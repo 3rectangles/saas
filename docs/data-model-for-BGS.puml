@@ -1,0 +1,66 @@
+@startuml
+
+entity "user_details" as u {
+  * id: text
+}
+
+entity "interview" as i {
+  * id: text
+}
+
+entity "evaluation" as e {
+  * id: text
+'  * company_id: text
+  * source: text // B2B
+  * job_role_id: text
+}
+
+entity "job_role" as j {
+  * id: text
+  * company_id: text
+}
+
+entity "interview_structure" as is {
+  * id: text
+
+}
+
+entity "skill" as s {
+  * id: text
+}
+
+entity "interview_structure_skills" as iss{
+  * id: text
+}
+
+entity "skill_weightage" as sw {
+  * id: text
+}
+
+entity "question" as q {
+  * id: text
+  * interview_id : text
+
+}
+
+entity "feedback" as f {
+  * id: text
+  * question_id: text
+  * skill_id: text
+  * weightage: decimal
+  * rating : decimal
+  * feedback: text
+}
+
+e }|.left.|| i
+u }|.up.|| e
+e }|.right.|| j
+i }|.left.|| is
+is }|.down.|| iss
+iss }|.right.|| s
+e }|.up.|| sw
+i }|.up.|| q
+q }|.left.|| f
+
+
+@enduml

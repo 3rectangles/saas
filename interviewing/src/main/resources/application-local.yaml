@@ -1,0 +1,237 @@
+config_variables_file_path: config.yaml
+server:
+    port: 5000
+    servlet:
+        session:
+            cookie:
+                domain: localhost
+                http-only: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - httptrace
+                    - info
+                    - health
+                    - shutdown
+                    - env
+                    - logfile
+                    - auditevents
+                    - beans
+                    - mappings
+    health:
+        elasticsearch:
+            enabled: false
+    endpoint:
+        health:
+            show-details: always
+            show-components: always
+    metrics:
+        tags:
+            stage: local
+
+spring:
+    profiles: local
+    datasource:
+        jdbcUrl: jdbc:postgresql://localhost:5432/barraiser
+        maximum-pool-size: 30
+
+        hikari:
+            leak-detection-threshold: 30000
+speaker:
+    url: http://13.234.172.129:5024
+
+
+    jpa:
+        show-sql: true
+bgs:
+    algorithm:
+        version: 12
+
+
+elasticsearch:
+    cluster:
+        domain: localhost
+        port: 9200
+        protocol: https
+
+firebase:
+    credentials-secret-name: firebase-codepairing-staging
+    database-url: https://codepairing-staging-default-rtdb.asia-southeast1.firebasedatabase.app
+
+mixpanel:
+    project-barraiser:
+        token: b13b478bf719460e37b216489f736da2
+
+aws:
+    secretNames:
+        barraiserDb: staging/barraiser
+    cognito:
+        userPoolId: ap-south-1_63VrnfQr0
+        backendClientId: 5b8aqclsqa26mtl2fdvd1ka472
+        backendClientSecretId: staging/cognito-client-5b8aqclsqa26mtl2fdvd1ka472
+        expectedIssuerCognito: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_63VrnfQr0
+        jwksDownloadUrl: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_63VrnfQr0/.well-known/jwks.json
+    eventBus: barraiser-local
+    sns:
+        sms:
+            senderId: BarRaiser
+            maxPrice: 0.50
+            smsType: Transactional
+
+razorpay:
+    secretNames:
+        apiKeyId: rzp_live_HNzSB8M7lYSOXj
+        secretName: RazorPay
+        webhook: jxXXGYd9ts5c7q#
+payment:
+    redirection:
+        host: localhost:3000
+queue:
+    jira: https://sqs.ap-south-1.amazonaws.com/969111487786/jira-events-dev
+    feedback: https://sqs.ap-south-1.amazonaws.com/969111487786/feedback-submitted-local
+    email-event: https://sqs.ap-south-1.amazonaws.com/969111487786/email-events
+    slack-notification: https://sqs.ap-south-1.amazonaws.com/969111487786/communication-events-local
+    expert-payment-calculation: https://sqs.ap-south-1.amazonaws.com/969111487786/expert-payment-calculation-local
+    db-log-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/events-log-db-local
+    interviewing-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/interviewing-local
+    video-transcoding-completion: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-transcoding-completion-event-staging
+    video-events: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-events-local
+    media-transcripts-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/media-transcripts-local
+    ats-integrations-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-integrations-local
+    data-science-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/datascience-local
+    ats-calendar-events: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-calendar-events-local
+    highlight-events: https://sqs.ap-south-1.amazonaws.com/969111487786/highlight-events-local
+
+interviewing-service-host:
+    url: http://localhost:5000
+
+transcripts-s3-bucket:
+    uri: s3://barraiser-interviewing-bot-staging/transcripts
+
+linkedinShare:
+    redirectUrl: http://localhost:3000
+
+launchdarkly:
+    secretNames:
+        sdk-key: launchdarklysdk/test
+
+communication:
+    calendar-accounts: # headless gmail accounts for sending calendar invites.
+        - interview12@barraiser.com
+        - interview13@barraiser.com
+    api-key-name: communication-service-api-key-staging
+    email:
+        fromAddress: interview@barraiser.com
+    phone:
+        countryCode:
+            india: 91
+        length:
+            india: 10
+
+media-serving:
+    domain: "media.staging.barraiser.in"
+
+search:
+    indices:
+        skills: "staging_skills"
+        companies: "staging_companies"
+        interests: "staging_area_of_interest"
+        interviewers: "staging_interviewers"
+
+monitoring:
+    slack-channel: "#"
+    enabled: false
+
+notification:
+    interview:
+        email: monitoring@barraiser.com
+        lifecycle:
+            email: interview@barraiser.com
+
+br-config:
+    s3-bucket: br-config-staging                    #we are actually not using this for local testing. A variable can be set in the class itself with a system path to indicate file location
+
+interview:
+    ta-auto-allocation: true
+
+    lifecycle:
+        management:
+            enabled: true
+        messagebird:
+            ivr:
+                flowId:
+                url: NA
+    confirmation:
+        messagebird:
+            ivr:
+                flowId:
+                url: https://flows.messagebird.com/flows/9c3b338b-7886-4b83-b200-d1df3f6c9966/invoke
+            whatsapp:
+                namespace: 00225efe_0bbc_4fab_8456_7f1952833ec0
+                candidateChannelId: b47898c2-2fd8-4fac-81ac-57d7e8c51219
+                expertChannelId: 55f2e6c6-363c-4284-b130-466cdccce0cd
+    followUpForScheduling:
+        messagebird:
+            ivr:
+                flowId: 4007d29b-d09a-4649-8462-a1faef8b944d
+
+scheduled:
+    initialDelay: 10000000
+    fixedDelay: 1000000
+    fixedDelayTaAllocation: 5000000000
+
+redirect_url:
+    # make localhost https or  possibly ngrok url
+    # and update the redirect url here - https://api.slack.com/apps/A02AN7PJFK7/oauth?
+    url: https://localhost:5000/slack-confirmation
+
+buttercms:
+    key: fd932099990a6dc3e2513968af084fe81a740f2b
+
+logging:
+    config: "classpath:log4j2-local.xml"
+
+cancellation-prediction-api-url: "https://77g5d2fm68.execute-api.ap-south-1.amazonaws.com/default/cancellation-prediction-mock-api-for-local-and-staging"
+
+followup-question-detection-url: http://13.234.172.129:5024/followup_detection_prediction/v1
+
+feedback-recommendation-url: http://13.234.172.129:5024/feedback_suggestion/v1
+
+interview-structure-skills-values-url: http://13.234.172.129:5024/interview_structure/skills_and_values
+
+question-category-prediction-url: http://13.234.172.129:5024/question_category_prediction/v1
+
+overall-feedback-suggestions-url: http://13.234.172.129:5024
+
+evaluation-link: https://staging.barraiser.in/customer/%s/evaluations/%s
+
+bgs-link: https://staging.barraiser.in/candidate-evaluation/%s
+
+merge-dev:
+    secretNames: staging/merge-dev
+
+login-link: https://staging.barraiser.in/login
+
+lever:
+    secretNames: staging/lever_credentials
+    api-client: https://api.sandbox.lever.co/v1/
+    access-token-client: https://sandbox-lever.auth0.com/oauth/token
+
+zoom:
+    app:
+        installation-link: https://a1ac-2401-4900-1ce2-9c92-ed45-dc1a-5203-af56.ngrok.io/api/zoomapp/install
+        api-key: staging/bia-service/api-key
+
+ms-teams:
+    app-id: 345dea15-857a-460e-a989-36a380a4c1f8
+
+cors:
+    enabled-origins:
+        - "http://localhost"
+        - "http://localhost:3000"
+        - "*"
+
+recaptcha-secret-key: 6LcJ2EEnAAAAALsC7g1tYE58GpwGOrmd9tVNjWKz

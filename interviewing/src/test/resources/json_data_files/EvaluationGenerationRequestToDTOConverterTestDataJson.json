@@ -1,0 +1,502 @@
+{
+    "evaluationId": "e1",
+    "interviews": [
+        {
+            "id": "i1",
+            "rescheduleCount": 0,
+            "questions": [
+                {
+                    "id": "q1",
+                    "interviewId": "i1",
+                    "type": "REQUIRED",
+                    "difficulty": "HARD",
+                    "createdOn": 1658481638.172013,
+                    "updatedOn": 1658481638.172013
+                }
+            ]
+        },
+        {
+            "id": "i2",
+            "rescheduleCount": 2,
+            "questions": [
+                {
+                    "id": "q2",
+                    "interviewId": "i2",
+                    "type": "REQUIRED",
+                    "difficulty": "HARD",
+                    "createdOn": 1658481638.172013,
+                    "updatedOn": 1658481638.172013
+                }
+            ]
+        }
+    ],
+    "questions1": [
+        {
+            "id": "q1",
+            "interviewId": "i1",
+            "type": "REQUIRED",
+            "difficulty": "HARD",
+            "createdOn": 1658481638.172013,
+            "updatedOn": 1658481638.172013
+        },
+        {
+            "id": "q2",
+            "interviewId": "i1",
+            "type": "GOOD_TO_KNOW",
+            "difficulty": "HARD",
+            "createdOn": 1658481638.172013,
+            "updatedOn": 1658481638.172013
+        }
+    ],
+    "questions2": [
+        {
+            "id": "q3",
+            "interviewId": "i2",
+            "type": "REQUIRED",
+            "difficulty": "EASY"
+        },
+        {
+            "id": "q4",
+            "interviewId": "i2",
+            "type": "GOOD_TO_KNOW",
+            "difficulty": "MODERATE"
+        }
+    ],
+    "skillWeights": [
+        {
+            "skillId": "1",
+            "weightage": 60
+        },
+        {
+            "skillId": "2",
+            "weightage": 40
+        }
+    ],
+    "feedbacks": [
+        {
+            "id": "f1",
+            "rating": 7,
+            "referenceId": "q1",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 7.2
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 6.1
+                }
+            ]
+        },
+        {
+            "id": "f2",
+            "rating": 1,
+            "referenceId": "q1",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 3.1
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 4.3
+                }
+            ]
+        },
+        {
+            "id": "f3",
+            "rating": 10,
+            "referenceId": "q1",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 8.7
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 6.1
+                }
+            ]
+        },
+        {
+            "id": "f4",
+            "rating": 4,
+            "referenceId": "q2",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 4.2
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 5.7
+                }
+            ]
+        },
+        {
+            "id": "f5",
+            "rating": 6,
+            "referenceId": "q2",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 8.7
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 9.8
+                }
+            ]
+        },
+        {
+            "id": "f6",
+            "rating": 3,
+            "referenceId": "q3",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 3.7
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 7.3
+                }
+            ]
+        },
+        {
+            "id": "f7",
+            "rating": 10,
+            "referenceId": "q3",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 9.2
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 10
+                }
+            ]
+        },
+        {
+            "id": "f8",
+            "rating": 6,
+            "referenceId": "q3",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 6.6
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 2.1
+                }
+            ]
+        },
+        {
+            "id": "f9",
+            "rating": 9,
+            "referenceId": "q4",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 9.9
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 10
+                }
+            ]
+        },
+        {
+            "id": "f10",
+            "rating": 8,
+            "referenceId": "q4",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 7.2
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 9.1
+                }
+            ]
+        }
+    ],
+    "softSkillsFeedback": [
+        {
+            "id": "s1",
+            "rating": 1,
+            "referenceId": "i1",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 1.2
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 2.1
+                }
+            ]
+        },
+        {
+            "id": "s2",
+            "rating": 2,
+            "referenceId": "i1",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 2.9
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 3
+                }
+            ]
+        },
+        {
+            "id": "s3",
+            "rating": 3,
+            "referenceId": "i2",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 4.4
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 4.9
+                }
+            ]
+        },
+        {
+            "id": "s4",
+            "rating": 5,
+            "referenceId": "i2",
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 3.2
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 1.2
+                }
+            ]
+        }
+    ],
+    "expectedData": {
+        "evaluationId": "e1",
+        "softSkillFeedback": {
+            "rating": 5.5,
+            "normalisedRatingMappings": [
+                {
+                    "normalisationVersion": "1",
+                    "cappedNormalisedRating": 5.85
+                },
+                {
+                    "normalisationVersion": "2",
+                    "cappedNormalisedRating": 5.6
+                }
+            ]
+        },
+        "interviews": [
+            {
+                "id": "i1",
+                "questions": [
+                    {
+                        "id": "q1",
+                        "interviewId": "i1",
+                        "type": "REQUIRED",
+                        "difficulty": "HARD",
+                        "createdOn": 1658481638.172013,
+                        "updatedOn": 1658481638.172013,
+                        "feedbacks": [
+                            {
+                                "id": "f1",
+                                "rating": 7,
+                                "referenceId": "q1",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 7.2
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 6.1
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f2",
+                                "rating": 1,
+                                "referenceId": "q1",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 3.1
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 4.3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f3",
+                                "rating": 10,
+                                "referenceId": "q1",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 8.7
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 6.1
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "q2",
+                        "interviewId": "i1",
+                        "type": "GOOD_TO_KNOW",
+                        "difficulty": "HARD",
+                        "createdOn": 1658481638.172013,
+                        "updatedOn": 1658481638.172013,
+                        "feedbacks": [
+                            {
+                                "id": "f4",
+                                "rating": 4,
+                                "referenceId": "q2",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 4.2
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 5.7
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f5",
+                                "rating": 6,
+                                "referenceId": "q2",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 8.7
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 9.8
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "q3",
+                        "interviewId": "i2",
+                        "type": "REQUIRED",
+                        "difficulty": "EASY",
+                        "createdOn": 1658481638.172013,
+                        "updatedOn": 1658481638.172013,
+                        "feedbacks": [
+                            {
+                                "id": "f5",
+                                "rating": 6,
+                                "referenceId": "q2",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 8.7
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 9.8
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f6",
+                                "rating": 3,
+                                "referenceId": "q3",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 3.7
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 7.3
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f7",
+                                "rating": 10,
+                                "referenceId": "q3",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 9.2
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 10
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": "q4",
+                        "interviewId": "i2",
+                        "type": "GOOD_TO_KNOW",
+                        "difficulty": "MODERATE",
+                        "createdOn": 1658481638.172013,
+                        "updatedOn": 1658481638.172013,
+                        "feedbacks": [
+                            {
+                                "id": "f9",
+                                "rating": 9,
+                                "referenceId": "q4",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 9.9
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 10
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "f10",
+                                "rating": 8,
+                                "referenceId": "q4",
+                                "normalisedRatingMappings": [
+                                    {
+                                        "normalisationVersion": "1",
+                                        "cappedNormalisedRating": 7.2
+                                    },
+                                    {
+                                        "normalisationVersion": "2",
+                                        "cappedNormalisedRating": 9.1
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

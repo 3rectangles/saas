@@ -1,0 +1,98 @@
+{
+    "availabilityPerInterviewer": {
+        "1": [
+            {
+                "startDate": 1000,
+                "endDate": 10000
+            },
+            {
+                "startDate": 15000,
+                "endDate": 30000
+            },
+            {
+                "startDate": 40000,
+                "endDate": 50000
+            },
+            {
+                "startDate": 60000,
+                "endDate": 90000
+            }
+        ],
+        "2": [
+            {
+                "startDate": 1624084200,
+                "endDate": 1624098600
+            },
+            {
+                "startDate": 1624069800,
+                "endDate": 1624080600
+            },
+            {
+                "startDate": 1624105800,
+                "endDate": 1624120200
+            },
+            {
+                "startDate": 1624170600,
+                "endDate": 1624177800
+            },
+            {
+                "startDate": 1624181400,
+                "endDate": 1624188600
+            }
+        ]
+    },
+    "bookedSlotsPerInterviewerMidOverlap": {
+        "1": [
+            {
+                "startDate": 1000,
+                "endDate": 4600
+            },
+            {
+                "startDate": 15500,
+                "endDate": 19100
+            },
+            {
+                "startDate": 45000,
+                "endDate": 48600
+            },
+            {
+                "startDate": 70000,
+                "endDate": 73600
+            },
+            {
+                "startDate": 86400,
+                "endDate": 90000
+            }
+        ],
+        "2": [
+            {
+                "startDate": 1624073400,
+                "endDate": 1624077000
+            },
+            {
+                "startDate": 1624080600,
+                "endDate": 1624087800
+            },
+            {
+                "startDate": 1624095000,
+                "endDate": 1624102200
+            },
+            {
+                "startDate": 1624116600,
+                "endDate": 1624120200
+            },
+            {
+                "startDate": 1624177800,
+                "endDate": 1624181400
+            },
+            {
+                "startDate": 1624188600,
+                "endDate": 1624192200
+            },
+            {
+                "startDate": 1624167000,
+                "endDate": 1624177800
+            }
+        ]
+    }
+}

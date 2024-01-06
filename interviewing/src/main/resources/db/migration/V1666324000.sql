@@ -1,0 +1,13 @@
+ALTER TABLE evaluation DROP COLUMN IF EXISTS user_id;
+ALTER TABLE interview DROP COLUMN IF EXISTS skill_ids;
+ALTER TABLE interview DROP COLUMN IF EXISTS category;
+ALTER TABLE interview DROP COLUMN IF EXISTS cost;
+ALTER TABLE interview DROP COLUMN IF EXISTS domain_id;
+ALTER TABLE interview DROP COLUMN IF EXISTS bgs_link;
+ALTER TABLE interview DROP COLUMN IF EXISTS interaction_percentage;
+ALTER TABLE interview DROP COLUMN IF EXISTS interview_structure_name;
+ALTER TABLE interview DROP COLUMN IF EXISTS transcript_link;
+ALTER TABLE interview DROP COLUMN IF EXISTS submission_link;
+ALTER TABLE interview DROP COLUMN IF EXISTS final_submission_link;
+ALTER TABLE interview DROP COLUMN IF EXISTS job_role_id;
+ALTER TABLE interview DROP COLUMN IF EXISTS cancellation_probability;

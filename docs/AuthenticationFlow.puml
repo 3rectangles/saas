@@ -1,0 +1,31 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        @startuml
+participant Frontend as fe
+
+participant Backend as be
+participant Cognito as c
+database Dynamo as d
+participant SNS as s
+
+== Send OTP flow ==
+fe -> be : send phoneOtp
+be -> d : create and conditional save phoneOtp
+
+alt if phone OTP exists
+    d -> be : record exists
+    be -> fe : OK
+else
+    d -> be : ok
+    be -> s : send sms
+    s -> be : OK
+    be -> fe : OK
+end
+== Verify OTP flow ==
+fe -> be : verify phoneOtp + phone
+be -> d : get phoneOtp for phone
+alt phoneOtp exists and correct
+  be -> fe : 201
+else
+  be -> fe : 400
+alt
+
+@enduml

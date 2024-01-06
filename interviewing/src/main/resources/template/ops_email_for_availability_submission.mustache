@@ -1,0 +1,20 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Submission of Availability by {{userName}}</title>
+    <p>Hi Team,</p>
+    <p>{{userName}} (with user id : {{userId}}) has submitted his/her availability for following days:
+        <br>
+        <ul>
+        {{#Date}}
+               <li> day{{index}} ({{date}}) : {{formattedStartTime}} - {{formattedEndTime}} </li>
+        {{/Date}}
+        </ul>
+    </p>
+  <p>Regards,</p>
+  <p>
+     Team BarRaiser
+  </p>
+    <br/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+

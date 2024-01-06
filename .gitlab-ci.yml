@@ -1,0 +1,114 @@
+stages:
+    - build
+    - test
+    - migrate_db_staging
+    - deploy-staging
+    - run-integration-test
+    - migrate_db_production
+    - deploy-prod
+variables:
+    DISABLE_CODE_FORMAT: "true"
+    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
+before_script:
+    - export PATH=$PATH:/usr/bin/mvn
+
+
+build_artifact:
+    stage: build
+    script:
+        - whoami
+        - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain barraiser --domain-owner 969111487786 --query authorizationToken --output text`
+        - mvn spotless:check
+        - mvn -U clean install
+        - pwd
+        - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+        - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+        - aws configure set region ap-south-1
+        - aws configure list
+        - bash scripts/create_source_jar.sh
+        - ls
+        - echo "uploaded-"
+    tags:
+        - barraiser
+    artifacts:
+        paths:
+            # saving artifacts
+            - interviewing-*.jar
+
+deploy_branch_staging:
+    stage: deploy-staging
+    when: manual
+    except:
+        - master
+    script:
+        - bash scripts/deploy.sh staging
+    tags:
+        - barraiser
+    environment:
+        name: staging
+        url: https://api.staging.barraiser.in/actuator
+
+deploy_staging:
+    stage: deploy-staging
+    only:
+        - master
+    script:
+        - bash scripts/deploy.sh staging
+    tags:
+        - barraiser
+    environment:
+        name: staging
+        url: https://api.staging.barraiser.in/actuator
+
+run_integration_test:
+    stage: run-integration-test
+    only:
+        - master
+        - /^(Hotfix|HOTFIX|hotfix).*$/
+    variables:
+        environment: staging
+    trigger:
+        project: barraiser/barraiser-integration-tests
+        branch: master
+        strategy: depend
+    allow_failure: true
+
+
+deploy_production:
+    stage: deploy-prod
+    when: manual
+    only:
+        - master
+        - /^(Hotfix|HOTFIX|hotfix).*$/
+    script:
+        - bash scripts/deploy.sh app-production-v2
+    tags:
+        - barraiser
+    environment:
+        name: prod
+        url: https://api.barraiser.com/actuator
+
+migrate_db_staging:
+    stage: migrate_db_staging
+
+    script:
+        - pwd
+        - bash interviewing/migrate.sh staging
+    tags:
+        - barraiser
+
+migrate_db_production:
+    stage: migrate_db_production
+    when: manual
+    only:
+        - master
+        - /^(Hotfix|HOTFIX|hotfix).*$/
+    script:
+        - bash interviewing/migrate.sh prod
+    tags:
+        - barraiser
+
+
+

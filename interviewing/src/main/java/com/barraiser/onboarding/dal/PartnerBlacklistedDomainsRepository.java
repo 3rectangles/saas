@@ -1,0 +1,16 @@
+/* Copyright (C) BarRaiser Private Limited - All Rights Reserved */
+package com.barraiser.onboarding.dal;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface PartnerBlacklistedDomainsRepository extends JpaRepository<PartnerBlackListedDomainDAO, String> {
+
+	List<PartnerBlackListedDomainDAO> findAllByPartnerId(String partnerId);
+
+	Optional<PartnerBlackListedDomainDAO> findByPartnerIdAndEmailDomain(String partnerId, String emailDomain);
+}

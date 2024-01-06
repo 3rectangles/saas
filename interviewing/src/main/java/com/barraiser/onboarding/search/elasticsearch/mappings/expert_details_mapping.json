@@ -1,0 +1,67 @@
+{
+    "properties": {
+        "user_id": {
+            "type": "keyword"
+        },
+        "peer_domains": {
+            "type": "keyword"
+        },
+        "expert_domains": {
+            "type": "keyword"
+        },
+        "phone": {
+            "type": "keyword"
+        },
+        "linkedin_profile": {
+            "type": "keyword"
+        },
+        "cost_per_hour": {
+            "type": "double"
+        },
+        "currency": {
+            "type": "keyword"
+        },
+        "designation": {
+            "type": "keyword"
+        },
+        "email": {
+            "type": "keyword"
+        },
+        "work_experience_in_month": {
+            "type": "integer"
+        },
+        "category": {
+            "type": "keyword"
+        },
+        "introductory": {
+            "type": "boolean"
+        },
+        "is_active": {
+            "type": "boolean"
+        },
+        "current_company_id": {
+            "type": "keyword"
+        },
+        "last_companies_id": {
+            "type": "keyword"
+        },
+        "skills": {
+            "type": "keyword"
+        },
+        "is_under_training": {
+            "type": "boolean"
+        },
+        "is_demo_eligible": {
+            "type": "boolean"
+        },
+        "companies_for_which_expert_can_take_interview": {
+            "type": "keyword"
+        },
+        "multiplier": {
+            "type": "double"
+        },
+        "countries_for_which_expert_can_take_interviews": {
+            "type": "keyword"
+        }
+    }
+}

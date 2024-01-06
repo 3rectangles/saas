@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+<p>Hi Expert,</p>
+Please find below feedback from {{interviewee_name}} for the interview taken on {{date}}:
+</p>
+<p>Average Rating - {{average_rating}}/5<p>
+<p>Rating on specific areas:</p>
+<p>
+1.Clarity of questions - {{clarity_of_questions}}/5
+<br/>
+2.Quality of questions - {{quality_of_questions}}/5
+<br/>
+3.Interviewer knowledge - {{interviewer_knowledge}}/5
+<br/>
+4.Feedback from the interviewer - {{feedback}}/5
+<br/>
+5.Structure of the interview - {{interview_structure}}/5
+<br/>
+<br/>
+Other remarks - {{other_remarks}}
+</p>
+
+<p>Please revert on <a>expert-feedback@barraiser.com</a> in case there is any concern.</p>
+<br/>
+<br/>
+<p>Regards,</p>
+<p>BarRaiser Team</p>
+    </div>
+    {{> footer_BR.mustache}}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+    "availabilityPerInterviewer": {
+        "1": [
+            {
+                "userId": "1",
+                "startDate": 1624084080,
+                "endDate": 1624091700
+            }
+        ],
+        "2": [
+            {
+                "userId": "2",
+                "startDate": 1624085340,
+                "endDate": 1624091280
+            }
+        ]
+    },
+    "freeSlots": [
+        {
+            "startDate": 1624084200,
+            "endDate": 1624091400
+        },
+        {
+            "startDate": 1624085340,
+            "endDate": 1624091280
+        }
+    ]
+}

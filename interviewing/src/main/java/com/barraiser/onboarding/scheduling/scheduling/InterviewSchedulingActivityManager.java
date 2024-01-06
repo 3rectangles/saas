@@ -1,0 +1,36 @@
+/* Copyright (C) BarRaiser Private Limited - All Rights Reserved */
+package com.barraiser.onboarding.scheduling.scheduling;
+
+import com.barraiser.onboarding.scheduling.scheduling.sfn.*;
+import com.barraiser.onboarding.sfn.StepFunctionManager;
+import com.barraiser.onboarding.sfn.StepFunctionUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Component;
+
+@Log4j2
+@Component
+@AllArgsConstructor
+public class InterviewSchedulingActivityManager {
+
+	private final ObjectMapper objectMapper;
+	private final WaitForCancellationToCompleteActivity waitForCancellationToCompleteActivity;
+	private final BookMeetingActivity bookMeetingActivity;
+	private final TriggerInterviewConfirmationLifecycleActivity triggerInterviewConfirmationLifeCycleActivity;
+	private final TriggerTaAllocationLifecycleActivity triggerTaAllocationLifecycleActivity;
+	private final TriggerInterviewingLifecycleActivity triggerInterviewingLifeCycleActivity;
+	private final UpdateInterviewInDbActivity updateInterviewInDbActivity;
+	private final UpdateInterviewInJiraActivity updateInterviewInJiraActivity;
+	private final SendInterviewScheduleMailToCandidateActivity sendInterviewScheduleMailToCandidateActivity;
+	private final SendInterviewScheduledMailToExpertActivity sendInterviewScheduledMailToExpertActivity;
+	private final SendInterviewScheduledCalendarInviteToCandidateActivity sendInterviewScheduledCalendarInviteToCandidateActivity;
+	private final SendInterviewScheduledCalendarInviteToExpertActivity sendInterviewScheduledCalendarInviteToExpertActivity;
+	private final StepFunctionManager stepFunctionManager;
+	private final StepFunctionUtil stepFunctionUtil;
+	private final LastMinuteDuplicateExpertHandler lastMinuteDuplicateExpertHandler;
+	private final GetInterviewerDetailsActivity getInterviewerDetailsActivity;
+	private final TransitionInterviewToPendingInterviewingActivity transitionInterviewToPendingInterviewingActivity;
+	private final SendInterviewScheduledEventActivity sendInterviewScheduledEventActivity;
+
+}

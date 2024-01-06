@@ -1,0 +1,1 @@
+ALTER TABLE evaluation ADD COLUMN IF NOT EXISTS block_candidate_scheduling boolean;

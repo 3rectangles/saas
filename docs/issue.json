@@ -1,0 +1,869 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "10195",
+  "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195",
+  "key": "CP-21",
+  "fields": {
+    "statuscategorychangedate": "2020-10-11T17:18:34.848+0530",
+    "customfield_10071": "Test",
+    "customfield_10072": "User",
+    "customfield_10073": "+919111111145",
+    "customfield_10074": "pragya.binjwa@gmail.com",
+    "customfield_10075": null,
+    "customfield_10076": "2014-09-16",
+    "customfield_10077": "IIT Delhi",
+    "fixVersions": [],
+    "customfield_10110": null,
+    "customfield_10078": "alphabets",
+    "customfield_10111": null,
+    "resolution": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/resolution/10000",
+      "id": "10000",
+      "description": "Work has been completed on this issue.",
+      "name": "Done"
+    },
+    "customfield_10079": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10356",
+      "value": "THREE_FIVE_LACS",
+      "id": "10356"
+    },
+    "lastViewed": "2020-10-28T12:54:52.815+0530",
+    "customfield_10065": null,
+    "customfield_10066": "https://drive.google.com/file/d/1wk41oFsacWeNWXjt6PgYSrJ6q5pY89V3/view?usp=sharing",
+    "priority": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/priority/3",
+      "iconUrl": "https://barraiser.atlassian.net/images/icons/priorities/medium.svg",
+      "name": "Medium",
+      "id": "3"
+    },
+    "customfield_10100": [
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10651",
+        "value": "Software Backend : 3",
+        "id": "10651"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10653",
+        "value": "Software Frontend iOS : 5",
+        "id": "10653"
+      }
+    ],
+    "customfield_10067": "https://www.linkedin.com/abs",
+    "customfield_10101": [
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10668",
+        "value": "Walmart : 1",
+        "id": "10668"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10667",
+        "value": "Fetch Rewards : 3",
+        "id": "10667"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10669",
+        "value": "Flipkart : 4",
+        "id": "10669"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10674",
+        "value": "Cardlytics : 5",
+        "id": "10674"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10678",
+        "value": "Acko : 12",
+        "id": "10678"
+      }
+    ],
+    "labels": [],
+    "aggregatetimeoriginalestimate": null,
+    "timeestimate": null,
+    "versions": [],
+    "issuelinks": [],
+    "assignee": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f63a6ff91091700760716c5",
+      "accountId": "5f63a6ff91091700760716c5",
+      "avatarUrls": {
+        "48x48": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png",
+        "24x24": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png",
+        "16x16": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png",
+        "32x32": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png"
+      },
+      "displayName": "Utkarsh Tiwari",
+      "active": true,
+      "timeZone": "Asia/Calcutta",
+      "accountType": "atlassian"
+    },
+    "status": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/status/10041",
+      "description": "",
+      "iconUrl": "https://barraiser.atlassian.net/",
+      "name": "Done",
+      "id": "10041",
+      "statusCategory": {
+        "self": "https://barraiser.atlassian.net/rest/api/2/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "components": [],
+    "customfield_10051": null,
+    "customfield_10052": null,
+    "customfield_10053": "https://feedbacklink.com",
+    "customfield_10057": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10112",
+      "value": "Software Backend : 3",
+      "id": "10112"
+    },
+    "customfield_10049": null,
+    "aggregatetimeestimate": null,
+    "creator": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+      "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+      "emailAddress": "prabhat.ranjan32@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+        "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+        "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+        "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+      },
+      "displayName": "prabhat ranjan",
+      "active": false,
+      "timeZone": "Asia/Calcutta",
+      "accountType": "atlassian"
+    },
+    "subtasks": [],
+    "reporter": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+      "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+      "emailAddress": "prabhat.ranjan32@gmail.com",
+      "avatarUrls": {
+        "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+        "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+        "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+        "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+      },
+      "displayName": "prabhat ranjan",
+      "active": false,
+      "timeZone": "Asia/Calcutta",
+      "accountType": "atlassian"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "votes": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/issue/CP-21/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "issuetype": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/issuetype/10023",
+      "id": "10023",
+      "description": "Epics track collections of related bugs, stories, and tasks.",
+      "iconUrl": "https://barraiser.atlassian.net/secure/viewavatar?size=medium&avatarId=10307&avatarType=issuetype",
+      "name": "Candidate",
+      "subtask": false,
+      "avatarId": 10307,
+      "entityId": "ab1703cc-68cd-41a8-a9f5-32d382a7a172"
+    },
+    "timespent": null,
+    "project": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/project/10005",
+      "id": "10005",
+      "key": "CP",
+      "name": "Candidate Processing",
+      "projectTypeKey": "software",
+      "simplified": true,
+      "avatarUrls": {
+        "48x48": "https://barraiser.atlassian.net/secure/projectavatar?pid=10005&avatarId=10419",
+        "24x24": "https://barraiser.atlassian.net/secure/projectavatar?size=small&s=small&pid=10005&avatarId=10419",
+        "16x16": "https://barraiser.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10005&avatarId=10419",
+        "32x32": "https://barraiser.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10005&avatarId=10419"
+      }
+    },
+    "customfield_10031": null,
+    "customfield_10032": null,
+    "customfield_10033": null,
+    "aggregatetimespent": null,
+    "customfield_10027": null,
+    "resolutiondate": "2020-10-11T17:18:34.844+0530",
+    "workratio": -1,
+    "issuerestriction": {
+      "issuerestrictions": {
+        "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+        "id": "10195",
+        "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195",
+        "key": "CP-21",
+        "fields": {
+          "statuscategorychangedate": "2020-10-11T17:18:34.848+0530",
+          "customfield_10071": "Test",
+          "customfield_10072": "User",
+          "customfield_10073": "+919111111145",
+          "customfield_10074": "pragya.binjwa@gmail.com",
+          "customfield_10075": null,
+          "customfield_10076": "2014-09-16",
+          "customfield_10077": "IIT Delhi",
+          "fixVersions": [],
+          "customfield_10110": null,
+          "customfield_10078": "alphabets",
+          "customfield_10111": null,
+          "resolution": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/resolution/10000",
+            "id": "10000",
+            "description": "Work has been completed on this issue.",
+            "name": "Done"
+          },
+          "customfield_10079": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10356",
+            "value": "THREE_FIVE_LACS",
+            "id": "10356"
+          },
+          "lastViewed": "2020-10-28T12:54:52.815+0530",
+          "customfield_10065": null,
+          "customfield_10066": "https://drive.google.com/file/d/1wk41oFsacWeNWXjt6PgYSrJ6q5pY89V3/view?usp=sharing",
+          "priority": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/priority/3",
+            "iconUrl": "https://barraiser.atlassian.net/images/icons/priorities/medium.svg",
+            "name": "Medium",
+            "id": "3"
+          },
+          "customfield_10100": [
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10651",
+              "value": "Software Backend : 3",
+              "id": "10651"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10653",
+              "value": "Software Frontend iOS : 5",
+              "id": "10653"
+            }
+          ],
+          "customfield_10067": "https://www.linkedin.com/abs",
+          "customfield_10101": [
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10668",
+              "value": "Walmart : 1",
+              "id": "10668"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10667",
+              "value": "Fetch Rewards : 3",
+              "id": "10667"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10669",
+              "value": "Flipkart : 4",
+              "id": "10669"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10674",
+              "value": "Cardlytics : 5",
+              "id": "10674"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10678",
+              "value": "Acko : 12",
+              "id": "10678"
+            }
+          ],
+          "labels": [],
+          "aggregatetimeoriginalestimate": null,
+          "timeestimate": null,
+          "versions": [],
+          "issuelinks": [],
+          "assignee": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f63a6ff91091700760716c5",
+            "accountId": "5f63a6ff91091700760716c5",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/1608cc46a867b3a1e92551ecb0145d6f?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FUT-4.png"
+            },
+            "displayName": "Utkarsh Tiwari",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "status": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/status/10041",
+            "description": "",
+            "iconUrl": "https://barraiser.atlassian.net/",
+            "name": "Done",
+            "id": "10041",
+            "statusCategory": {
+              "self": "https://barraiser.atlassian.net/rest/api/2/statuscategory/3",
+              "id": 3,
+              "key": "done",
+              "colorName": "green",
+              "name": "Done"
+            }
+          },
+          "components": [],
+          "customfield_10051": null,
+          "customfield_10052": null,
+          "customfield_10053": "https://feedbacklink.com",
+          "customfield_10057": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10112",
+            "value": "Software Backend : 3",
+            "id": "10112"
+          },
+          "customfield_10049": null,
+          "aggregatetimeestimate": null,
+          "creator": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "emailAddress": "prabhat.ranjan32@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "prabhat ranjan",
+            "active": false,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "subtasks": [],
+          "reporter": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "emailAddress": "prabhat.ranjan32@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "prabhat ranjan",
+            "active": false,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "aggregateprogress": {
+            "progress": 0,
+            "total": 0
+          },
+          "progress": {
+            "progress": 0,
+            "total": 0
+          },
+          "votes": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/issue/CP-21/votes",
+            "votes": 0,
+            "hasVoted": false
+          },
+          "worklog": {
+            "startAt": 0,
+            "maxResults": 20,
+            "total": 0,
+            "worklogs": []
+          },
+          "issuetype": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/issuetype/10023",
+            "id": "10023",
+            "description": "Epics track collections of related bugs, stories, and tasks.",
+            "iconUrl": "https://barraiser.atlassian.net/secure/viewavatar?size=medium&avatarId=10307&avatarType=issuetype",
+            "name": "Candidate",
+            "subtask": false,
+            "avatarId": 10307,
+            "entityId": "ab1703cc-68cd-41a8-a9f5-32d382a7a172"
+          },
+          "timespent": null,
+          "project": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/project/10005",
+            "id": "10005",
+            "key": "CP",
+            "name": "Candidate Processing",
+            "projectTypeKey": "software",
+            "simplified": true,
+            "avatarUrls": {
+              "48x48": "https://barraiser.atlassian.net/secure/projectavatar?pid=10005&avatarId=10419",
+              "24x24": "https://barraiser.atlassian.net/secure/projectavatar?size=small&s=small&pid=10005&avatarId=10419",
+              "16x16": "https://barraiser.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10005&avatarId=10419",
+              "32x32": "https://barraiser.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10005&avatarId=10419"
+            }
+          },
+          "customfield_10031": null,
+          "customfield_10032": null,
+          "customfield_10033": null,
+          "aggregatetimespent": null,
+          "customfield_10027": null,
+          "resolutiondate": "2020-10-11T17:18:34.844+0530",
+          "workratio": -1,
+          "issuerestriction": {
+            "issuerestrictions": {},
+            "shouldDisplay": false
+          },
+          "watches": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/issue/CP-21/watchers",
+            "watchCount": 2,
+            "isWatching": true
+          },
+          "created": "2020-09-10T02:02:47.022+0530",
+          "customfield_10020": null,
+          "customfield_10021": null,
+          "customfield_10022": "2020-10-28T12:55:09.312+0530",
+          "customfield_10023": "10040_*:*_5_*:*_45916422_*|*_10042_*:*_8_*:*_1471500641_*|*_10041_*:*_2_*:*_56821_*|*_10043_*:*_2_*:*_87541170_*|*_10046_*:*_2_*:*_60771762_*|*_10045_*:*_2_*:*_956568_*|*_10039_*:*_3_*:*_1066604466",
+          "customfield_10024": null,
+          "customfield_10025": [],
+          "customfield_10026": null,
+          "customfield_10016": null,
+          "customfield_10017": "dark_orange",
+          "customfield_10018": {
+            "hasEpicLinkFieldDependency": false,
+            "showField": false,
+            "nonEditableReason": {
+              "reason": "PLUGIN_LICENSE_ERROR",
+              "message": "The Parent Link is only available to Jira Premium users."
+            }
+          },
+          "customfield_10019": "0|i0010v:",
+          "updated": "2020-10-28T15:35:02.134+0530",
+          "customfield_10092": null,
+          "timeoriginalestimate": null,
+          "customfield_10095": null,
+          "customfield_10096": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10642",
+            "value": "Attentive AI--A--Software Backend--SDE-1 : 224fcb62-1450-4fb8-aebc-8e0f8795fa5b",
+            "id": "10642"
+          },
+          "description": null,
+          "customfield_10097": [
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10645",
+              "value": "Expert",
+              "id": "10645"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10647",
+              "value": "Active",
+              "id": "10647"
+            }
+          ],
+          "customfield_10010": null,
+          "customfield_10099": [
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10648",
+              "value": "Data Science : 1",
+              "id": "10648"
+            },
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10659",
+              "value": "Software Backend : 3",
+              "id": "10659"
+            }
+          ],
+          "customfield_10014": null,
+          "timetracking": {},
+          "customfield_10015": null,
+          "customfield_10005": null,
+          "customfield_10006": null,
+          "security": null,
+          "customfield_10007": null,
+          "customfield_10008": null,
+          "attachment": [
+            {
+              "self": "https://barraiser.atlassian.net/rest/api/2/attachment/10135",
+              "id": "10135",
+              "filename": "Ritika's Resume.pdf.pdf",
+              "author": {
+                "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+                "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+                "emailAddress": "prabhat.ranjan32@gmail.com",
+                "avatarUrls": {
+                  "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                  "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                  "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                  "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                },
+                "displayName": "prabhat ranjan",
+                "active": false,
+                "timeZone": "Asia/Calcutta",
+                "accountType": "atlassian"
+              },
+              "created": "2020-09-22T23:22:33.746+0530",
+              "size": 41580,
+              "mimeType": "application/pdf",
+              "content": "https://barraiser.atlassian.net/secure/attachment/10135/Ritika%27s+Resume.pdf.pdf"
+            }
+          ],
+          "customfield_10009": null,
+          "summary": "Test User",
+          "customfield_10080": 86.0,
+          "customfield_10081": "Engineer",
+          "customfield_10000": "{}",
+          "customfield_10001": null,
+          "customfield_10002": null,
+          "customfield_10003": null,
+          "customfield_10004": null,
+          "environment": null,
+          "duedate": null,
+          "comment": {
+            "comments": [
+              {
+                "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195/comment/10917",
+                "id": "10917",
+                "author": {
+                  "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+                  "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+                  "emailAddress": "prabhat.ranjan32@gmail.com",
+                  "avatarUrls": {
+                    "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                  },
+                  "displayName": "prabhat ranjan",
+                  "active": false,
+                  "timeZone": "Asia/Calcutta",
+                  "accountType": "atlassian"
+                },
+                "body": "sync",
+                "updateAuthor": {
+                  "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+                  "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+                  "emailAddress": "prabhat.ranjan32@gmail.com",
+                  "avatarUrls": {
+                    "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                  },
+                  "displayName": "prabhat ranjan",
+                  "active": false,
+                  "timeZone": "Asia/Calcutta",
+                  "accountType": "atlassian"
+                },
+                "created": "2020-10-22T13:25:49.289+0530",
+                "updated": "2020-10-22T13:25:49.289+0530",
+                "jsdPublic": true
+              },
+              {
+                "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195/comment/11124",
+                "id": "11124",
+                "author": {
+                  "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+                  "accountId": "5f59c8ddbea5be0068234d43",
+                  "emailAddress": "prabhat@barraiser.com",
+                  "avatarUrls": {
+                    "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                  },
+                  "displayName": "Prabhat Ranjan",
+                  "active": true,
+                  "timeZone": "Asia/Calcutta",
+                  "accountType": "atlassian"
+                },
+                "body": "bfc",
+                "updateAuthor": {
+                  "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+                  "accountId": "5f59c8ddbea5be0068234d43",
+                  "emailAddress": "prabhat@barraiser.com",
+                  "avatarUrls": {
+                    "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                  },
+                  "displayName": "Prabhat Ranjan",
+                  "active": true,
+                  "timeZone": "Asia/Calcutta",
+                  "accountType": "atlassian"
+                },
+                "created": "2020-10-28T12:55:09.312+0530",
+                "updated": "2020-10-28T12:55:09.312+0530",
+                "jsdPublic": true
+              },
+              {
+                "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195/comment/11134",
+                "id": "11134",
+                "author": {
+                  "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+                  "accountId": "5f59c8ddbea5be0068234d43",
+                  "emailAddress": "prabhat@barraiser.com",
+                  "avatarUrls": {
+                    "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                  },
+                  "displayName": "Prabhat Ranjan",
+                  "active": true,
+                  "timeZone": "Asia/Calcutta",
+                  "accountType": "atlassian"
+                },
+                "body": "sync",
+                "updateAuthor": {
+                  "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+                  "accountId": "5f59c8ddbea5be0068234d43",
+                  "emailAddress": "prabhat@barraiser.com",
+                  "avatarUrls": {
+                    "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+                    "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+                  },
+                  "displayName": "Prabhat Ranjan",
+                  "active": true,
+                  "timeZone": "Asia/Calcutta",
+                  "accountType": "atlassian"
+                },
+                "created": "2020-10-28T15:35:02.134+0530",
+                "updated": "2020-10-28T15:35:02.134+0530",
+                "jsdPublic": true
+              }
+            ],
+            "maxResults": 3,
+            "total": 3,
+            "startAt": 0
+          }
+        }
+      },
+      "shouldDisplay": false
+    },
+    "watches": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/issue/CP-21/watchers",
+      "watchCount": 2,
+      "isWatching": true
+    },
+    "created": "2020-09-10T02:02:47.022+0530",
+    "customfield_10020": null,
+    "customfield_10021": null,
+    "customfield_10022": "2020-10-28T12:55:09.312+0530",
+    "customfield_10023": "10040_*:*_5_*:*_45916422_*|*_10042_*:*_8_*:*_1471500641_*|*_10041_*:*_2_*:*_56821_*|*_10043_*:*_2_*:*_87541170_*|*_10046_*:*_2_*:*_60771762_*|*_10045_*:*_2_*:*_956568_*|*_10039_*:*_3_*:*_1066604466",
+    "customfield_10024": null,
+    "customfield_10025": [],
+    "customfield_10026": null,
+    "customfield_10016": null,
+    "customfield_10017": "dark_orange",
+    "customfield_10018": {
+      "hasEpicLinkFieldDependency": false,
+      "showField": false,
+      "nonEditableReason": {
+        "reason": "PLUGIN_LICENSE_ERROR",
+        "message": "The Parent Link is only available to Jira Premium users."
+      }
+    },
+    "customfield_10019": "0|i0010v:",
+    "updated": "2020-10-28T15:35:02.134+0530",
+    "customfield_10092": null,
+    "timeoriginalestimate": null,
+    "customfield_10095": null,
+    "customfield_10096": {
+      "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10642",
+      "value": "Attentive AI--A--Software Backend--SDE-1 : 224fcb62-1450-4fb8-aebc-8e0f8795fa5b",
+      "id": "10642"
+    },
+    "description": null,
+    "customfield_10097": [
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10645",
+        "value": "Expert",
+        "id": "10645"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10647",
+        "value": "Active",
+        "id": "10647"
+      }
+    ],
+    "customfield_10010": null,
+    "customfield_10099": [
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10648",
+        "value": "Data Science : 1",
+        "id": "10648"
+      },
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/customFieldOption/10659",
+        "value": "Software Backend : 3",
+        "id": "10659"
+      }
+    ],
+    "customfield_10014": null,
+    "timetracking": {},
+    "customfield_10015": null,
+    "customfield_10005": null,
+    "customfield_10006": null,
+    "security": null,
+    "customfield_10007": null,
+    "customfield_10008": null,
+    "attachment": [
+      {
+        "self": "https://barraiser.atlassian.net/rest/api/2/attachment/10135",
+        "id": "10135",
+        "filename": "Ritika's Resume.pdf.pdf",
+        "author": {
+          "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+          "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+          "emailAddress": "prabhat.ranjan32@gmail.com",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+            "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+            "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+            "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+          },
+          "displayName": "prabhat ranjan",
+          "active": false,
+          "timeZone": "Asia/Calcutta",
+          "accountType": "atlassian"
+        },
+        "created": "2020-09-22T23:22:33.746+0530",
+        "size": 41580,
+        "mimeType": "application/pdf",
+        "content": "https://barraiser.atlassian.net/secure/attachment/10135/Ritika%27s+Resume.pdf.pdf"
+      }
+    ],
+    "customfield_10009": null,
+    "summary": "Test User",
+    "customfield_10080": 86.0,
+    "customfield_10081": "Engineer",
+    "customfield_10000": "{}",
+    "customfield_10001": null,
+    "customfield_10002": null,
+    "customfield_10003": null,
+    "customfield_10004": null,
+    "environment": null,
+    "duedate": null,
+    "comment": {
+      "comments": [
+        {
+          "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195/comment/10917",
+          "id": "10917",
+          "author": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "emailAddress": "prabhat.ranjan32@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "prabhat ranjan",
+            "active": false,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "body": "sync",
+          "updateAuthor": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=557058%3A3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "accountId": "557058:3f038a59-82c1-4ac1-ad49-35353637ffaf",
+            "emailAddress": "prabhat.ranjan32@gmail.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/d08fd4916240ac2e1bf9321379109816?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "prabhat ranjan",
+            "active": false,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "created": "2020-10-22T13:25:49.289+0530",
+          "updated": "2020-10-22T13:25:49.289+0530",
+          "jsdPublic": true
+        },
+        {
+          "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195/comment/11124",
+          "id": "11124",
+          "author": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+            "accountId": "5f59c8ddbea5be0068234d43",
+            "emailAddress": "prabhat@barraiser.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "Prabhat Ranjan",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "body": "bfc",
+          "updateAuthor": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+            "accountId": "5f59c8ddbea5be0068234d43",
+            "emailAddress": "prabhat@barraiser.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "Prabhat Ranjan",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "created": "2020-10-28T12:55:09.312+0530",
+          "updated": "2020-10-28T12:55:09.312+0530",
+          "jsdPublic": true
+        },
+        {
+          "self": "https://barraiser.atlassian.net/rest/api/2/issue/10195/comment/11134",
+          "id": "11134",
+          "author": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+            "accountId": "5f59c8ddbea5be0068234d43",
+            "emailAddress": "prabhat@barraiser.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "Prabhat Ranjan",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "body": "sync",
+          "updateAuthor": {
+            "self": "https://barraiser.atlassian.net/rest/api/2/user?accountId=5f59c8ddbea5be0068234d43",
+            "accountId": "5f59c8ddbea5be0068234d43",
+            "emailAddress": "prabhat@barraiser.com",
+            "avatarUrls": {
+              "48x48": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "24x24": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "16x16": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png",
+              "32x32": "https://secure.gravatar.com/avatar/0aae0cc657464107ad7450c2b0ffa97a?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FPR-4.png"
+            },
+            "displayName": "Prabhat Ranjan",
+            "active": true,
+            "timeZone": "Asia/Calcutta",
+            "accountType": "atlassian"
+          },
+          "created": "2020-10-28T15:35:02.134+0530",
+          "updated": "2020-10-28T15:35:02.134+0530",
+          "jsdPublic": true
+        }
+      ],
+      "maxResults": 3,
+      "total": 3,
+      "startAt": 0
+    }
+  }
+}

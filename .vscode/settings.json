@@ -1,0 +1,17 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.debug.settings.onBuildFailureProceed": true,
+    "remote.SSH.defaultForwardedPorts": [
+        {
+            "localPort": 5432,
+            "name": "POSTGRES",
+            "remotePort": 5433
+        },
+        {
+            "localPort": 5000,
+            "name": "BarRaiser Backend Api",
+            "remotePort": 5000
+        }
+    ],
+    "extensions.ignoreRecommendations":true
+}

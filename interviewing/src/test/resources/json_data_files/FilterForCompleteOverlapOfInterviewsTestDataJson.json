@@ -1,0 +1,19 @@
+{
+    "slotsToInterviewer": {
+        "1637526600": "x",
+        "1637530200": "y"
+    },
+    "expectedSlotsToInterviewer": {
+        "1637526600": "x"
+    },
+    "interviewsOfInterviewee": [
+        {
+            "startDate": 1637523000,
+            "endDate": 1637526600
+        },
+        {
+            "startDate": 1637530200,
+            "endDate": 1637533800
+        }
+    ]
+}

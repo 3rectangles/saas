@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+participant Greenhouse as greenhouse
+collections BarRaiser_BackEnd as barraiser_backend
+queue EventQueue as event_queue
+database DB as db
+
+group list_test API
+greenhouse -> barraiser_backend : list_tests API Request(list all the job roles for the concerned company)
+barraiser_backend -> db : requests all the concerned job roles
+db -> barraiser_backend : returns all the concerned job roles
+barraiser_backend -> greenhouse : list_tests API Response
+end
+
+group send_test API
+greenhouse -> barraiser_backend : send_test API Request(add candidate for evaluation)
+barraiser_backend -> event_queue : Generates an AddEvaluationEvent and adds it to the EventQueue
+barraiser_backend -> greenhouse : send_test API Response
+end
+
+group test_status API
+greenhouse -> barraiser_backend : test_status API Request(fetches the status of the evaluation)
+barraiser_backend -> db : requests the concerned evaluation object
+db -> barraiser_backend : returns the concerned evaluation object
+barraiser_backend -> greenhouse : test_status API Response
+end
+
+group Greenhouse Evaluation Completed Listener
+barraiser_backend -> event_queue : Event listener for Evaluations which are completed and has greenhouse as client
+event_queue -> barraiser_backend : Returns the event of EvaluationCompleted with greenhouse as the client
+barraiser_backend -> greenhouse : calls the mark_test_as_completed API of greenhouse
+end
+
+@enduml

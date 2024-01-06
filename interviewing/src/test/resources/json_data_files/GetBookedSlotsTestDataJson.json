@@ -1,0 +1,78 @@
+{
+    "bookedSlotsPerInterviewerRightOverlap": {
+        "1": [
+            {
+                "userId": "1",
+                "startDate": 1624170600,
+                "endDate": 1624174200
+            },
+            {
+                "userId": "1",
+                "startDate": 1624174200,
+                "endDate": 1624177800
+            },
+            {
+                "userId": "1",
+                "startDate": 1624177800,
+                "endDate": 1624181400
+            }
+        ],
+        "2": [
+            {
+                "userId": "2",
+                "startDate": 1624170600,
+                "endDate": 1624174200
+            },
+            {
+                "userId": "2",
+                "startDate": 1624174200,
+                "endDate": 1624177800
+            }
+        ]
+    },
+    "bookedSlotsPerInterviewerLeftOverlap": {
+        "1": [
+            {
+                "userId": "1",
+                "startDate": 1624163400,
+                "endDate": 1624170600
+            }
+        ]
+    },
+    "calculatedBookedSlotOfInterviewer": {
+        "1": [
+            {
+                "userId": "1",
+                "startDate": 1624170600,
+                "endDate": 1624174200
+            },
+            {
+                "userId": "1",
+                "startDate": 1624174200,
+                "endDate": 1624177800
+            },
+            {
+                "userId": "1",
+                "startDate": 1624177800,
+                "endDate": 1624181400
+            },
+            {
+                "userId": "1",
+                "startDate": 1624163400,
+                "endDate": 1624170600
+            }
+        ],
+        "2": [
+            {
+                "userId": "2",
+                "startDate": 1624170600,
+                "endDate": 1624174200
+            },
+            {
+                "userId": "2",
+                "startDate": 1624174200,
+                "endDate": 1624177800
+            }
+        ]
+    }
+}

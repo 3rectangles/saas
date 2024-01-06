@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+    barraiser_local:
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=barraiser
+            - POSTGRES_PASSWORD=barraiser1234
+            - POSTGRES_DB=postgres
+        ports: 
+            - "5432:5432"
+        restart: always
+        volumes: 
+            - ./database-data:/workspace/barraiser
+        command: -p 5432
+
+    pgadmin:
+        image: dpage/pgadmin4
+        environment: 
+            - PGADMIN_DEFAULT_EMAIL=barraiser@barraiser.com
+            - PGADMIN_DEFAULT_PASSWORD=barraiser1234
+        ports:
+            - '5050:80'
+        restart: always
+        volumes: 
+            - pgadmin:/workspace/.pgadmin
+volumes:
+    database-data:
+    pgadmin:

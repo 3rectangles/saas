@@ -1,0 +1,151 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "version",
+        "id",
+        "detail-type",
+        "source",
+        "account",
+        "time",
+        "region",
+        "resources",
+        "detail"
+    ],
+    "definitions": {
+        "GenerateInterviewStructureEvent": {
+            "type": "object",
+            "properties": {
+                "ats_details": {
+                    "$ref": "#/definitions/atsDetails"
+                },
+                "skills_and_values": {
+                    "$ref": "#/definitions/skillsAndValues"
+                },
+                "department": {
+                    "type": "string"
+                },
+                "free_text": {
+                    "type": "string"
+                },
+                "job_role_id": {
+                    "type": "string"
+                },
+                "job_role_name": {
+                    "type": "string"
+                },
+                "rounds": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        },
+        "atsDetails": {
+            "type": "object",
+            "properties": {
+                "rounds": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/atsDetailsRound"
+                    }
+                }
+            }
+        },
+        "skillsAndValues": {
+            "type": "object",
+            "properties": {
+                "skills": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "atsDetailsRound": {
+            "type": "object",
+            "properties": {
+                "duration": {
+                    "type": "integer"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "properties": {
+        "version": {
+            "$id": "#/properties/version",
+            "type": "string",
+            "title": "The version schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "detail-type": {
+            "$id": "#/properties/detail-type",
+            "type": "string",
+            "title": "The detail-type schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "source": {
+            "$id": "#/properties/source",
+            "type": "string",
+            "title": "The source schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "account": {
+            "$id": "#/properties/account",
+            "type": "string",
+            "title": "The account schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "time": {
+            "$id": "#/properties/time",
+            "type": "string",
+            "title": "The time schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "region": {
+            "$id": "#/properties/region",
+            "type": "string",
+            "title": "The region schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "resources": {
+            "$id": "#/properties/resources",
+            "type": "array",
+            "title": "The resources schema",
+            "description": "An explanation about the purpose of this instance.",
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/resources/items"
+            }
+        },
+        "detail": {
+            "$ref": "#/definitions/GenerateInterviewStructureEvent"
+        }
+    }
+}

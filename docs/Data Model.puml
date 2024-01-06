@@ -1,0 +1,160 @@
+@startuml
+entity "User" as user {
+    * id : text <<Range key>>
+    --
+    * email : text
+    * phone : text
+    * dob  : date
+    * isAdmin : Boolean
+    * isInterviewer: Boolean
+    * profDetails : ProfessionalDetails
+    * location : Location
+}
+
+entity Location {
+    * pincode: text
+    * state: text
+    * country: text
+    * city: Text
+}
+entity "ProfessionalDetails" {
+   * userId: text
+   * linkedInProfileUrl: text
+   * currentCtc: double
+   * currentEmployer: text <<employerId>>
+}
+
+entity "UserDreamJob" as dreamJob {
+    * userId : text  <<Range key>>
+    ---
+    * id : text <<sort key>>
+    ---
+    * companies: text <<comma separated company ids>>
+    * salaryDesired: number
+    * role: text <<Designation>>
+    * creationDate: Date
+    * updateDate: Date
+}
+
+entity "Role" as role {
+   * id: text
+   ----
+}
+
+entity "UserSkills" {
+    * userId : text <<Range key>>
+    ----
+    * id : text <<Sort key>>
+    ----
+    * skillId : text
+    * proficiency : int <<scale  1 to 10 >>
+}
+
+entity "Skill" {
+   * id : text
+   * name : text
+   * domain: text
+}
+
+entity "Cart" {
+}
+entity "Interview" as interviewDAO {
+   * id <<range key>>
+   -----
+   * intervieweeId : text <<user id of interviewee>>
+   * interviewerId : text <<user id of interviwer >>
+   * date : date
+   * skills : text<<comma separated ids>>
+   * video: text <<video id>>
+   * access: "??"
+   * scheduledDate: Date
+   * payment: paymentId <<if not null, its paid>>
+   * evaluationId: text
+   * isCancelled: boolean
+   * previousInterview: text <<id>>
+}
+
+entity "Payment" {
+  * id: text
+  * type: text <<netbanking, etc>>
+  * amount: double
+  * referenceId: text
+  * createdOn: Date
+}
+
+entity Video {
+  * id: text
+  * timeTagging : text
+  * url: text
+}
+
+entity "Evaluation" {
+  id: text
+  originalScore: double
+  normalizedScore: double
+  feedback: text
+  skillSCores: ...
+}
+
+entity "InterviewByInterviewee" as interviewSecondaryIndex1 {
+   * id : text <<Sort key>>
+   ----
+   * intervieweeId : text <<Range Key>>
+   ----
+   * interviewerId : text
+   * date : date
+   * competencies: text <<comma separated values>>
+   * videoLink: text
+}
+
+entity "InterviewByInterviewer" as interviewSecondaryIndex2 {
+   * id : text <<Sort key>>
+   -----
+   * intervieweeId : text
+   * interviewerId : text <<Range Key>>
+   * date : date
+   * competencies: text <<comma separated values>>
+   * videoLink: text
+}
+
+entity Schedule {
+   * userId : text <<Range Key>>
+   ---
+   * Id: text <<Sort key>>
+   ---
+   * startDate : Date <<2020-05-22:10:00:00>>
+   * endDate: Date    <<2020-05-22:10:30:00>>
+   * isTaken: boolean
+}
+
+entity Company {
+   * userId : text <<Range Key >>
+   ---
+   * name: text
+   * size : text <<enums>>
+}
+
+entity AreaOfInterest {
+    * id: text <<Range Key>>
+    * name : text
+    * domain : text
+}
+
+user }|.left.|| UserSkills
+user }|.up.|| dreamJob
+user }|.. Cart
+Skill }|..||UserSkills
+interviewDAO ||.right. interviewSecondaryIndex1
+interviewDAO ||.left.. interviewSecondaryIndex2
+user }|....|| interviewDAO
+user }|.right.|| Schedule
+Location }|.down.|| user
+interviewDAO }|..Evaluation
+interviewDAO }|.. Payment
+interviewDAO }|.. Video
+user }|.. ProfessionalDetails
+
+user }|..|| Company
+user }|..|| AreaOfInterest
+
+@enduml

@@ -1,0 +1,83 @@
+{
+    "interviewers" : [
+        {
+            "id": "1",
+            "cost": 1000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "2",
+            "cost": 1100,
+            "averageProficiencyInSkills": 4,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "3",
+            "cost": 1200,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "4",
+            "cost": 1300,
+            "averageProficiencyInSkills": 4,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "5",
+            "cost": 1400,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "6",
+            "cost": 1500,
+            "averageProficiencyInSkills": 4,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+         {
+             "id": "7",
+             "cost": 1500,
+             "averageProficiencyInSkills": 4,
+             "interviewingSlotsBookedInAWeek": 1,
+             "interviewingSlotsBookedOnADay": 0,
+             "isDemoEligible": true
+         }
+    ],
+    "expertListOfPriorityInterviewers": [
+        {
+            "id": "7"
+        },
+        {
+            "id": "1"
+        },
+        {
+            "id": "2"
+        },
+        {
+            "id": "4"
+        },
+        {
+            "id": "6"
+        },
+        {
+            "id": "3"
+        },
+        {
+            "id": "5"
+        }
+    ]
+}

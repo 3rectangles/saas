@@ -1,0 +1,66 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Submission of Availability by {{userName}}</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    th {
+      text-align: center;
+    }
+    ol {
+      padding: 0;
+    }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+    <p>Hi {{expertName}},</p>
+    <p>We hope you are doing well.</p>
+      <p> Please find below your cancellation report for the date range ({{startTime}} to {{endTime}}).</p>
+       <table>
+          <tr>
+           <th>Total Completed Interviews</th>
+           <th>Total Cancelled Interviews by you</th>
+           <th>Last Minute Cancellations* </th>
+          </tr>
+          <tr>
+           <td>{{totalCompletedInterviews}}</td>
+           <td>{{totalCancelledInterviews}}</td>
+           <td>{{totalLastMinuteCancelledInterviews}}</td>
+          </tr>
+       </table>
+       * Cancellation Information provided to BarRaiser with in or after 30 mins of the start of the interview
+    </p>
+    <p>
+    Cancellation reasons:
+    <ol type = "1">
+    {{{reasonForCancellation}}}
+    </ol>
+    </p>
+    <p>
+    Please take cognizance of these cancellation numbers and try to reduce the cancellations to zero. Please revert at expert-feedback@barraiser.com for further information.
+    </p>
+  <p>Regards,</p>
+  <p>
+     Team BarRaiser<br>
+     +91-7239013727
+  </p>
+    <br/>
+    </div>
+    {{> footer_BR.mustache}}
+</div>
+</body>
+
+
+
+

@@ -1,0 +1,2 @@
+export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain barraiser --domain-owner 969111487786 --query authorizationToken --output text`
+mvn -Dmaven.repo.local=/workspace/m2-repository clean package -Dmaven.test.skip=true

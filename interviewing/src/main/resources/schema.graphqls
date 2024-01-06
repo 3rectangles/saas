@@ -1,0 +1,2849 @@
+type Query {
+    verifyOtp(phone:String, email:String, otp:String!): OtpVerificationResult
+    verifyMagicLink(token: String!): Boolean
+    suggestAsYouType(filters: [SearchFilter]!, query: String!): [SuggestionResponse]
+    isAuthenticated : Boolean
+    checkIfAuthorized(input: AuthorizationInput!): Boolean
+    getIntroductoryCallSlots(input: GetIntroductoryCallSlotsInput!): [Slot]
+    getInterviewers(input: GetInterviewersInput!): [Interviewer]
+    getAvailability(input: GetAvailabilityInput!) : [Slot]
+    getInterviews(input: GetInterviewsInput!) : [Interview]
+    getCertificate(input: GetCertificateInput): Certificate
+    getLoggedInUserDetails: UserDetails # Gets the details of the logged in user  NOTE : Will be deprecated for getLoggedInUserDetailsForPartner
+    getLoggedInUserDetailsForPartner(partnerId : String): UserDetails # Gets the details of the logged in user (for a partner like roles specifically for the partner)
+    getExpertDetails(input: UserDetailsInput!): Interviewer
+    getDomains: [Domain]
+    getEvaluations(input: GetEvaluationInput): [Evaluation]
+    getJobRoles(input: GetJobRoleInput): [JobRole]
+    getPocEmails(input: PartnerInput): [UserDetails]
+    getProfile(input: ProfileInput): Profile
+    getPartner(input: PartnerInput): [Partner]
+    getInterviewScheduleLink(input: String!): SchedulingInfo
+    getAllCompanies: [Company]
+
+    ## Interview Structure
+    getExcerpts(input: GetExcerptInput): [Excerpt]
+    getSkills(input : String): [Skill]
+    getInterviewStructure(input: GetInterviewStructureInput) : [InterviewStructure]
+
+    ## BGS enquiry for candidate
+    getCandidateBgsCost: Money
+
+    getPaymentStatus(input: PaymentStatusInput!) : PaymentStatus
+
+    getCancellationReasons(input: GetCancellationReasonsInput) : [Reason]
+
+    #user product-tour history
+    getUserTourHistory : String
+
+    getExpertCompensation(input: ExpertCompensationCalculatorInput!): ExpertCompensation
+
+    getComments(input: CommentsInput!) : [Comment]
+
+    ### APIs related to code execution ###
+    ##getSupportedProgrammingLanguages() : [ProgrammingLanguage]
+    getCodeSubmissionResult(submissionId: String!) : CodeSubmissionResult
+    ###
+    getDisplayKPINumbers : DisplayKPINumbers
+
+    getUserDetailsFromResume(input: [UserDetailsFromResumeInput]): [UserDetailsForResume]
+
+    getSchedulingSlots(input: GetInterviewersInput!) :[InterviewSlots]
+
+    getPartnerRepDetails: PartnerRepDetails
+
+    getCandidateCompensations(input: CandidateCompensationCalculatorInput): [CandidateCompensation]
+    getPartnerReps(input: PartnerInput!): [PartnerRepDetails]
+
+    getPartnerDetails: [PartnerDetail]
+    getPartnerConfiguration(input: GetPartnerConfigurationInput!): PartnerConfiguration
+
+    getTaggingAgent: [UserDetails]
+
+    getBookedSlotsOfInterviewer(input : GetBookedSlotsInput!) : [Slot]
+    getPartnerWhitelistedDomains(input: PartnerInput!): PartnerWhitelistedDomains
+    verifyOrSignUpUserForBGS(email : String!, otp:String!, evaluationId: String!) : OtpVerificationResult
+    getChannelsForSlack(input: GetChannelsForSlackInput):[Channel]
+    getSelectedEvents(input: GetSelectedEventsInput):[SlackEvents]
+    getCandidateAvailability(input: GetCandidateAvailabilityInput): [Slot]
+    getWhatsAppConsent(input:GetWhatsappConsentInput!):WhatsappConsent
+
+    ###Job role management
+
+    getSkillInterviewingConfiguration(input: GetSkillInterviewingConfigurationInput) : SkillInterviewingConfiguration
+    #deleteSkillInterviewingConfiguration(input: DeleteSkillInterviewingConfigurationInput) : DeleteSkillInterviewingConfigurationResult
+    searchSkillInterviewingConfiguration(input: SearchSkillInterviewingConfigurationInput) : SearchResultType
+    searchJobRole(input:SearchJobRoleInput ) : SearchResultType
+
+    ##
+    #####
+
+    getFirebaseAuthToken: String
+    ## Candidate ##
+    getInterviewee(input: GetIntervieweeInput): Interviewee
+    getEligibleInterviewers(input: GetEligibleInterviewersInput): EligibleInterviewers
+
+    getApiKey(input: IssueApiKeyInput) : IssueApiKeyOutput
+    getZoomJoinDetails(interviewId: String!): ZoomJoinDetails
+
+    ### Data Science
+    getFeedbackRecommendations(input: GetFeedbackRecommendationsInput): FeedbackRecommendations
+    getOverallFeedbackSuggestions(input: GetOverallFeedbackSuggestionsInput): OverallFeedbackSuggestions
+
+    getJobRoleSkillsValues(input: GetJobRoleSkillsValuesInput!): GetJobRoleSkillsAndValues
+    ## Interview Feedbacks ##
+    getPartnerInterviewFeedbacks(input: PartnerInterviewFeedbackInput) : SearchResultType
+    ## Pending Interviews for a partner ##
+    getPendingInterviews(input: PartnerPendingInterviewInput) : SearchResultType
+
+    ##Integrations
+    getLeverData(input: GetLeverDataInput) : Lever
+    getMergeLinkToken(input: GetMergeLinkTokenInput) : MergeLinkToken
+    getReopeningReasons(input: GetReopeningReasonInput) : [Reason]
+    getRedoReasons(input: GetRedoReasonInput) : [Reason]
+
+    getExpertProfile(input: GetExpertProfileInput): ExpertProfile
+    getRecurringAvailability(input: GetRecurringAvailabilityInput!): RecurringAvailability
+    getConnectedCalendars: [Calendar]
+    predictNumberOfInterviewsOfExpert(input: PredictNumberOfInterviewsOfExpertInput!): PredictedNumberOfInterviewsOfExpert
+    getUserDetails(input: GetUserDetailsInput!): UserDetails
+    getCandidateRejectionReasons(input: GetCandidateRejectionReasonsInput!): [Reason]
+
+    getAccessibleFeatures(input: GetAccessibleFeaturesInput!): [String]
+    loginByMicrosoftIdToken(input: String!): Boolean
+    getHighlights(input: GetHighlightsInput!): [Highlight]
+    getUserComments(input: GetUserCommentInput!): [UserComment]
+    getInterviewerFeedback(input: GetInterviewerFeedbackInput!): InterviewerFeedback
+    ##Training Module
+    getAllTrainingSnippetsForRole(input: String): [TrainingSnippet]
+    getAllTrainingTags(input: TrainingTagInput): [TrainingTag]
+
+    getAllJobRoleListWithCount(input: String): [JobRoleWithSnippetCount]
+
+    #ATS Integration
+    fetchBRPartnerUserRoles(input: BarraiserPartnerUserRolesInput): [Role]
+    fetchATSUserRoleMapping(input: FetchATSUserRoleMappingInput): [ATSUserRoleMapping]
+
+    fetchValuesForFilter(input: FetchValuesForFilterInput!): [FilterValue]
+    fetchApplicableFilters(input: ApplicableFiltersInput!): [ApplicableFilter]
+
+    getJobRoleCategories: [JobRoleCategory]
+    fetchJobRoleATSStatus(input: GetATSStatusInput!): [StatusType]
+    fetchJobRoleBRStatus: [StatusType]
+    fetchInterceptionConfiguration( partnerId: String!) : MeetingInterceptionConfiguration
+    fetchHiringManagers(input: GetHiringManagersInput!): [PartnerRepDetails]
+    fetchRecruiters(input: GetRecruitersInput!): [PartnerRepDetails]
+    fetchLocations(input: GetLocationsInput!): [Location]
+    fetchTeams(input: GetTeamsInput!): [Team]
+    getActiveCandidatesOptions: [ActiveCandidatesOption]
+    getJobRoleStatuses: [StatusType]
+    getCountries: [Country]
+}
+
+type Mutation {
+    sendOtp(phone:String, email:String, recaptchaToken:String) : Boolean
+    sendMagicLink(input: MagicLinkInput!): Boolean
+    submitPersonalDetails(details: PersonalDetailsInput!): SubmitPersonalDetailsResult
+    signOut: SignoutResult
+    scheduleInterview(input: ScheduleInterviewInput): Interview
+    cancelInterview(input: CancelInterviewInput): Boolean
+    addAvailability(input: AddAvailabilityInput!) : Boolean
+    removeAvailability(input: RemoveAvailabilityInput!) : Boolean
+    submitFeedback(input: SubmitFeedbackInput) : SubmitFeedbackResult
+    submitQuestion(input: SubmitQuestionInput) : SubmitQuestionResult
+    confirmInterview(input: confirmInterviewInput): Boolean
+    linkedinShare(input: LinkedinShareInput): LinkedinShareResult
+    dropCandidature(evaluationId: String, cancellationReasonId: String) : Boolean
+    updateCandidature(input: UpdateCandidatureInput) : Boolean
+    updateInterviewingConfiguration(input: UpdateInterviewingConfigurationInput) : Boolean
+
+
+    ### For supporting editing of evaluations (BGS Playground) ###
+    computeAndSaveCustomizableEvaluationScores(input: ComputeAndSaveCustomizableEvaluationScoreInput): [Evaluation]
+
+    addInterceptionKeyword( partnerId : String!, keyword : [String]!) : Boolean
+
+    deleteInterceptionKeyword( partnerId : String!, keyword : String!) : Boolean
+
+    addCandidate(input: CandidateInput): Candidate @auth(roles: [ADMIN])
+    sendFeedbackReminder(input : SendFeedbackReminderInput): FeedbackReminderResult @auth(roles: [ADMIN])
+
+    addTaggingAgent(input: UserDetailsInput):Boolean
+    removeTaggingAgent(input: UserDetailsInput):Boolean
+
+    addPocEmail(input: AddPocEmailInput):Boolean
+    # Mutation for job role management
+    createSkillInterviewingConfiguration(input: SkillInterviewingConfigurationInput): SkillInterviewingConfigurationCreationResult
+    deleteSkillInterviewingConfiguration(input: String): Boolean
+
+    ######
+
+    # Interview Structure Management
+    createExcerpt(input: CreateExcerptInput): String
+    createInterviewStructure(input: InterviewStructureInput): String
+
+    createUserComment(input: CreateUserCommentInput!): UserComment
+    updateUserComment(input: UpdateUserCommentInput!): UserComment
+    deleteUserComment(input: String!): Boolean                          #Send ID of entity that needs deletion, also deletes child entities
+
+    sendInterviewerFeedback(input: InterviewerFeedbackInput) : InterviewerFeedback
+
+    # BGS enquiry for candidate
+    addBgsEnquiry(input: BgsEnquiryInput!): Boolean
+    createPaymentOrderForBGS(input: BgsEnquiryInput!): PaymentOrderCreationResult
+
+    saveUserTourHistory(input: UserTourHistoryInput!): Boolean
+    postComment (input: CommentsInput!): Boolean
+
+    createJobRole(input: JobRoleInput!): JobRoleCreationResult
+    deprecateJobRole(input: DeprecateJobRoleInput!): Boolean
+    toggleIsJobRoleInDraft(input: ToggleIsJobRoleInDraftInput!): Boolean
+    createPartnerConfiguration(input: AddPartnerConfigurationInput): Boolean
+
+    # Job Role Tool
+    createJobRoleConfiguration(input: JobRoleInput!): JobRoleConfigurationCreationResult
+
+    addBulkEvaluations (input: AddBulkEvaluationsInput!): [AddBulkEvaluationsResult]
+
+    ### Interviewing
+    getInterviewPad(input: GetInterviewPadLinkInput!): InterviewPad
+
+    ### APIs related to code execution ###
+    submitCodeForExecution(input: CodeExecutionInput) : String
+    ###
+
+    createSkill(input: CreateSkillInput!): Skill
+    createBulkSkills(input: CreateBulkSkillsInput!): [Skill]
+
+    addPartnerRep(input: PartnerAccessInput!): Boolean
+    removePartnerRep(input: PartnerAccessInput!): Boolean
+
+    addPartnerRepresentative(input: PartnerAccessInput!): Boolean
+    removePartnerRepresentative(input: PartnerAccessInput!): Boolean
+
+    postProcessZoomTranscript(input: String!): Boolean
+
+    whitelistPartnerDomain(input: WhitelistPartnerDomainInput!): Boolean
+    transitionPartnerStatus(input: PartnerStatusInput!): Boolean
+
+    createSlackMember(input: CreateSlackMemberInput):Boolean
+    storeEvent(input: StoreEventInput):Boolean
+    removeSlackMember(input: RemoveSlackMemberInput):Boolean
+    ### Communication Specific
+    registerDeviceForPushNotification(input: DeviceRegistrationInput!): Boolean # Mutation to register a device for
+    ### Evening
+    generateEvent(input: EventInput!): Boolean
+
+    ### Auth
+    issueApiKey(input: IssueApiKeyInput!): IssueApiKeyOutput
+    updateCandidateAvailability(input: CandidateAvailabilityInput): Boolean
+    updateWhatsAppConsent(input: UpdateWhatsappConsentInput!): WhatsappConsent
+    approveInterview(input: ApproveInterviewInput!): Boolean
+    updateExpertSpecificSkill(input: UpdateExpertSpecificSkillInput!): Boolean
+    reassignExpert(input: ReassignExpertInput!): Boolean
+    allocateExpert(input: AllocateExpertInput!): Boolean
+    ##integrations
+    mapLeverPostingToBRJobRole(input: MapLeverPostingToBRJobRoleInput) : Boolean
+    saveMergeAccountToken(input: SaveMergeAccountTokenInput): Boolean
+    reopenInterview(input: ReopenInterviewInput!): Boolean
+    mapAtsJobPostingToBRJobRole(input: MapAtsJobPostingToBRJobRoleInput): Boolean
+    activateATSWebhook(input: ActivateATSWebhookInput): Boolean
+    submitATSCredentials(input: SubmitATSCredentialsInput): Boolean
+    ### Data Science
+    predictQuestionCategory(input: PredictQuestionCategoryInput!): PredictQuestionCategoryOutput
+    redoInterview(input: RedoInterviewInput!): Boolean
+    updateExpertProfile(input: UpdateExpertProfileInput!): Boolean
+    updateRecurringAvailability(input: UpdateRecurringAvailabilityInput!): Boolean
+    addCalendar(input: AddCalendarInput!): Boolean
+    removeCalendar(input: RemoveCalendarInput!): Boolean
+    addPricingConfig(input : AddPricingConfigInput!): AddPricingConfigResult
+    updateJobRoleBasedPricing(input: UpdateJobRoleBasedPricingInput!): JobRoleBasedPricingUpdationResult
+    updatePartnerPricingStageDetails(input : UpdatePartnerPricingStageDetailsInput!): PartnerPricingStageUpdationResult
+    rejectCandidate(input: RejectCandidateInput!): Boolean
+
+    ##Training Module
+    saveTrainingSnippets(input: TrainingSnippetInput!): String
+    removeTrainingSnippets(input: String!): Boolean
+
+    #ATS Integration
+    updateATSUserRoleMapping(input : UpdateATSUserRoleMappingInput) : Boolean
+    disableJobRoleIntelligence(input: DisableJobRoleIntelligenceInput) : JobRole
+
+    addLocation(input: LocationInput) : Location
+    addTeam(input:TeamInput) : Team
+}
+
+input UpdateATSUserRoleMappingInput {
+    partnerId : String!
+    atsProvider : String!
+    roleMappings : [ATSUserRoleMappingInput]
+}
+
+input GetAccessibleFeaturesInput {
+    partnerId : String!
+    parentComponentOfFeatures : String
+}
+
+
+type Role {
+    name: String
+    displayName: String
+    type: RoleType
+    partnerId: String
+}
+
+enum RoleType {
+    GLOBAL,
+    PARTNER_GLOBAL,
+    PARTNER_CONDITIONAL
+}
+
+input GetExpertProfileInput {
+    expertId : String!
+}
+
+input UpdateExpertProfileInput {
+    expertId : String!
+    interviewingConfiguration : ExpertInterviewingConfigurationInput
+    minPrice: Float
+}
+
+type ExpertProfile {
+    expertId : String
+    interviewingConfiguration : ExpertInterviewingConfiguration
+}
+
+input ExpertInterviewingConfigurationInput {
+    timeGapBetweenInterviews: Int
+}
+
+type ExpertInterviewingConfiguration {
+    timeGapBetweenInterviews: Int
+}
+input UpdateRecurringAvailabilityInput {
+    userId: String!
+    timezone: String!
+    slots : [RecurringAvailabilitySlotInput]!
+}
+
+input RecurringAvailabilitySlotInput {
+    dayOfTheWeek: DayOfTheWeek
+    maxInterviewsInSlot: Int! #Maximum number of interviews expert wants to take in slot
+    startTime: Int! #Unit: Minutes from start of the day
+    endTime: Int! #Unit: Minutes from start of the day
+}
+
+input GetRecurringAvailabilityInput {
+    userId: String!
+}
+
+type RecurringAvailability {
+    timezone : String
+    slots : [RecurringAvailabilitySlot]
+}
+
+type RecurringAvailabilitySlot {
+    dayOfTheWeek: DayOfTheWeek
+    maxInterviewsInSlot: Int #Maximum number of interviews expert wants to take in slot
+    startTime: Int #Unit: Minutes from start of the day
+    endTime: Int #Unit: Minutes from start of the day
+}
+
+enum DayOfTheWeek {
+    MON,
+    TUE,
+    WED,
+    THU,
+    FRI,
+    SAT,
+    SUN
+}
+
+input GetOverallFeedbackSuggestionsInput {
+    interviewId: String
+    feedbackDetails: [FeedbackDetailsInput]
+}
+
+input FeedbackDetailsInput {
+    feedback: String
+    question: String
+    rating: Int
+    difficulty: String
+}
+
+type OverallFeedbackSuggestions {
+    suggestions: [OverallFeedbackSuggestion]
+}
+
+type OverallFeedbackSuggestion {
+    type: String
+    feedbackSuggestions: [FeedbackSuggestion]
+}
+
+type FeedbackSuggestion {
+    id: String
+    suggestion: String
+}
+
+input SubmitATSCredentialsInput {
+    partnerId: String
+    atsProvider: String
+    credentials: String
+}
+
+input PredictQuestionCategoryInput {
+    questionId: String
+    question: String
+    masterQuestion: String
+}
+
+type PredictQuestionCategoryOutput {
+    predictedQuestionCategory: QuestionCategory
+}
+
+type MeetingInterceptionConfiguration {
+    keyword: [String]
+}
+type QuestionCategory {
+    id: String
+    name: String
+}
+
+input MapAtsJobPostingToBRJobRoleInput {
+    partnerId: String
+    atsProvider: String
+    jobPostingToBRJobRoleList: [AtsJobPostingToBRJobRole]!
+}
+
+input AtsJobPostingToBRJobRole {
+    atsJobPostingId: String
+    jobRoleId: String
+}
+
+type AtsIntegration {
+    id: String
+    name: String
+    jobPostings: [AtsJobPosting]
+}
+
+type AtsJobPosting {
+    id: String
+    name: String
+    jobRoleId: String
+}
+
+input SaveMergeAccountTokenInput {
+    partnerId: String
+    publicToken: String
+}
+
+input GetHighlightsInput{
+    interviewId: String!
+}
+
+input GetMergeLinkTokenInput {
+    partnerId: String
+    companyName: String
+    emailAddress: String
+}
+
+type MergeLinkToken {
+    linkToken: String
+}
+
+input UpdateCandidatureInput {
+    evaluationId: String
+    candidatureDetailsToBeUpdated: CandidatureDetailsToBeUpdated
+}
+
+input UpdateInterviewingConfigurationInput {
+    interviewId: String!
+    interviewStructureId: String
+    jobRoleId: String
+    jobRoleVersion: Int
+}
+
+input CandidatureDetailsToBeUpdated {
+    pocEmail: String
+    userDetailsInput: UserDetailsInput
+}
+
+input GetFeedbackRecommendationsInput {
+    interviewId: String
+    feedbackId: String
+    question: String
+    questionCategory: String
+    rating: Long
+}
+
+input GetJobRoleSkillsValuesInput {
+    jobRoleDescription: String!
+    jobRoleName: String
+    department: String
+    noOfRounds: Int
+}
+
+type GetJobRoleSkillsAndValues {
+    response: String
+}
+
+type FeedbackRecommendations {
+    feedbackRecommendations : [FeedbackRecommendation]
+}
+
+type FeedbackRecommendation {
+    id: String
+    recommendation: String
+}
+
+type Certificate {
+    candidateName: String
+    domainName: String
+    issueDate: Long
+    imageUrl: String
+}
+
+input MapLeverPostingToBRJobRoleInput {
+    partnerId: String
+    leverPostingsToJobRoles: [LeverPostingToJobRole]
+}
+
+input LeverPostingToJobRole {
+    leverPostingId: String
+    jobRoleIds: [String]
+}
+
+input GetLeverDataInput {
+    partnerId: String
+}
+
+input ActivateATSWebhookInput {
+    partnerId: String
+    atsProvider: String
+}
+
+type Lever {
+    isLeverIntegrated: Boolean
+    postings: [LeverPosting]
+}
+
+type LeverPosting {
+    id: String
+    name: String
+    jobRoleIds: [String]
+}
+
+input GetCertificateInput{
+    certificateId:String! #this is actually the evaluationId
+}
+
+input DeprecateJobRoleInput {
+    jobRoleId : String
+    jobRoleVersion: Int
+}
+input ToggleIsJobRoleInDraftInput {
+    jobRoleId : String
+    jobRoleVersion: Int
+    isDraft: Boolean
+}
+input GetPartnerConfigurationInput{
+    partnerId : String
+}
+input AddPartnerConfigurationInput{
+    partnerId: String
+    config: String
+}
+
+input UpdateAestheticFieldsOfJobRoleInput {
+    jobRoleId: String
+    internalDisplayName: String
+    candidateDisplayName: String
+    remarks: String
+}
+
+input AddAvailabilityInput {
+    userId: String
+    availabilities: [AvailabilityInput]
+}
+
+type InterviewPad {
+    interviewerPad: String
+    intervieweePad: String
+}
+
+input GetInterviewPadLinkInput {
+    interviewId: String
+}
+
+input GetSkillInterviewingConfigurationInput {
+    id: String!
+    version: String!
+}
+
+input SearchSkillInterviewingConfigurationInput {
+    onlyAllowLatestVersion : Boolean
+    partnerId : String
+    searchSkillInterviewingConfigurationQuery : SearchInput!
+}
+
+input SearchJobRoleInput {
+    onlyAllowLatestVersion : Boolean
+    partnerId : String
+    searchJobRoleQuery : SearchInput!
+}
+
+input DeleteSkillInterviewingConfigurationInput {
+    id: String!
+    version: String!
+}
+
+type SkillInterviewingConfiguration {
+    id: String
+    version: Int
+    domain: Domain
+    skill: Skill
+    duration: Int
+    questioningType: String
+    categoryCoverage: String
+    sampleQuestions: String
+    sampleQuestionDocuments: [Document]
+    mandatoryExpectations: String
+    barraisingExpectations: String
+}
+
+type Document {
+    id : String
+    url : String
+    fileName : String
+}
+
+input DocumentInput {
+    id : String!
+    fileName : String!
+}
+
+type JobRoleConfigurationCreationResult {
+    success : Boolean
+    jobRoleId : String
+    jobRoleVersion : Int
+}
+
+
+input SkillInterviewingConfigurationInput {
+    id : String
+    version : Int
+    partnerId : Int
+    domain : DomainInput!
+    skill: SkillInput!
+    duration: Int!
+    questioningType: String!
+    categoryCoverage: String!
+    sampleQuestions: String
+    sampleQuestionDocuments : [DocumentInput]
+    mandatoryExpectations: String
+    barraisingExpectations: String
+    roleSpecificInstructions: String
+}
+
+type SkillInterviewingConfigurationCreationResult {
+    success : Boolean
+    skillInterviewingConfigurationId : String
+    version : Int
+    validationResult : ValidationResult
+}
+
+type ValidationResult {
+    fieldErrors : [FieldValidationResult]
+    fieldWarnings : [FieldValidationResult]
+    overallErrors: [String]
+    overallWarnings : [String]
+}
+
+type FieldValidationResult {
+    resourceIdentifier : String #question id if validation error/warning is for a question, or feedback id if its for a feedback etc
+    message : String
+    fieldTag : String
+}
+
+
+input RemoveAvailabilityInput {
+    userId: String
+    availabilities: [AvailabilityInput]
+}
+
+enum QuestionType {
+    REQUIRED
+    GOOD_TO_KNOW
+    NON_EVALUATIVE
+}
+
+input AuthorizationInput {
+    resourceType:String!
+    resourceAttributes: [ResourceAttribute]
+    action: Action!
+}
+
+input ResourceAttribute {
+    key: String!
+    value: String!
+}
+
+enum Action {
+    READ
+    WRITE
+}
+
+enum RecommendationType {
+    NOT_RECOMMENDED
+    RECOMMENDED
+    REQUIRES_FURTHER_REVIEW
+    STRONGLY_RECOMMENDED
+}
+
+input UpdateWhatsappConsentInput {
+    phone: String! @validPhone
+    consent: Boolean!
+}
+
+input GetWhatsappConsentInput {
+    phone: String
+}
+
+type WhatsappConsent {
+    phone: String
+    consent: Boolean
+    submitted: Boolean
+}
+
+
+type IssueApiKeyOutput {
+    apiKey: String
+}
+
+input IssueApiKeyInput {
+    keyName: String
+    partnerId: String
+}
+
+input DeviceRegistrationInput {
+    deviceType: String! # ANDROID / IOS
+    deviceToken: String!
+    enabled : Boolean! # to let client disable notification
+    scope: String! # values could be - expertApp or other apps as required.
+
+}
+
+input StoreEventInput{
+    channel:String
+    partnerId:String
+    event:[String]
+
+}
+
+input GetSelectedEventsInput{
+    channel:String
+    targetEntityId:String
+    targetEntityType:String
+}
+
+input CreateSlackMemberInput{
+    code:String
+    state:String
+}
+
+input RemoveSlackMemberInput{
+    channel:String
+    channelId:String
+    partnerId:String
+}
+
+input GetChannelsForSlackInput{
+    partnerId:String
+}
+
+input CodeExecutionInput {
+    interviewId: String!
+    sourceCode: String!
+    compilerId: Int!
+    compilerVersionId: Int!
+}
+
+type PartnerDetail {
+    partnerId: String!
+    company: Company
+}
+
+type PartnerConfiguration{
+    data: String
+}
+
+type FeedbackReminderResult{
+    success:Boolean
+    message:String
+}
+
+type Channel{
+    channel:String
+    channelId:String
+
+}
+
+type SlackEvents{
+    eventName:String
+}
+
+type CodeSubmissionResult {
+    isCompleted : Boolean    #Keep polling until this becomes true.
+    isSuccessful : Boolean   #Will be true only when the program ran.
+    #Will be false for compilation,runtime errors etc
+
+    time: String
+    memory: String
+    status: String
+    output: String
+    error : String
+}
+
+
+
+input GetExcerptInput {
+    excerptId: String
+}
+
+input CreateExcerptInput {
+    id: String
+    candidateContent: String
+    expertContent: String
+    skillId: String
+    remarks: String
+    duration: Int
+    depth: String
+    domainId : String
+}
+
+input GetEvaluationInput {
+    id: String
+    jira: String
+    userId: String
+    scoresNeedNotBeGenerated: Boolean
+    agv: String # algo version
+}
+
+type ReminderResult {
+    success: Boolean
+    message: String
+}
+
+input SendFeedbackReminderInput {
+    jira: String
+    key: String
+}
+
+input GetJobRoleInput {
+    jobRoleId: String
+    partnerId: String
+    jobRoleVersion: Int
+    onlyAllowLatestVersion: Boolean
+}
+
+input SkillInput {
+    id: String
+    name: String
+    isOptional: Boolean
+    domain: String
+    creationSource: String
+}
+
+input SkillWeightageInput {
+    skill: SkillInput
+    weightage: Float
+}
+
+
+type GetInterviewsResponse {
+    interviews: [Interview]
+    page: Int
+    pageSize: Int
+}
+
+input SubmitQuestionInput {
+    interviewStart: Long @epoch
+    interviewEnd: Long @epoch
+    lastQuestionEnd: Long @epoch  #time of last question done
+    interviewId: String
+    finalSubmission: Boolean # if the submission is final from question tagging view
+    questions: [QuestionInput]
+    onlyTagTime: Boolean
+    wasInterviewerVideoOn: Boolean
+    ##zoomStartTime: Long
+    videoStartTime: Long
+}
+input  LinkedinShareInput
+{
+    code: String
+    certificateId: String
+}
+
+input SubmitFeedbackInput {
+    interviewStart: Long @epoch
+    interviewEnd: Long @epoch
+    lastQuestionEnd: Long @epoch
+    finalSubmission: Boolean # if the submission is final.
+    interviewId: String
+    questions: [QuestionInput] # because question id for feedback is present there
+    overallFeedback: OverallFeedbackInput
+    isFeedbackInconsistent: Boolean
+    includeFeedbackImprovements: Boolean
+    wasInterviewerVideoOn: Boolean
+}
+
+input QuestionInput {
+    id: String
+    startTimeEpoch: Int @epoch
+    startTime: Int
+    endTime : Int
+    question: String
+    difficulty: String #moved to feedback level
+    type: String
+    handsOn: Boolean #moved to feedback level
+    irrelevant: Boolean
+    followUpQuestions:[QuestionInput]
+    feedbacks:[FeedbackInput]
+    isDefault: Boolean
+    questionCategory: String
+}
+
+input FeedbackInput {
+    id: String
+    categoryId:String
+    rating: Float
+    weightage: Float
+    difficulty: String
+    handsOn: Boolean
+    feedback: String
+    looksGood: Boolean
+    qcComments:[QcCommentInput]
+    feedbackWeightage: String
+}
+
+input UserDetailsInput {
+    id: String
+    userName: String # This is also userid
+    email: String
+    phone: String
+    userDetailsPresent: Boolean
+    fullName: String
+    almaMater: String
+    workExperienceInMonths: Int
+    currentCompanyName: String
+    timezone: String
+    designation: String
+    documentId: String
+}
+
+input UpdateCandidateInput{
+    candidateId: String
+    email: String
+    phoneNumber: String
+    firstName: String
+    lastName: String
+}
+
+input QcCommentInput {
+    id: String
+    comment: String
+    commentedBy: UserDetailsInput
+    updatedAt: Int
+}
+
+input CandidateCompensationCalculatorInput {
+    domainId: String
+    workExperience: Int
+    currentCTC: Float
+    userIdentity: String
+}
+
+input OverallFeedbackInput {
+    strength: FeedbackInput
+    areasOfImprovement: FeedbackInput
+    softSkills: [FeedbackInput]
+    interviewerRecommendation: InterviewerRecommendationInput
+}
+
+input InterviewerRecommendationInput {
+    hiringRating: Int
+    remarks: String
+    cheatingSuspectedRemarks: String
+    interviewIncompleteRemarks: String
+}
+
+type InterviewerRecommendation {
+    hiringRating: Int
+    remarks: String
+    cheatingSuspectedRemarks: String
+    interviewIncompleteRemarks: String
+}
+
+
+###########  For facilitating editing of evaluation (BGS playground) ###############
+
+input InterviewInput {
+    id: String
+    interviewerId: String
+    interviewee: IntervieweeInput
+    interviewer: InterviewerInputForCustomizableEvaluation
+    actualStartDate: Int
+    startDate : Int @epoch
+    endDate: Int @epoch
+    lastQuestionEnd: Int @epoch
+    interviewRound: String
+    videoLink: String
+    youtubeLink: String
+    interviewStructure: InterviewStructureInput
+    questions: [QuestionInput]
+    overallFeedback: OverallFeedbackInput
+    interviewId: String
+    domain: DomainInput
+    round: String
+}
+
+
+input IntervieweeInput {
+    id: String
+    firstName: String
+    lastName: String
+    designation: String
+    linkedInProfile: String
+    lastCompanies: [CompanyInput]
+    almaMater: String
+    workExperienceInMonths: Int
+    currentCompanyName: String
+}
+
+input InterviewStructureInput {
+    id: String
+    name: String
+    domainId: String
+    roundIndex: Int
+    round: String
+    categoryIds: [String]
+    specificSkills : [SkillInput]
+    duration: Int
+    interviewStructureLink: String
+    defaultQuestionsWithCategories: [CategoricalQuestionInput]
+    defaultQuestions: [String]
+    skillInterviewingConfigurations:[SkillInterviewingConfigurationInput]
+    defaultQuestionsDocuments: [DocumentInput]
+    expertJoiningTime: Int
+    allSkillsFound : Boolean
+    cutOffScore: Int
+    thresholdScore: Int
+    requiresApproval: Boolean
+    roundClearanceCriteria: CriteriaInput
+    price: MoneyInput
+    margin: Float
+    recommendationScore: Int
+    isBrRound: Boolean
+    interviewFlowLink: String
+    atsId: String
+    interviewFlow: String
+    interviewCutoffScore: Int
+    categoryCutoffs: [CategoryCutoffInput]
+}
+
+input CategoryCutoffInput {
+    categoryId: String
+    cutoffScore: Int
+}
+
+input CategoricalQuestionInput{
+    categoryIds: [String]
+    isPreInterviewQuestion: Boolean
+    questionType: QuestionType
+    question: String
+}
+
+input CriteriaInput{
+    approvalCriteria: String
+    rejectionCriteria: String
+}
+
+input GetInterviewStructureInput{
+    interviewStructureId: String
+}
+
+
+input InterviewStructureExcerptInput{
+    excerptId: String
+    companySpecific: String
+    defaultQuestions: [String]
+}
+
+input DomainInput {
+    id: String
+    name: String
+}
+
+input InterviewCategoryInput {
+    id: String
+    name: String
+    subCategories:[InterviewCategoryInput]
+}
+
+input CompanyInput {
+    id: String
+    name: String
+    url: String
+    logo: String # logo url
+}
+
+input MoneyInput {
+    value: Float
+    currency: String
+    symbol: String
+}
+
+input SlotInput {
+    userId: String!
+    startDate: Int! @epoch
+    endDate: Int! @epoch
+}
+
+input ComputeAndSaveCustomizableEvaluationScoreInput {
+    editId: String
+    evaluationId: String
+    agv: String #algorithmVersion
+    weightages: [SkillWeightageInput]
+    interviews: [InterviewInput]
+}
+
+input InterviewerInputForCustomizableEvaluation {
+    id: String!
+    firstName: String
+    lastName: String
+    initials: String
+    designation: String
+    currentCompany: CompanyInput
+    lastCompanies: [CompanyInput]
+    almaMater: String
+    achievements: [String]
+    cost: MoneyInput
+    availability: [SlotInput]
+    recommended: Boolean
+}
+
+
+
+type ComputeScoreResponse {
+    id: String
+    scores: [SkillScore]
+}
+
+
+type CustomizableEvaluation {
+    id: String
+    interviews:[InterviewForCustomizableEvaluation]
+    scores: [SkillScore]
+}
+
+type InterviewForCustomizableEvaluation {
+    id: String
+    interviewerId: String
+    interviewee: IntervieweeForCustomizableEvaluation
+    interviewer: InterviewerForCustomizableEvaluation
+    startDate : Int @epoch
+    endDate: Int @epoch
+    lastQuestionEnd: Int @epoch
+    interviewRound: String
+    videoLink: String
+    youtubeLink: String
+    interviewStructure: InterviewStructureForCustomizableEvaluation
+    questions: [QuestionForCustomizableEvaluation]
+    overallFeedback: OverallFeedbackForCustomizableEvaluation
+    interviewId: String
+    domain: DomainForCustomizableEvaluation
+    round: String
+}
+
+type QuestionForCustomizableEvaluation {
+    id: String
+    startTimeEpoch: Int @epoch
+    startTime: Int
+    endTime : Int
+    question: String
+    difficulty: String #moved to feedback level
+    type: String
+    handsOn: Boolean #moved to feedback level
+    irrelevant: Boolean
+    followUpQuestions:[QuestionForCustomizableEvaluation]
+    feedbacks:[FeedbackForCustomizableEvaluation]
+}
+
+type FeedbackForCustomizableEvaluation {
+    id: String
+    categoryId:String
+    rating: Float
+    weightage: Float
+    difficulty: String
+    handsOn: Boolean
+    feedback: String
+}
+
+type IntervieweeForCustomizableEvaluation {
+    id: String
+    firstName: String
+    lastName: String
+    designation: String
+    linkedInProfile: String
+    lastCompanies: [CompanyForCustomizableEvaluation]
+    almaMater: String
+    workExperienceInMonths: Int
+    currentCompanyName: String
+}
+
+input GetIntervieweeInput {
+    intervieweeId: String
+}
+
+
+type InterviewerForCustomizableEvaluation {
+    id: String!
+    firstName: String
+    lastName: String
+    initials: String
+    designation: String
+    currentCompany: CompanyForCustomizableEvaluation
+    lastCompanies: [CompanyForCustomizableEvaluation]
+    almaMater: String
+    achievements: [String]
+    cost: MoneyForCustomizableEvaluation
+    availability: [SlotForCustomizableEvaluation]
+    recommended: Boolean
+}
+
+
+type InterviewStructureForCustomizableEvaluation {
+    id: String
+    name: String
+    domain: DomainForCustomizableEvaluation
+    categories: [InterviewCategoryForCustomizableEvaluation]
+    duration: Int
+}
+
+type DomainForCustomizableEvaluation {
+    id: String
+    name: String
+}
+
+type InterviewCategoryForCustomizableEvaluation {
+    id: String
+    name: String
+    subCategories:[InterviewCategoryForCustomizableEvaluation]
+}
+
+type CompanyForCustomizableEvaluation {
+    id: String
+    name: String
+    url: String
+    logo: String # logo url
+}
+
+type MoneyForCustomizableEvaluation {
+    value: Float
+    currency: String
+    symbol: String
+}
+
+type SlotForCustomizableEvaluation {
+    userId: String! #interviewer id
+    startDate: Int! @epoch
+    endDate: Int! @epoch
+}
+
+
+type OverallFeedbackForCustomizableEvaluation {
+    strength: FeedbackForCustomizableEvaluation
+    areasOfImprovement: FeedbackForCustomizableEvaluation
+}
+
+######################
+
+type Question {
+    id: String
+    ##
+    interviewId: String
+    masterQuestionId: String
+    startTime: Int
+    startTimeEpoch: Int
+    endTime : Int
+    question: String
+    tags: [String]
+    difficulty: String #Moved to feedback level
+    type: String
+    handsOn: Boolean #Moved to feedback level
+    irrelevant: Boolean
+    followUpQuestions:[Question]
+    isDefault: Boolean
+    feedbacks:[Feedback] @auth(roles: [EXPERT, PARTNER_EMPLOYEE, PARTNER,QC,TAGGING_AGENT])
+    questionCategory: String
+    inputType: QuestionInputType   #currently only support 4,5,10 scoring
+}
+
+type Feedback {
+    id: String
+    categoryId:String
+    rating: Float
+    weightage: Float
+    difficulty: String
+    handsOn: Boolean
+    feedback: String
+    looksGood: Boolean
+    sentiment: FeedbackSentiment
+    qcComments:[QcComment]
+    modifiedRating: Float
+    feedbackWeightage: String
+}
+
+type QcComment {
+    id: String
+    comment: String
+    commentedBy: UserDetails
+    updatedAt: Int
+}
+
+type OverallFeedback {
+    strength: Feedback
+    areasOfImprovement: Feedback
+    softSkills: [Feedback]
+    interviewerRecommendation: InterviewerRecommendation
+}
+
+type Candidate {
+    id: String
+}
+
+input CandidateInput {
+    firstName: String
+    lastName: String
+    email: String
+    phone: String
+    targetCompanyId: String
+    resumeUrl: String
+    linkedInProfile: String
+    almaMater: String
+    currentCompanyId: String
+    experienceInMonths: Int
+}
+
+type Evaluation {
+    id: String
+    partnerId: String
+    interviews:[Interview]
+    allInterviews: [Interview]
+    validInterviews: [Interview] #Interview rounds uniquely identified after grouping by Interview structure
+    status: String @deprecated
+    displayStatus: String @deprecated
+    barraiserStatus: StatusType
+    partnerStatus: StatusType
+    bgsCreatedTimeEpoch: Long
+    candidate: Interviewee
+    createdOn: Long
+    jobRole: JobRole
+    pocEmail: String
+    pocs: [UserDetails]
+    waitingReason: Reason
+    cancellationReason: Reason
+    percentile: Int
+    defaultScoringAlgoVersion: String
+    evaluationScore: EvaluationScore
+    recommendation: EvaluationRecommendation
+    latestComment: JiraComment
+    isEvaluationScoreUnderReview: Boolean
+    scaleBGS: Int
+    scaleScoring: Int
+}
+type EvaluationRecommendation {
+    recommendationType: RecommendationType
+    screeningCutOff: Int
+}
+
+type EvaluationScore {
+    bgs: Float # bgs considering the barraiser interview rounds only
+    partnerBGS: Float # bgs considering interview rounds only for partner's internal rounds only.
+    overallBGS: Float # bgs considering all the interview rounds
+    defaultScoringAlgoVersion: String
+    barraiserScores: [SkillScore]
+    partnerScores : [SkillScore]
+    overallScores : [SkillScore]
+}
+
+type JobRole {
+    id: String
+    version: Int
+    internalDisplayName: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE])
+    candidateDisplayName: String
+    domainId: String
+    companyId: String
+    category: String
+    minExp: Int @auth(roles: [PARTNER, PARTNER_EMPLOYEE])
+    maxExp:Int @auth(roles: [PARTNER, PARTNER_EMPLOYEE])
+    remarks: String
+    company: Company @auth(roles: [PARTNER, PARTNER_EMPLOYEE,CANDIDATE,QC,TAGGING_AGENT])
+    domain: Domain @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT, CANDIDATE,QC,TAGGING_AGENT])
+    evaluationProcessType: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE, CANDIDATE])
+    roundLevelInterviewStructure: [RoundLevelInterviewStructure]
+    skillWeightages: [SkillWeightage] @auth(roles: [PARTNER, PARTNER_EMPLOYEE])
+    cutOffScore: Int @auth(roles: [PARTNER, PARTNER_EMPLOYEE])
+    jdLink: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE, CANDIDATE]) # job description link
+    evaluationStatistics: EvaluationStatistics
+    partner: Partner
+    deprecatedOn: Long @epoch
+    isDeprecated : Boolean
+    jdDocument: Document
+    countryCode: String
+    eligibleCountriesOfExperts: [String]
+    timezone: String
+    defaultPocEmail: String
+    atsId: String
+    isDraft: Boolean
+    atsStatus: StatusType
+    extFullSync: Boolean
+    extFullSyncStatus: String
+    creationSource: String
+    creationSourceMeta: String
+    brStatus: [StatusType] #TODO : Only one brStatus is possible. This contract has to be changed.
+    hiringManagers: [PartnerRepDetails]
+    hiringTeamMembers: [PartnerRepDetails]
+    recruiters: [PartnerRepDetails]
+    locations: [Location]
+    teams: [Team]
+    activeCandidateCountAggregate: Int
+}
+
+type EvaluationStatistics {
+    total: Int
+    active: Int
+    requiresAction: Int
+
+}
+
+type SkillScore {
+    skill: Skill
+    score: Float
+    weightage: Float
+}
+
+type Score {
+    skillScores: [SkillScore]
+    bgs: Float
+}
+
+input AvailabilityInput {
+    startDate: Int
+    endDate: Int
+    maximumNumberOfInterviews: Int
+}
+
+type UserDetails {
+    id : String
+    userName: String # This is also userid
+    email: String
+    phone: String
+    isdCode: String
+    roles: [String]
+    userDetailsPresent: Boolean
+    firstName: String
+    lastName: String
+    almaMater: String
+    workExperienceInMonths: Int
+    currentCompanyName: String
+    lastCompanies: [Company]
+    expertDomains: [Domain]
+    peerDomains: [Domain]
+    resumeUrl: String
+    category: String
+    timezone: String
+    whatsappNumber: String
+    partnershipModelId: String
+}
+
+input  GetInterviewsInput {
+    interviewId: String
+    partnerId: String
+    jira: String
+    interviewerId: String
+    startingTime: Int @epoch
+    endingTime: Int @epoch
+    status: String # PENDING_PAYMENT, CONFIRMED, PENDING_FEEDBACK, COMPLETED, CANCELLED
+    includedStatuses: [String]
+    excludedStatuses: [String]
+    paymentId: String
+    evaluationId: String
+    page: Int
+    pageSize: Int
+}
+
+type PaymentOrderCreationResult {
+    orderId: String
+    paymentId: String
+    amount: Float
+}
+
+
+
+type Skill {
+    id: String
+    name: String
+    isOptional: Boolean
+    domain: Domain
+    proficiency: Float
+    parentSkillId: String
+    creationSource: String
+}
+
+
+input GetAvailabilityInput {
+    userId: String
+    startDate: Int @epoch
+    endDate: Int @epoch
+    breakIntoSlots: Boolean # default to true
+}
+
+input SubmitTargetJobInput {
+    companies: [String]
+    desiredRole: String
+    skillsToFocus: [String]
+    timeToStartApplications: String
+}
+
+input ScheduleInterviewInput {
+    interviewerId: String!
+    interviewRound: String # INTRODUCTORY, PEER, EXPERT
+    startDate: Int! @epoch
+    endDate: Int! @epoch
+    isB2B: Boolean!
+    interviewId: String!
+    schedulingPlatform: String
+    timezone: String
+    interviewDuration: Int
+}
+
+input CancelInterviewInput {
+    interviewId: String!
+    cancellationReason: ReasonInput
+}
+
+type Interview {
+    id: String
+    roundNumber: Int
+    interviewerId: String @deprecated
+    interviewee: Interviewee @auth(roles: [PARTNER, PARTNER_EMPLOYEE, CANDIDATE,EXPERT, QC,TAGGING_AGENT])
+    interviewer: Interviewer
+    startDate : Int @epoch
+    endDate: Int @epoch
+    videoStartTime: Int @epoch @auth
+    cancellationTime: Int @epoch @auth(roles: [PARTNER, PARTNER_EMPLOYEE, CANDIDATE, EXPERT])
+    scheduledStartDate: Int
+    expertScheduledStartDate: Int @auth
+    scheduledEndDate: Int
+    lastQuestionEnd: Int @epoch @auth
+    interviewRound: String
+    conferenceUrl : String @deprecated
+    videoLink: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT])
+    youtubeLink: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT])
+    interviewStructure: InterviewStructure @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT, CANDIDATE,QC,TAGGING_AGENT])
+    cost: Money @auth(roles: [ADMIN, OPS, EXPERT])
+    questions: [Question] @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT, TAGGING_AGENT,QC]) # Tagging agent should be removed in future
+    overallFeedback: OverallFeedback @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT,QC])
+    score: Score @auth(roles: [PARTNER, PARTNER_EMPLOYEE])
+    interviewId: String
+    round: String
+    submittedCodeLink: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT])
+    opsRep: String @auth(roles: [ADMIN, OPS])
+    durationInMinutes: Long @auth
+    rating: Int
+    remarks: String
+    interviewStructureLink: String
+    questionTaggingStatus: String
+    zoomLink: String
+    zoomAppLink: String
+    feedbackStatus: String
+    status: String
+    confirmation: InterviewConfirmation
+    ##zoomStartTime: Long
+    jobRole: JobRole
+    cancellationReason: Reason @auth
+    interviewTimeline: [InterviewChangeHistory] @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+    audioLink: String @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT, TAGGING_AGENT])
+    media: [Media] @auth(roles: [PARTNER, PARTNER_EMPLOYEE, EXPERT,QC])
+    requiresApproval: Boolean @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+    interviewStatus: StatusType @auth(roles: [PARTNER_EMPLOYEE, PARTNER, EXPERT, CANDIDATE])
+    evaluation: Evaluation
+    isRescheduled: Boolean @auth(roles: [ADMIN, OPS])
+    roundTypeConfiguration: InterviewRoundTypeConfiguration
+    roundLevelInterviewStructure: RoundLevelInterviewStructure
+    codingPad : CodingPad
+    transcript: Transcript
+    intervieweeTimezone: String
+    candidateWebexMeetingDetails: WebexMeetingDetails
+    interviewerWebexMeetingDetails: WebexMeetingDetails
+    dyteMeetingDetails: DyteMeetingDetail @auth
+    rescheduleCount: Long
+    message : String
+    updatedOn : Int @epoch
+    isRedoEligible: Boolean
+    interviewingData: InterviewingData
+    partnerId: String
+    redoReasonId: String
+    interviewPad: InterviewPad
+    feedbackConfig: String
+    meetingLink: String
+    areHighlightsComplete: Boolean
+    meetingPlatform: MeetingPlatform
+    partner: Partner
+    atsInterviewFeedbackLink: String
+}
+
+enum MeetingPlatform {
+    ZOOM,
+    GOOGLE_MEET,
+    MICROSOFT_TEAMS
+}
+
+type InterviewingData {
+    wasInterviewerVideoOn: Boolean
+}
+
+type CodingPad{
+    link : String
+}
+
+type Media {
+    id: String
+    category: String
+    internalType: String
+    format: String
+    context: String
+    uri: String
+}
+
+type InterviewStructure {
+    id: String
+    name: String
+    domain: Domain
+    duration: Int
+    categories: [InterviewCategory]
+    specificSkills: [Skill]
+    skillInterviewingConfigurations :[SkillInterviewingConfiguration]
+    defaultQuestions: [String]
+    link: String
+    expertJoiningTime: Int
+    interviewFlowLink: String
+    allSkillsFound: Boolean
+    isBrRound: Boolean
+    atsId: String
+    interviewFlow: String
+    feedbackTextType: FeedbackTextType
+    inputType: QuestionInputType
+}
+
+# Excerpt is a write up that helps
+type Excerpt {
+    id: String
+    skill: Skill
+    duration: Int
+    expertContent: String
+    candidateContent: String
+    remarks: String
+    depth: String
+    domain: Domain
+    companySpecific: String
+    defaultQuestions: [String]
+}
+
+type InterviewCategory {
+    id: String
+    name: String
+    subCategories:[InterviewCategory]
+}
+
+type Domain {
+    id: String
+    name: String
+}
+
+type Interviewee {
+    id: String
+    firstName: String
+    lastName: String
+    email: String
+    phone: String
+    designation: String
+    linkedInProfile: String
+    lastCompanies: [Company]
+    almaMater: String
+    workExperienceInMonths: Int
+    currentCompanyName: String
+    redactedResumeUrl: String
+    resumeUrl: String
+    timezone: String
+    evaluations: [Evaluation]
+    whatsappNumber: String
+    magicToken: String @auth(roles: [ADMIN])
+}
+
+type Money {
+    value: Float
+    currency: String
+    symbol: String
+}
+
+input GetInterviewersInput {
+    interviewId: String!
+    availabilityStartDate: Int @epoch
+    availabilityEndDate: Int @epoch
+    timezone: String
+}
+
+type Interviewer {
+    id: String!
+    initials: String @auth(roles: [PARTNER_EMPLOYEE, PARTNER, EXPERT, CANDIDATE])
+    designation: String @auth(roles: [PARTNER, CANDIDATE, PARTNER_EMPLOYEE, EXPERT])
+    currentCompany: Company @auth(roles: [PARTNER, CANDIDATE, PARTNER_EMPLOYEE, EXPERT])
+    lastCompanies: [Company] @auth(roles: [PARTNER, CANDIDATE, PARTNER_EMPLOYEE, EXPERT])
+    almaMater: String @auth(roles: [PARTNER, CANDIDATE, PARTNER_EMPLOYEE, EXPERT])
+    achievements: [String] @auth(roles: [OPS,ADMIN])
+    cost: Money @auth(roles: [EXPERT])
+    availability: [Slot] @auth(roles: [EXPERT])
+    recommended: Boolean @auth(roles: [OPS,ADMIN])
+    workExperienceInMonths: Int @auth(roles: [PARTNER, CANDIDATE, PARTNER_EMPLOYEE, EXPERT])
+    userDetails: UserDetails
+    pan: String @auth(roles: [EXPERT])
+    bankAccount: String @auth(roles: [EXPERT])
+    offerLetter: String @auth(roles: [EXPERT])
+    specificSkills : [Skill] @auth(roles: [EXPERT])
+    expertDomains: [String] @auth(roles: [EXPERT])
+    peerDomains: [String] @auth(roles: [EXPERT])
+    timezone: String @auth(roles: [EXPERT])
+    totalInterviewsCompleted: Long
+    phone: String
+    totalEarningTillDate: Money @auth(roles: [EXPERT])
+    minPrice: Money @auth(roles: [EXPERT])
+}
+
+type InterviewerFeedback {
+    id: String
+    user: UserDetails
+    feedback: String
+    sender: UserDetails
+    createdOn: Long @epoch
+}
+
+input GetInterviewerFeedbackInput{
+    interviewId: String!
+}
+
+input InterviewerFeedbackInput {
+    interviewerId: String!
+    interviewId: String!
+    ccUserList: [String]
+    feedback: String
+    offsetTime: Int @epoch
+
+}
+
+
+type Highlight {
+    id: String!
+    description: String
+    title: String
+    startTime: Int              #startTime of highlight from video beginning
+    endTime: Int
+    questions: [HighlightQuestion]
+    skills: [Skill]
+}
+
+type HighlightQuestion{
+    id: String!
+    description: String
+    offsetTime: Int
+    speaker: Speaker
+}
+
+type UserComment {
+    id: String!
+    commentValue: String
+    reactionValue: String
+    type: UserCommentType
+    createdBy: UserDetails
+    offsetTime: Int                     #time from start of Interview
+    justifications: [UserComment]
+    createdOn: Long @epoch
+    updatedOn: Long @epoch
+}
+
+enum UserCommentType {
+    COMMENT,
+    REACTION
+}
+
+input GetUserCommentInput {
+    entityType: String          #Parent(example "INTERVIEW")
+    entityId: String!            #ParentId (example <interviewId>)
+}
+
+input CreateUserCommentInput {
+    entityType: String      #Parent(example "INTERVIEW")
+    entityId: String!       #ParentId (example <interviewId>)
+    commentValue: String
+    reactionValue: String
+    type: UserCommentType
+    offsetTime: Int         #Use the time of highlight/transcript
+    context: String          #(example "HIGHLIGHT/FULL_INTERVIEW")
+}
+
+input CreateHighlightsInput {
+    interviewId: String!
+    highlights: [HighlightInput]
+}
+
+input HighlightInput{
+    title: String
+    startTime: Int
+    endTime: Int
+    question: String
+    answer: String
+    skills: [SkillInput]
+}
+
+input UpdateUserCommentInput {
+    userCommentId: String!
+    commentValue: String
+    reactionValue: String
+}
+
+enum UserRole {
+    ADMIN,
+    OPS,
+    EXPERT,
+    QC,
+    CANDIDATE,
+    PARTNER,
+    PARTNER_EMPLOYEE,
+    TAGGING_AGENT
+}
+
+type Company {
+    id: String
+    name: String
+    url: String
+    logo: String # logo url
+}
+
+type SignoutResult {
+    success: Boolean
+}
+
+# Directives are currently for informational purposes only, they will cause validation in future.
+directive @validPhone on INPUT_FIELD_DEFINITION
+directive @dateFormat (
+    format: String,
+    timezone: String
+) on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+
+directive @epoch on INPUT_FIELD_DEFINITION | FIELD_DEFINITION
+
+# Usage :
+#    @auth : needs authentication but no authorization
+#    @auth(roles: [PARTNER]) : Partner roles and admin/ops roles can
+#    @auth(roles: [ADMIN,OPS]) : only admin and ops can
+directive @auth(
+    roles: [UserRole]
+) on QUERY | INPUT_FIELD_DEFINITION |FIELD_DEFINITION |FIELD
+
+type CreateIntroductoryInterviewResult {
+    id: String
+}
+
+input CreateIntroductoryInterviewInput {
+    startDate : Int @epoch
+    endDate : Int @epoch
+    interviewerId : String!
+    dreamJob: DreamJobAttributes
+    timeToStartApplications: String
+}
+
+input ExpertCompensationCalculatorInput{
+    hourPerWeek: Float!
+    salary: Float!
+    userIdentity: String
+}
+
+input DreamJobAttributes {
+    companies: [String]
+    desiredRole: String
+    skillsToFocus: [String]
+}
+
+input SearchFilter {
+    key : String
+    value : String
+}
+type OtpVerificationResult {
+    verified: Boolean!
+    authenticated: Boolean!
+    isLoginBlocked: Boolean
+    accountLockoutPeriodInMinutes: Int
+    remainingLoginAttempts: Int
+    maximumAllowedLoginAttempts: Int
+}
+
+type SuggestionResponse {
+    id: String!
+    value: String!
+}
+
+input GetIntroductoryCallSlotsInput {
+    startDate: Int! @epoch
+    endDate: Int! @epoch
+}
+
+type Slot {
+    userId: String
+    startDate: Int! @epoch
+    endDate: Int! @epoch
+    maximumNumberOfInterviews: Int
+    type: String
+}
+
+type SubmitPersonalDetailsResult {
+    success: Boolean
+}
+
+input PersonalDetailsInput {
+    workExperienceInMonths: Int
+    currentCTC: String
+    currentEmployer: String
+    currentEmployerName: String
+    areaOfInterest: String
+    resumeDocumentId: String
+}
+
+enum CurrentCTC {
+    ZERO_THREE_LACS
+    THREE_FIVE_LACS
+    FIVE_EIGHT_LACS
+    EIGHT_TWELVE_LACS
+    TWELEVE_TWENTY_LACS
+    TWENTY_THIRTY_LACS
+    THIRTY_FOURTY_LACS
+    MORE_THAN_FOURTY_LACS
+}
+
+type InterviewConfirmation {
+    candidateConfirmation: Boolean
+    interviewerConfirmation: Boolean
+}
+
+input confirmInterviewInput {
+    interviewId: String!
+    candidateConfirmation: Boolean
+    interviewerConfirmation: Boolean
+    type: String!
+    channel: String
+    source: String
+    cancellationReason: ReasonInput
+}
+
+input ProfileInput {
+    expertId: String!
+}
+
+type Profile {
+    upcomingInterviews: [Interview]
+    pastInterviews: [Interview]
+}
+
+type SubmitFeedbackResult {
+    success: Boolean
+    errors: [SubmitFeedbackError]
+    type: String
+    feedbackImprovements: [String]
+}
+
+type SubmitFeedbackError {
+    questionId: String
+    error: String
+    fieldTag: String
+}
+
+type SubmitQuestionResult {
+    success: Boolean
+    errors: [SubmitQuestionError]
+    type: String
+}
+type LinkedinShareResult{
+    redirectUrl: String
+}
+
+type SubmitQuestionError {
+    questionId: String
+    error: String
+    fieldTag: String
+}
+
+input BgsEnquiryInput {
+    interested: Boolean!
+    candidateId: String
+}
+
+input PaymentStatusInput {
+    paymentId: String
+}
+
+type PaymentStatus {
+    paymentId: String,
+    orderId: String,
+    status: String
+}
+input PartnerInput {
+    partnerId: String
+    evaluationsSearchQuery: SearchInput
+}
+type Partner {
+    evaluations: [Evaluation]
+    searchedEvaluations: SearchResultType
+    companyDetails: Company
+    atsIntegrations: [AtsIntegration]
+    partnerEvaluationStatus: [StatusType]
+    isCandidateSchedulingEnabled: Boolean
+    partnerInterviewSummary: PartnerInterviewingSummary
+    pricing: PartnerPricing
+    useATSFeedback: Boolean
+    partnershipModelId: String
+}
+
+input AddPocEmailInput {
+    partnerId: String
+    emails: [String]
+}
+
+input GetCancellationReasonsInput {
+    reasonType : String
+    reasonTypes : [String]
+}
+
+type Reason{
+    id: String
+    type: String
+    reason: String
+    customerDisplayableReason: String
+    description: String
+    nonReschedulableReason: Boolean
+}
+
+input ReasonInput{
+    id: String
+    type: String
+    reason: String
+    customerDisplayableReason: String
+}
+
+input UserTourHistoryInput {
+    history: String!
+}
+
+input JobRoleInput {
+    id: String
+    version: String
+    partnerId: String
+    companyId: String
+    domainId: String
+    category: String
+    internalDisplayName: String
+    candidateDisplayName: String
+    remarks: String
+    evaluationProcessType: String
+    interviewStructures: [InterviewStructureInput]
+    skillWeightages: [SkillWeightageInput]
+    jdLink: String
+    checkSpecificSkillExpertAvailability: Boolean
+    cutOffScore: Int
+    jdDocumentId: String
+    countryCode: String
+    eligibleCountriesOfExperts: [String]
+    timezone: String
+    defaultPocEmail: String
+    atsId: String
+    isDraft: Boolean
+    locations: [String]  #Using Ids, to eliminate confusion that creation is possible for location. Only attachment to JR is happening for an existing location
+    teams: [String]
+    hiringManagers: [String]
+    recruiters: [String]
+    hiringTeamMembers: [String]
+    creationSource: String
+    sourceMeta: String
+    extFullSync: Boolean
+    extFullSyncStatus: String
+    brStatusId: String
+    atsStatusId: String
+    creationSourceMeta: String
+}
+
+input LocationInput {
+    partnerId : String
+    name : String
+    description : String
+}
+
+type Location {
+    id : String
+    name : String
+    description : String
+    atsId : String
+    partnerId : String
+    creationSource : String
+    sourceMeta : String
+}
+
+input TeamInput {
+    partnerId : String
+    name : String
+    description : String
+}
+
+type Team {
+    id : String
+    name : String
+    description : String
+    atsId : String
+    creationSource : String
+    sourceMeta : String
+    partnerId : String
+}
+
+
+type RoundLevelInterviewStructure {
+    id: String
+    atsId: String  #To be removed , already in interview structure
+    interviewRound: String @auth
+    interviewStructure: InterviewStructure @auth(roles: [PARTNER_EMPLOYEE, PARTNER, EXPERT])
+    cutOffScore: Int @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+    thresholdScore: Int @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+    interviewCutoffScore: Int @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+    categoryCutoffs:[CategoryCutoff]
+    requiresApproval: Boolean @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+    problemStatementLink: String @auth(roles: [PARTNER_EMPLOYEE, PARTNER, EXPERT, CANDIDATE])
+    price: Money
+    margin: Float
+    recommendationScore: Int @auth(roles: [PARTNER_EMPLOYEE, PARTNER])
+}
+type CategoryCutoff {
+    categoryId: String
+    cutoffScore: Int
+}
+type SkillWeightage {
+    id: String
+    skill : Skill
+    weightage: Float
+}
+
+type JobRoleCreationResult {
+    jobRoleId: String
+    jobRoleVersion: Int
+    success: Boolean
+    errors: [JobRoleCreationError]
+    type: String
+    expertsNotFoundForSpecificSkills: [String]
+}
+
+type JobRoleCreationError {
+    error: String
+    fieldTag: String
+}
+
+type FieldValidationError {
+    error: String
+    fieldTag: String
+}
+
+type DisplayKPINumbers {
+    numberOfInterviews: Int
+    numberOfExperts: Int
+    numberOfPartners: Int
+}
+
+input CommentsInput {
+    entityId: String
+    entityType: String
+    comment: String
+}
+
+type Comment {
+    comment: String
+    createdOn: String
+    updatedOn: String
+    author: String
+    entityId: String
+    entityType: String
+}
+
+input AddEvaluationInput {
+    candidateName: String
+    jobRoleId: String
+    resumeUrl: String
+    instructions: String
+    pocEmail: String
+}
+
+input AddBulkEvaluationsCandidateInput {
+    serialId: String
+    candidateName: String
+    email: String
+    phone: String
+    workExperience: Int
+    documentId: String
+    documentLink: String
+    forcedAddFlag: Boolean
+}
+
+input AddBulkEvaluationsInput {
+    jobRoleId: String!
+    pocEmail: String!
+    partnerId: String!
+    candidates: [AddBulkEvaluationsCandidateInput]
+}
+
+type AddBulkEvaluationsError {
+    error: String
+    fieldTag: String
+}
+
+type AddBulkEvaluationsResult {
+    success: Boolean
+    evaluationId: String
+    serialId: String
+    errors: [AddBulkEvaluationsError]
+}
+
+input UserDetailsFromResumeInput {
+    serialId: String
+    documentId: String
+}
+
+type UserDetailsForResume {
+    serialId: String
+    documentId: String
+    userDetails: UserDetails
+}
+
+type ExpertCompensation {
+    minimumSalary: Float
+    maximumSalary: Float
+}
+
+type InterviewSlots {
+    date: String
+    prioritySlots :[Slot]
+    allSlots: [Slot]
+}
+
+type PartnerRepDetails {
+    partnerId: String
+    companyId: String
+    userDetails: UserDetails
+    teams : [String]
+    roles : [String]
+    locations : [String]
+    accessGrantedOn: Int @epoch
+}
+
+
+input PartnerAccessInput {
+    userId: String
+    partnerId: String!
+    email: String
+    phone: String
+    firstName: String
+    lastName: String
+    roles: [String]
+    teams: [String]
+    locations: [String]
+}
+
+type CandidateCompensation {
+    bgsScore: Int
+    minSalary: Int
+    maxSalary: Int
+}
+
+type InterviewChangeHistory {
+    fieldName: String
+    displayValue: String
+    displayReason: String
+    scheduledTime: Long
+    rescheduledTime: Long
+    createdOn: Long
+    createdByUser: UserDetails
+}
+
+type FeedbackSentiment {
+    id: String
+    feedbackSentimentLabel: String
+    feedbackSentimentScore: Float
+    looksGood: Boolean
+}
+
+input GetBookedSlotsInput {
+    userId: String
+    startDate: Int @epoch
+    endDate: Int @epoch
+}
+
+input WhitelistPartnerDomainInput {
+    partnerId: String
+    emailDomain: String
+}
+
+type PartnerWhitelistedDomains {
+    emailDomains: [String]
+}
+
+input SearchInput {
+    pageNumber: Int
+    pageSize: Int
+    sortBy: [SearchOrderInput]
+    filters: [SearchFilterInput]
+    aggregates: [AggregateInput]
+    newPortal: Boolean
+}
+
+input SearchOrderInput {
+    field: String
+    ascending: Boolean
+}
+
+input SearchFilterInput {
+    field: String
+    value: [String]
+}
+
+input AggregateInput {
+    field: String
+}
+
+union SearchRecord = Evaluation | SkillInterviewingConfiguration | JobRole | CandidateInterviewFeedback | Interview
+
+type SearchResultType {
+    pageNumber: Int
+    pageSize: Int
+    totalPages: Int
+    totalRecords: Long
+    records: [SearchRecord]
+    aggregations: [AggregateResultType]
+    filtersApplied: [FilterType]
+    cards: [SearchCard]
+    filterContext: String
+}
+
+type SearchCard{
+    type: String
+    cardVersion: String
+    detail: SearchRecord
+}
+
+type FilterType {
+    field: String
+    value: [String]
+}
+
+type AggregateResultType {
+    aggregatedCount: [AggregateCountResult]
+}
+
+type AggregateCountResult {
+    fieldValue: String
+    count: Long
+}
+
+type StatusType {
+    id: String
+    internalStatus: String
+    displayStatus: String
+    transitionedOn: Int @epoch
+}
+
+input PartnerStatusInput {
+    evaluationId: String!
+    statusId: String!
+}
+
+input EventInput {
+    eventType: String!
+    event: String
+}
+
+type SchedulingInfo {
+    oldLink: String
+    newLink: String
+}
+
+input CandidateAvailabilityInput {
+    interviewId: String
+    inputSlots: [AvailabilityInput]
+}
+
+input GetCandidateAvailabilityInput {
+    interviewId: String
+}
+
+input ApproveInterviewInput {
+    interviewId: String!
+    approved: Boolean!
+}
+
+input UpdateExpertSpecificSkillInput {
+    expertId: String!
+    skillId: String!
+    proficiency: Float!
+}
+
+type InterviewRoundTypeConfiguration {
+    commonZoomLink: String
+}
+
+type Transcript {
+    transcriptions: [Transcription]
+}
+
+type Transcription {
+    startTime: Long
+    endTime: Long
+    speaker: String
+    text: String
+}
+
+input MagicLinkInput {
+    email: String!
+    redirectUrl: String!
+    evaluationIdToSignUpPartnerFor: String
+}
+
+input ReassignExpertInput {
+    interviewId: String!
+    reassignmentReason: String!
+}
+
+input AllocateExpertInput {
+    interviewId: String!
+    expertId: String!
+}
+
+input GetEligibleInterviewersInput {
+    interviewId: String!
+    availabilityStartDate: Long
+    availabilityEndDate: Long
+}
+
+type ZoomJoinDetails {
+    meetingId: String
+    signature: String
+    password: String
+}
+
+type EligibleInterviewers {
+    availableInterviewers: [Interviewer]
+    unavailableInterviewers: [Interviewer]
+    interviewers: [Interviewer]
+    bookedInterviewers: [Interviewer]
+}
+
+type PartnerInterviewingSummary {
+    averageRating : Float
+    totalReviewCount: Int
+}
+
+input PartnerInterviewFeedbackInput {
+    partnerId: String
+    searchQuery: SearchInput
+}
+
+type CandidateInterviewFeedback {
+    interviewId: String
+    interview : Interview
+    overallRating: Float
+    comment: String
+}
+
+
+type DyteMeetingDetail {
+    meetingId: String
+    roomName: String
+    participantMeetingDetails : DyteParticipantDetail
+}
+
+type DyteParticipantDetail {
+    id: String
+    role: String
+    authToken: String
+}
+
+type WebexMeetingDetails {
+    joinLink: String
+    accessToken: String
+}
+
+input PartnerPendingInterviewInput {
+    partnerId: String
+    searchQuery: SearchInput
+}
+
+input ReopenInterviewInput {
+    interviewId: String
+    reasonId: String
+}
+
+input GetReopeningReasonInput {
+    reasonTypes: [String]
+}
+
+type JiraComment{
+    id: String
+    comment: String
+    updatedOn: String
+}
+
+input RedoInterviewInput {
+    interviewId: String!
+    reasonId: String!
+}
+
+input GetRedoReasonInput {
+    reasonTypes: [String]
+}
+
+
+input AddCalendarInput {
+    code: String!
+    redirectUri: String!
+    oAuthProvider: String
+    partnerId: String
+    context: String
+}
+
+type Calendar {
+    email: String
+    isExpired: Boolean
+    provider: String
+}
+
+input RemoveCalendarInput {
+    email: String!
+    oAuthProvider: String
+    context: String
+}
+
+input AddPricingConfigInput {
+    partnerId: String!
+    pricing: [PricingConfigInput]
+}
+
+input PricingConfigInput {
+    id: String
+    flatRateBasedPricing: FlatRateBasedPricingInput
+    workExperienceBasedPricing: [WorkExperienceBasedPricingInput]
+    applicableFrom: Int
+    applicableTill: Int
+    pricingType: String!
+    defaultMargin: Float
+}
+
+type JobRoleBasedPricingResult {
+    pricing: [JobRoleBasedPricing]
+}
+
+type JobRoleBasedPricing {
+    jobRoleId: String
+    interviewStructureId: String
+    price: Money
+}
+
+type WorkExperienceBasedPricing {
+    price: Money
+    workExperienceInMonthsUpperBound: Int
+    workExperienceInMonthsLowerBound: Int
+    roundType: String
+}
+
+input WorkExperienceBasedPricingInput {
+    price: MoneyInput
+    workExperienceInMonthsUpperBound: Int
+    workExperienceInMonthsLowerBound: Int
+    roundType: String
+}
+
+type PartnerPricingUpdationError {
+    error: String
+    fieldTag: String
+}
+
+type FlatRateBasedPricing {
+    price: Money
+}
+
+input FlatRateBasedPricingInput {
+    price: MoneyInput
+}
+
+type AddPricingConfigResult {
+    validationResult: ValidationResult
+}
+
+type JobRoleBasedPricingUpdationResult {
+    validationResult: ValidationResult
+}
+
+input UpdateJobRoleBasedPricingInput {
+    jobRoleBasedPricings: [JobRoleBasedPricingInput]
+}
+
+input JobRoleBasedPricingInput {
+    jobRoleId: String
+    interviewStructureId: String
+    price: MoneyInput
+    margin: Float
+}
+
+input UpdatePartnerPricingStageDetailsInput {
+    partnerId: String
+    pricingStage: String
+    numberOfInterviewsForDemo: Int
+    applicableFrom: Long
+    applicableTill: Long
+}
+
+type PartnerPricingStageUpdationResult {
+    validationResult: ValidationResult
+}
+
+type PartnerPricing {
+    pricingType: String
+}
+
+input PredictNumberOfInterviewsOfExpertInput {
+    expertId: String!
+    minCost: Float!
+}
+
+type PredictedNumberOfInterviewsOfExpert {
+    expectedNumberOfInterviews: Int
+    validationResult: ValidationResult
+}
+
+input GetUserDetailsInput {
+    userId: String
+}
+
+input GetCandidateRejectionReasonsInput {
+    reasonTypes: [String]
+}
+
+input RejectCandidateInput {
+    evaluationId: String!
+    rejectionReasonId: String!
+}
+
+type TrainingSnippet {
+    id: String
+    userId: String
+    createdBy: UserDetails
+    title: String
+    description: String
+    startTime:Int
+    endTime: Int
+    videoId: String
+    videoURL: String
+    createdOn: String
+    jobRoleList: [TrainingJobRole]
+    tagList: [TrainingTag]
+}
+
+type TrainingTag {
+    id: String
+    name: String
+}
+
+type TrainingJobRole {
+    jobRoleId: String
+}
+
+type JobRoleWithSnippetCount {
+    jobRoleId: String
+    snippetCount: Int
+}
+
+input TrainingSnippetInput {
+    id: String
+    userId: String
+    partnerId: String
+    title: String
+    description: String
+    startTime:Int
+    endTime: Int
+    videoId: String
+    videoURL: String
+    jobRoleList: [TrainingJobRoleInput]
+    tagList: [TrainingTagInput]
+}
+
+input TrainingTagInput {
+    id: String
+    partnerId: String
+    name: String
+}
+
+input TrainingJobRoleInput {
+    id: String
+}
+
+input CreateSkillInput {
+    name: String!
+    parentSkillId: String
+    domainId: String
+    creationSource: String
+}
+
+input CreateBulkSkillsInput {
+    skillInputs: [CreateSkillInput]
+}
+
+input BarraiserPartnerUserRolesInput {
+    partnerId: String!
+}
+
+input ATSUserRoleMappingInput {
+    brUserRoleId : String
+    atsUserRoleId : String
+    atsUserRoleName: String
+}
+
+input FetchATSUserRoleMappingInput {
+    partnerId: String!
+    atsProvider: String!
+}
+
+type ATSUserRoleMapping {
+    id: String
+    brUserRole: Role
+    atsUserRoleId: String
+    atsUserRoleName: String
+}
+
+enum FieldType {
+    SELECT,
+    TEXT,
+    DATE,
+    INT,
+    MULTISELECT
+}
+
+input FetchValuesForFilterInput{
+    fieldName: String
+    filterContext: String
+    dependantData: String
+}
+
+type FilterValue{
+    id: String
+    displayName: String
+}
+
+input ApplicableFiltersInput{
+    filterContext: String!
+    type: ApplicableFilterType
+    isIaas: Boolean
+}
+
+input GetHiringManagersInput{
+    partnerId: String!
+}
+
+input GetRecruitersInput{
+    partnerId: String!
+}
+
+input GetLocationsInput{
+    partnerId: String!
+}
+
+input GetTeamsInput{
+    partnerId: String!
+}
+
+enum Operator {
+    EQUALS,
+    LIKE,
+    LIKE_IGNORE_CASE,
+    IN,
+    GREATER_THAN,
+    LESS_THAN,
+    GREATER_THAN_OR_EQUAL_TO,
+    LESS_THAN_OR_EQUAL_TO,
+    NOT_EQUALS,
+    IS_NULL,
+    IS_NOT_NULL,
+    CONTAINS
+}
+
+enum ApplicableFilterType{
+    SORT,
+    SEARCH
+}
+
+enum QuestionInputType{
+    RATING_TILL_4,
+    RATING_TILL_5,
+    RATING_TILL_10
+}
+
+enum FeedbackTextType {
+    ONE_TEXT_TYPE,
+    TWO_TEXT_TYPE
+}
+type ApplicableFilter{
+    fieldName: String
+    dependantFields: [String]
+    operationsPossible: [Operator]
+    fieldType: FieldType
+    displayName: String
+    defaultValue: String
+    filterType: ApplicableFilterType #SEARCH/SORT
+}
+
+type JobRoleCategory {
+    id: String
+    name: String
+}
+
+type ActiveCandidatesOption{
+    id: String
+    name: String
+}
+
+input GetATSStatusInput{
+    partnerId: String!
+}
+
+type Country{
+    countryCode: String
+    name: String
+}
+
+input DisableJobRoleIntelligenceInput{
+    jobRoleId: String!
+    jobRoleVersion: String!
+}
+
+type Speaker {
+    name : String
+}

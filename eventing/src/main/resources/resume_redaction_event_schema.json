@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "required": [
+        "version",
+        "id",
+        "detail-type",
+        "source",
+        "account",
+        "time",
+        "region",
+        "resources",
+        "detail"
+    ],
+    "definitions": {
+        "ResumeRedactionEvent": {
+            "type": "object",
+            "properties": {
+                "resumeLink": {
+                    "type": "string"
+                },
+                "intervieweeId": {
+                    "type": "string"
+                }
+            },
+            "required": ["resumeLink", "intervieweeId"]
+        }
+    },
+    "properties": {
+        "version": {
+            "$id": "#/properties/version",
+            "type": "string",
+            "title": "The version schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "detail-type": {
+            "$id": "#/properties/detail-type",
+            "type": "string",
+            "title": "The detail-type schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "source": {
+            "$id": "#/properties/source",
+            "type": "string",
+            "title": "The source schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "account": {
+            "$id": "#/properties/account",
+            "type": "string",
+            "title": "The account schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "time": {
+            "$id": "#/properties/time",
+            "type": "string",
+            "title": "The time schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "region": {
+            "$id": "#/properties/region",
+            "type": "string",
+            "title": "The region schema",
+            "description": "An explanation about the purpose of this instance."
+        },
+        "resources": {
+            "$id": "#/properties/resources",
+            "type": "array",
+            "title": "The resources schema",
+            "description": "An explanation about the purpose of this instance.",
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/resources/items"
+            }
+        },
+        "detail": {
+            "$ref": "#/definitions/ResumeRedactionEvent"
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Interview Rescheduled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+<p>Dear {{expert_first_name}},</p>
+<p>The candidate for your next interview has been changed and request you to kindly go through the resume and interview structure.
+</p>
+<p>The interview can be accessed here - https://app.barraiser.com/interview-landing/e/{{interview_id}}</p>
+<p>You can also access the interview from website -> login ->upcoming interviews. </p>
+<p>The page contains interview structure which helps you with what needs to be asked in the interview,
+candidate's resume and some general guidelines of BarRaiser interviewing, it is highly recommended that you go through
+them much before the interview scheduled time and make yourself familiar and prepared for the interview.</p>
+
+<p>Key focus areas for this interview would be:</p>
+<ol style="padding-left: 20px;">
+{{#categories_list}}
+       <li> {{name}} </li>
+{{/categories_list}}
+</ol>
+{{#specific_skills_list}}
+(specific focus on : {{specific_skills_list}})
+{{/specific_skills_list}}
+
+{{#were_questions_asked_in_previous_rounds}}
+<p>Please find below the questions asked to the candidate in the previous rounds.
+ Request you to go through it and avoid asking the same question again.
+   <ol style="padding-left: 20px;">
+   {{#questions_asked_in_previous_rounds}}
+          <li> {{question}} </li>
+   {{/questions_asked_in_previous_rounds}}
+   </ol>
+</p>
+{{/were_questions_asked_in_previous_rounds}}
+
+
+<p>In case of any issues, please reply to this mail.</p>
+
+<p>Regards,<br>
+BarRaiser Team</p>
+    </div>
+    {{> footer_BR.mustache}}
+</div>
+</body>
+</html>
+

@@ -1,0 +1,107 @@
+{{#partial "content" }}
+    <p>Dear {{getInterviews.0.interviewee.firstName}} {{getInterviews.0.interviewee.lastName}},</p>
+    {{#if (in getInterviews.0.interviewRound "MACHINE" "MACHINE2")}}
+        {{#if getInterviews.0.isRescheduled}}
+            <p>This is regarding your interview with <strong>{{getInterviews.0.jobRole.company.name}}</strong>. Due to some technical reasons we are updating the meeting link.<p>
+
+            <p><strong>Below are the details of the interview, please go through them carefully.</strong></p>
+            <p>
+                <strong>interview start:</strong>{{formatEpochInSeconds getInterviews.0.scheduledStartDate getInterviews.0.interviewee.timezone}}<br>
+                <strong>interview end:</strong>{{formatEpochInSeconds getInterviews.0.scheduledEndDate getInterviews.0.interviewee.timezone}}
+            </p>
+        {{else}}
+            <p>
+                Your interview has been scheduled on {{formatEpochInSeconds getInterviews.0.scheduledStartDate getInterviews.0.interviewee.timezone}} and a calendar invite has been sent as well.
+                This interview will be taken by a BarRaiser expert on a zoom video call which will be recorded and hence, please read all the instructions given below:
+            </p>
+            <p>1. Kindly login through a laptop and share your video<br/>
+                2. Share your screen and get started with solving the problem at hand <br/>
+                3. Ensure a stable internet & electricity connection</p>
+
+            {{#if (in getInterviews.0.interviewRound "MACHINE")}}
+                <p>Interview Format:</p>
+                <p> 1. Briefing of Problem statement (10-15 minutes): Problem statement will be shared with you, you can go through the problem statement and ask any doubts about the use cases and scope of the problem. For the briefing please join : {{getInterviews.0.roundTypeConfiguration.commonZoomLink}} </p>
+
+                <p>2.Post Problem briefing , kindly join the link mentioned below: <br/>
+            {{/if}}
+                Interview link: https://app.barraiser.com/interview-landing/c/{{getInterviews.0.id}} <br/>
+                Interview Passcode: 123456 <br/>
+            {{#if (in getInterviews.0.interviewRound "MACHINE")}}
+                    <strong> NOTE: </strong>Upon joining the link kindly share your screen and get started with solving the problem at hand. </p>
+            {{/if}}
+
+        {{/if}}
+
+        <p><strong>What is this round about?</strong></p>
+        <p>This is a machine round wherein you will be given a  problem to build a webpage in your favourite framework.
+            Its advisable to come prepared with a setup  of your favourite IDE, language and framework so that maximum time could be spent on writing the actual business
+            logic.
+        </p>
+        <br>
+        For e.g.
+        <p>1. For frontend if you wish to develop in react JS, come prepared with your favourite IDE with hello world react application and some well known dependencies
+            like redux, AXIOS, etc.</p>
+        <p>2. For backend if you with to develop in JAVA and spring boot come prepared with your favourite IDS with a hello world project in MAVEN or GRADLE and a local setup
+            of data base.</p>
+
+        {{#if getInterviews.0.isRescheduled}}
+            {{#if (in getInterviews.0.interviewRound "MACHINE2")}}
+                <p><strong>Below are the details of the interview, please go through them carefully.</strong></p>
+                <p>
+                    1. Kindly join the meeting link given below.
+                    <strong>NOTE:</strong>Upon joining the link kindly share your screen and get started with
+                    solving the problem at hand.
+                    Zoom meeting : {{getInterviews.0.zoomLink}}
+                    Interview Passcode: 123456
+                </p>
+            {{/if}}
+        {{/if}}
+
+        <p>In case of any issues, please reply to this mail.</p>
+    {{else}}
+        {{#getInterviews.0.isRescheduled}}
+            <p>Due to some technical changes, your zoom meeting details are updated for your interview scheduled with {{getInterviews.0.jobRole.company.name}} on
+                {{formatEpochInSeconds getInterviews.0.scheduledStartDate getInterviews.0.interviewee.timezone}}</p>
+            <p>You can access the zoom details from <a href="https://app.barraiser.com/interview-landing/c/{{getInterviews.0.id}}">here</a>.
+        {{/getInterviews.0.isRescheduled}}
+        {{^getInterviews.0.isRescheduled}}
+            <p>Your interview has been scheduled on {{formatEpochInSeconds getInterviews.0.scheduledStartDate getInterviews.0.interviewee.timezone}} and a calendar invite has been sent as well.
+
+                This interview will be taken by {{#if (stringEquals getInterviews.0.interviewRound "INTERNAL")}} {{getInterviews.0.interviewer.firstName}} {{getInterviews.0.interviewer.firstName}} {{else}} a BarRaiser expert {{/if}} on a zoom video call which will be recorded and hence, please read all the instructions given below: </p>
+            <ol style="padding-left: 20px;">
+                <li>Kindly login through a laptop and turn on your video</li>
+                <li>Share your screen during coding sessions</li>
+                <li>Ensure a stable internet connection </li>
+            </ol>
+
+            <p>Key focus areas for this interview would be:</p>
+            <ol style="padding-left: 20px;">
+                {{#getInterviews.0.interviewStructure.categories}}
+                    {{#if (stringEquals name "Others")}}
+                         {{else}}
+                              <li>{{name}}</li>
+                    {{/if}}
+                {{/getInterviews.0.interviewStructure.categories}}
+            </ol>
+            {{#if getInterviews.0.interviewStructure.specificSkills.length}}
+                (specific focus on :
+                {{#getInterviews.0.interviewStructure.specificSkills}}
+                    {{#if (stringEquals name "Others")}}
+                        {{else}}
+                            {{name}},
+                    {{/if}}
+                {{/getInterviews.0.interviewStructure.specificSkills}}
+                )
+            {{/if}}
+
+            <p>Interview link: https://app.barraiser.com/interview-landing/c/{{getInterviews.0.id}} <br/>
+                Zoom passcode: 123456</p>
+        {{/getInterviews.0.isRescheduled}}
+
+        <p>Wishing you all the luck!</p>
+    {{/if}}
+    <br/>
+    <p>Regards,</p>
+    <p>BarRaiser Team</p>
+    </div>
+{{/partial}}

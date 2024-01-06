@@ -1,0 +1,36 @@
+{{> header_partner.mustache}}
+    <p>Hi {{candidate_first_name}},</p>
+    <p>We regret to inform you that the interview which is scheduled at {{interview_date_time}} is being rescheduled because of an unavoidable emergency. </p>
+    {{#is_candidate_scheduling_allowed}}
+        {{^is_round_internal}}
+        <p>Please reschedule your interview round using the link below.<br>
+        <div align="center" width="300" height="40" bgcolor="#0898A9" style="-webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            color: #ffffff;
+            display: block;
+            width:270px;
+            height:40px;
+            background-color:#0898A9;
+            margin-left:auto;margin-right:auto">
+            <a href="https://app.barraiser.com/candidate-scheduling/{{interview_id}}"
+            style="font-size:16px;
+            font-weight: bold;
+            font-family: Helvetica, Arial, sans-serif;
+            text-decoration: none;
+            line-height:40px;
+            width:100%;
+            display:inline-block">
+            <span style="color: #FFFFFF">Schedule Now</span></a>
+        </div>
+        </p>
+        {{/is_round_internal}}
+    {{/is_candidate_scheduling_allowed}}
+    {{^is_candidate_scheduling_allowed}}
+        <p>Our team will reach out to you for rescheduling this interview round. We sincerely apologise for the inconvenience caused.</p>
+    {{/is_candidate_scheduling_allowed}}
+    <p>Regards,</p>
+  <p>
+     Team BarRaiser
+  </p>
+{{> footer_partner.mustache}}

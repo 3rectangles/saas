@@ -1,0 +1,114 @@
+{
+    "interviewsScheduledInSlot": [
+        {
+            "id": "i-1",
+            "interviewerId": "d1",
+            "startDate": 1634920200,
+            "status": "cancellation_done"
+        },
+        {
+            "id": "i-2",
+            "interviewerId": "d2",
+            "startDate": 1634923800,
+            "status": "Expert_Needed_For_Dummy_Interview"
+        },
+        {
+            "id": "i-3",
+            "interviewerId": "d3",
+            "startDate": 1634922000,
+            "status": "pending_ta_assignment"
+        },
+        {
+            "id": "i-4",
+            "interviewerId": "d4",
+            "startDate": 1634920200,
+            "status": "pending_ta_assignment"
+        },
+        {
+            "id": "i-5",
+            "interviewerId": "d5",
+            "startDate": 1634920200,
+            "status": "pending_ta_assignment"
+        },
+        {
+            "id": "i-6",
+            "interviewerId": "e2",
+            "startDate": 1634920200,
+            "status": "pending_ta_assignment"
+        }
+    ],
+    "duplicateExperts": [
+        {
+            "id": "d1",
+            "duplicatedFrom": "e2"
+        },
+        {
+            "id": "d2",
+            "duplicatedFrom": "e2"
+        },
+        {
+            "id": "d3",
+            "duplicatedFrom": "e1"
+        },
+        {
+            "id": "d4",
+            "duplicatedFrom": "e2"
+        },
+        {
+            "id": "d4",
+            "duplicatedFrom": "e2"
+        }
+    ],
+    "interviewToEligibleExperts": [
+        {
+            "id": "1",
+            "interviewId": "i-1",
+            "interviewerId": "e1"
+        },
+        {
+            "id": "2",
+            "interviewId": "i-1",
+            "interviewerId": "e2"
+        },
+        {
+            "id": "3",
+            "interviewId": "i-2",
+            "interviewerId": "e1"
+        },
+        {
+            "id": "4",
+            "interviewId": "i-2",
+            "interviewerId": "e2"
+        },
+        {
+            "id": "5",
+            "interviewId": "i-3",
+            "interviewerId": "e1"
+        },
+        {
+            "id": "6",
+            "interviewId": "i-3",
+            "interviewerId": "e2"
+        },
+        {
+            "id": "7",
+            "interviewId": "i-4",
+            "interviewerId": "e1"
+        },
+        {
+            "id": "8",
+            "interviewId": "i-4",
+            "interviewerId": "e2"
+        },
+        {
+            "id": "9",
+            "interviewId": "i-5",
+            "interviewerId": "e2"
+        }
+    ],
+    "interviewThatExpertCanTake": {
+        "id": "i-3",
+        "interviewerId": "d3",
+        "startDate": 1634922000
+    }
+}

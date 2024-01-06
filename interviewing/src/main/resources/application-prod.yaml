@@ -1,0 +1,229 @@
+server:
+    port: 5000
+    servlet:
+        session:
+            cookie:
+                domain: .barraiser.com
+                http-only: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - info
+                    - health
+    metrics:
+        tags:
+            stage: prod
+
+spring:
+    profiles: prod
+    datasource:
+        jdbcUrl: jdbc:postgresql://db-production-ap-south-1.czggcjhujenw.ap-south-1.rds.amazonaws.com:5432/barraiser
+        username: java_backend_rw
+        maximum-pool-size: 40
+
+        hikari:
+            leak-detection-threshold: 30000
+speaker:
+    url: http://ds-gpt-nlp-prod-406168508.ap-south-1.elb.amazonaws.com
+
+
+bgs:
+    algorithm:
+        version: 12
+
+elasticsearch:
+    cluster:
+        domain: vpc-elasticsearch-prod-f5aq2f6krd2es5w2twrzyz6rz4.ap-south-1.es.amazonaws.com
+        port: 443
+        protocol: https
+
+firebase:
+    credentials-secret-name: firebase-codepairing-prod
+    database-url: https://codepairing-default-rtdb.asia-southeast1.firebasedatabase.app
+
+mixpanel:
+    project-barraiser:
+        token: fec396b02ae7aceaa241463891ba23b2
+
+aws:
+    secretNames:
+        barraiserDb: prod_java_backend
+    cognito:
+        userPoolId: ap-south-1_pAhGkakES
+        backendClientId: 1rtgdegg5r246let30pl7gq0n
+        backendClientSecretId: prod/cognito-client-1rtgdegg5r246let30pl7gq0n
+        expectedIssuerCognito: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_pAhGkakES
+        jwksDownloadUrl: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_pAhGkakES/.well-known/jwks.json
+    eventBus: barraiser-prod
+    sns:
+        sms:
+            senderId: BarRaiser
+            maxPrice: 0.50
+            smsType: Transactional
+
+razorpay:
+    secretNames:
+        apiKeyId: rzp_live_HNzSB8M7lYSOXj
+        secretName: RazorPay
+        webhook: jxXXGYd9ts5c7q#
+payment:
+    redirection:
+        host: barraiser.com
+
+queue:
+    atsIntegration: https://sqs.ap-south-1.amazonaws.com/969111487786/job-sync-with-partner-prod
+    jira: https://sqs.ap-south-1.amazonaws.com/969111487786/jira-events
+    feedback: https://sqs.ap-south-1.amazonaws.com/969111487786/feedback-submitted
+    email-event: https://sqs.ap-south-1.amazonaws.com/969111487786/email-events-prod
+    slack-notification: https://sqs.ap-south-1.amazonaws.com/969111487786/communication-events-prod
+    expert-payment-calculation: https://sqs.ap-south-1.amazonaws.com/969111487786/expert-payment-calculation-prod
+    db-log-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/events-log-db-prod
+    interviewing-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/interviewing-prod
+    video-transcoding-completion: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-transcoding-completion-event-prod
+    video-events: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-events-prod
+    media-transcripts-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/media-transcripts-prod
+    ats-integrations-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-integrations-prod
+    data-science-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/datascience-prod
+    ats-calendar-events: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-calendar-events
+    highlight-events: https://sqs.ap-south-1.amazonaws.com/969111487786/highlight-events-prod
+
+interviewing-service-host:
+    url: https://api.barraiser.com
+
+transcripts-s3-bucket:
+    uri: s3://barraiser-interviewing-bot/transcripts
+
+linkedinShare:
+    redirectUrl: https://www.barraiser.com
+launchdarkly:
+    secretNames:
+        sdk-key: launchdarklysdk/prod
+
+media-serving:
+    domain: "media.barraiser.com"
+
+communication:
+    calendar-accounts:
+        - interview2@barraiser.com
+        - interview3@barraiser.com
+        - interview4@barraiser.com
+        - interview5@barraiser.com
+        - interview6@barraiser.com
+        - interview7@barraiser.com
+        - interview8@barraiser.com
+        - interview9@barraiser.com
+        - interview10@barraiser.com
+        - interview11@barraiser.com
+        - interview12@barraiser.com
+        - interview13@barraiser.com
+    api-key-name: communication-service-api-key-prod
+    email:
+        fromAddress: interview@barraiser.com
+    phone:
+        countryCode:
+            india: 91
+        length:
+            india: 10
+
+search:
+    indices:
+        skills: "prod_skills"
+        companies: "prod_companies"
+        interests: "prod_area_of_interest"
+        interviewers: "prod_interviewers"
+
+monitoring:
+    slack-channel: "#monitoring"
+    enabled: true
+
+
+notification:
+    interview:
+        email: expert@barraiser.com
+        lifecycle:
+            email: interview@barraiser.com
+
+br-config:
+    s3-bucket: br-config-prod
+
+interview:
+    ta-auto-allocation: true
+    lifecycle:
+        management:
+            enabled: true
+        messagebird:
+            ivr:
+                flowId:
+
+                url: https://flows.messagebird.com/flows/169a0b62-a12c-4f6a-ae8b-6b1258c44df6/invoke
+    confirmation:
+        messagebird:
+            whatsapp:
+                namespace: 00225efe_0bbc_4fab_8456_7f1952833ec0
+                candidateChannelId: b47898c2-2fd8-4fac-81ac-57d7e8c51219
+                expertChannelId: 55f2e6c6-363c-4284-b130-466cdccce0cd
+    followUpForScheduling:
+        messagebird:
+            ivr:
+                flowId: c1b8086c-6ec1-402f-8a8d-50e5e92475c4
+
+scheduled:
+    initialDelay: 1
+    fixedDelay: 1
+    fixedDelayTaAllocation: 1
+
+redirect_url:
+    url: https://app.barraiser.com/slack-confirmation
+
+buttercms:
+    key: fd932099990a6dc3e2513968af084fe81a740f2b
+question:
+    tags:
+        host: http://15.207.14.178:8080/predict
+
+cancellation-prediction-api-url: "http://172.16.2.146:5022/interview-cancellation/predict-slotwise-cancellation-probability"
+
+followup-question-detection-url: http://172.16.1.77:5024/followup_detection_prediction/v1
+
+feedback-recommendation-url: http://172.16.1.77:5024/feedback_suggestion/v1
+
+interview-structure-skills-values-url: http://172.16.1.77:5024/interview_structure/skills_and_values
+
+question-category-prediction-url: http://172.16.1.77:5024/question_category_prediction/v1
+
+overall-feedback-suggestions-url: http://172.16.1.77:5024
+
+evaluation-link: https://app.barraiser.com/customer/%s/evaluations/%s
+
+bgs-link: https://app.barraiser.com/candidate-evaluation/%s
+
+merge-dev:
+    secretNames: prod/merge-dev
+
+login-link: https://app.barraiser.com/login
+
+lever:
+    secretNames: prod/lever_credentials
+    api-client: https://api.lever.co/v1
+    access-token-client: https://auth.lever.co/oauth/token
+
+zoom:
+    app:
+        installation-link: https://bia.barraiser.com/api/zoomapp/install
+        api-key: prod/bia-service/api-key
+
+ms-teams:
+    app-id: 835ea772-1a7c-4597-b1f0-1c6118c060db
+
+cors:
+    enabled-origins:
+        - "http://barraiser.com"
+        - "https://app.barraiser.com"
+        - "https://bia.barraiser.com"
+        - "chrome-extension://nicimijlbggbdfnooghfkjpcbllphjcc"
+
+recaptcha-secret-key: 6LcJ2EEnAAAAALsC7g1tYE58GpwGOrmd9tVNjWKz
+

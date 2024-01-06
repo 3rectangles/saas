@@ -1,0 +1,50 @@
+{
+    "properties": {
+        "evaluation_id": {
+            "type": "keyword"
+        },
+        "partner_id": {
+            "type": "keyword",
+            "null_value": "NULL"
+        },
+        "domain_id": {
+            "type": "keyword"
+        },
+        "barraiser_status": {
+            "type": "keyword"
+        },
+        "partner_status": {
+            "type": "keyword"
+        },
+        "job_role_id": {
+            "type": "keyword"
+        },
+        "candidate_first_name" : {
+            "type": "text",
+            "copy_to": "full_name"
+        },
+        "candidate_last_name" : {
+            "type": "text",
+            "copy_to": "full_name"
+        },
+        "full_name": {
+            "type": "text"
+        },
+        "min_exp": {
+            "type": "integer"
+        },
+        "max_exp": {
+            "type": "integer"
+        },
+        "job_role_version": {
+            "type": "keyword"
+        },
+        "created_on": {
+            "type": "date"
+        },
+        "deleted_on": {
+            "type": "keyword",
+            "null_value": "NULL"
+        }
+    }
+}

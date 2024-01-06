@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Interview Scheduled (Machine coding round)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+<p>Hi {{expert_name}},</p>
+<p>We have scheduled an interview for you which starts at {{expert_start_datetime}} and will end by
+{{expert_end_datetime}}</p>
+<p>Below are the details of the interview, please go through them carefully:</p>
+<p>1.Kindly allow 15 minutes of problem statement reading and clarification from candidate
+end post start of the round.
+<strong>problem statement:</strong>{{problem_statement_link}}
+<p><strong>2.Resume of the candidate:</strong>{{resume_link}}</p?>
+<p><strong>3.Zoom invite:</strong>{{meeting_link}}
+Meeting Passcode: 123456
+</p>
+
+<p>Let us know if you have any questions.
+   Thank you,</p>
+<br/>
+<br/>
+<p>Regards,</p>
+<p>BarRaiser Team</p>
+</div>
+{{> footer_BR.mustache}}
+</div>
+</body>
+</html>

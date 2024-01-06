@@ -1,0 +1,71 @@
+{{#partial "content" }}
+    <p>Hi {{getInterviews.0.interviewer.firstName}} {{getInterviews.0.interviewer.lastName}},</p>
+    {{#if (in getInterviews.0.interviewRound "MACHINE")}}
+        <p>We have scheduled an interview for you which starts at {{formatEpochInSeconds getInterviews.0.expertScheduledStartDate getInterviews.0.interviewer.timezone}} and will end by
+            {{formatEpochInSeconds getInterviews.0.scheduledEndDate getInterviews.0.interviewer.timezone}}</p>
+        <p>Below are the details of the interview, please go through them carefully:</p>
+        <p><strong>problem statement: </strong>{{getInterviews.0.roundLevelInterviewStructure.problemStatementLink}}</p>
+        <p><strong>Resume of the candidate: </strong>{{getInterviews.0.interviewee.resumeUrl}}</p>
+        <p><strong>Zoom invite: </strong>{{getInterviews.0.zoomLink}}<br>
+            Meeting Passcode: 123456
+        </p>
+
+        <p>Let us know if you have any questions.
+            Thank you,</p>
+        <br/>
+        <br/>
+        <p>Regards,</p>
+        <p>BarRaiser Team</p>
+    {{else if (in getInterviews.0.interviewRound "MACHINE2")}}
+        <p>We have scheduled an interview for you which starts at {{formatEpochInSeconds getInterviews.0.expertScheduledStartDate getInterviews.0.interviewer.timezone}} and will end by
+            {{formatEpochInSeconds getInterviews.0.scheduledEndDate getInterviews.0.interviewer.timezone}}</p>
+        <p>Below are the details of the interview, please go through them carefully:</p>
+        <p>1.Kindly allow 15 minutes of problem statement reading and clarification from candidate
+            end post start of the round.<br>
+            <strong>problem statement: </strong>{{getInterviews.0.roundLevelInterviewStructure.problemStatementLink}}
+        <p><strong>2.Resume of the candidate: </strong>{{getInterviews.0.interviewee.resumeUrl}}</p>
+        <p><strong>3.Zoom invite: </strong>{{getInterviews.0.zoomLink}}<br>
+            Meeting Passcode: 123456
+        </p>
+
+        <p>Let us know if you have any questions.
+            Thank you,</p>
+        <br/>
+        <br/>
+        <p>Regards,</p>
+        <p>BarRaiser Team</p>
+    {{else}}
+        <p>We have scheduled an interview for you on {{formatEpochInSeconds getInterviews.0.expertScheduledStartDate getInterviews.0.interviewer.timezone}}.</p>
+        <p>Below are the details of the interview, please go through them carefully.</p>
+        <p>Interview will happen over a zoom meeting details of which can be accessed through
+            <a href="https://app.barraiser.com/interview-landing/e/{{getInterviews.0.id}}">here</a> before the interview.
+            The page also contains information on what to expect in the interview and some general guidelines of interviewing,
+            it is highly recommended that you go through them and make yourself familiar.
+        </p>
+
+        <p>
+            The page contains interview structure which helps you with what needs to be asked in the interview, candidate's resume and
+            some general guidelines of BarRaiser interviewing, it is highly recommended that you go through them much before the interview
+            scheduled time and make yourself familiar and prepared for the interview.
+        </p>
+
+        <p>Key focus areas for this interview would be:</p>
+        <ol style="padding-left: 20px;">
+            {{#getInterviews.0.interviewStructure.categories}}
+                <li> {{name}} </li>
+            {{/getInterviews.0.interviewStructure.categories}}
+        </ol>
+        {{#if getInterviews.0.interviewStructure.specificSkills.length}}
+            (specific focus on :
+            {{#getInterviews.0.interviewStructure.specificSkills}}
+                {{name}},
+            {{/getInterviews.0.interviewStructure.specificSkills}}
+            )
+        {{/if}}
+
+        <p>Wishing you all the luck !</p>
+        <br/>
+        <p>Regards,</p>
+        <p>BarRaiser Team</p>
+    {{/if}}
+{{/partial}}

@@ -1,0 +1,101 @@
+{
+    "bool" : {
+        "must" : [
+            {
+                "bool" : {
+                    "must" : [
+                        {
+                            "bool" : {
+                                "must" : [
+                                    {
+                                        "terms" : {
+                                            "is_active" : [
+                                                true
+                                            ],
+                                            "boost" : 1.0
+                                        }
+                                    },
+                                    {
+                                        "terms" : {
+                                            "is_under_training" : [
+                                                false
+                                            ],
+                                            "boost" : 1.0
+                                        }
+                                    },
+                                    {
+                                        "terms" : {
+                                            "companies_for_which_expert_can_take_interview" : [
+                                                "164"
+                                            ],
+                                            "boost" : 1.0
+                                        }
+                                    }
+                                ],
+                                "filter" : [
+                                    {
+                                        "terms" : {
+                                            "category" : [ ],
+                                            "boost" : 1.0
+                                        }
+                                    }
+                                ],
+                                "must_not" : [
+                                    {
+                                        "terms" : {
+                                            "id" : [
+                                                "1"
+                                            ],
+                                            "boost" : 1.0
+                                        }
+                                    },
+                                    {
+                                        "terms" : {
+                                            "current_company_id" : [
+                                                "123"
+                                            ],
+                                            "boost" : 1.0
+                                        }
+                                    },
+                                    {
+                                        "terms" : {
+                                            "last_companies_id" : [
+                                                "123"
+                                            ],
+                                            "boost" : 1.0
+                                        }
+                                    }
+                                ],
+                                "adjust_pure_negative" : true,
+                                "boost" : 1.0
+                            }
+                        },
+                        {
+                            "range" : {
+                                "work_experience_in_month" : {
+                                    "from" : 0,
+                                    "to" : null,
+                                    "include_lower" : true,
+                                    "include_upper" : true,
+                                    "boost" : 1.0
+                                }
+                            }
+                        }
+                    ],
+                    "adjust_pure_negative" : true,
+                    "boost" : 1.0
+                }
+            },
+            {
+                "terms" : {
+                    "expert_domains" : [
+                        "ai"
+                    ],
+                    "boost" : 1.0
+                }
+            }
+        ],
+        "adjust_pure_negative" : true,
+        "boost" : 1.0
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "properties": {
+        "job_role_id": {
+            "type": "keyword"
+        },
+        "partner_id": {
+            "type": "keyword",
+            "null_value": "NULL"
+        },
+        "job_role_version": {
+            "type": "keyword"
+        },
+        "deprecated_on": {
+            "type": "keyword",
+            "null_value": "NULL"
+        },
+        "domain_id": {
+            "type": "keyword"
+        },
+        "internal_display_name": {
+            "type": "text"
+        },
+        "candidate_display_name": {
+            "type": "text"
+        },
+        "created_on": {
+            "type": "date"
+        },
+        "min_exp": {
+            "type": "integer"
+        },
+        "max_exp": {
+            "type": "integer"
+        },
+        "is_draft": {
+            "type": "boolean"
+        }
+    }
+}

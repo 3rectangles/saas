@@ -1,0 +1,74 @@
+@startuml
+title Interview Data Model
+entity "Company" as c {
+    * id : text
+    --
+    * name: text
+}
+
+entity "Interview Structure" as is {
+    * id: text
+    --
+    * domain_id : text
+    * name : text
+}
+
+entity "Interview Round" as ir {
+    * id: text
+    --
+    * job_role_id : text
+    * interview_structure_id: text
+}
+
+
+entity "Interviewing Skills" as ints {
+    * id: text
+    --
+    * skill_id: text
+    * duration: int
+    * flavour: text
+    * difficulty / depth: text
+}
+
+entity "interview_structure_to_interviewing_skills" as istis {
+    * id : text
+    --
+    * interview_structure_id: text
+    * interview_skill_id: text
+}
+
+entity "Job Role" as jr {
+    * id: text
+    --
+    * name: text
+    * domain_id: text
+    * company_id: text
+    * category: text
+    * min_exp:int
+    * max_exp:int
+
+}
+entity "Skills" as s {
+    * id: text
+    --
+    * name: text
+    * domain_id: text
+}
+
+entity "Skill Weightage" as sw{
+    * id: text
+    --
+    * weightage
+    * skill_id
+    * evaluation_id // discouraged
+}
+
+jr -> ir
+ir -> is
+c -> jr
+'is -> s
+jr -down-> sw
+is -down-> ints
+ints -> istis
+ints -left-> s
+@enduml

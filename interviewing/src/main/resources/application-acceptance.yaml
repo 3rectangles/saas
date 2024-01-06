@@ -1,0 +1,155 @@
+server:
+    port: 5000
+    servlet:
+        session:
+            cookie:
+                domain: .acceptance.barraiser.in
+                http-only: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - httptrace
+                    - info
+                    - health
+                    - shutdown
+                    - env
+                    - logfile
+                    - auditevents
+    health:
+        elasticsearch:
+            enabled: false
+    endpoint:
+        health:
+            show-details: always
+            show-components: always
+    metrics:
+        tags:
+            stage: acceptance
+
+spring:
+    profiles: acceptance
+    datasource:
+        jdbcUrl: jdbc:postgresql://db-staging-ap-south-1.czggcjhujenw.ap-south-1.rds.amazonaws.com:5432/barraiser
+        username: bladewing
+
+elasticsearch:
+    cluster:
+        domain: search-elasticsearch-staging-jtmmp5fcenfwwsm5cv6rntqhty.ap-south-1.es.amazonaws.com
+        port: 443
+        protocol: https
+
+aws:
+    secretNames:
+        barraiserDb: staging/bladewing
+    cognito:
+        clientSecret: 2hjsp2i5m9n76s19s4s5d7jsqsoa92me3ckdcus0388ecqj5eou
+        backendClientId: 5a224o7c7ovao8k344o9blbgjl
+        userPoolId: ap-south-1_VwKdMENAE
+        expectedIssuerCognito: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_VwKdMENAE
+        jwksDownloadUrl: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_VwKdMENAE/.well-known/jwks.json
+    eventBus: barraiser-acceptance
+bgs:
+    algorithm:
+        version: 7
+
+razorpay:
+    secretNames:
+        apiKeyId: rzp_live_HNzSB8M7lYSOXj
+        secretName: RazorPay
+        webhook: jxXXGYd9ts5c7q#
+payment:
+    redirection:
+        host: staging.barraiser.in
+queue:
+    jira: https://sqs.ap-south-1.amazonaws.com/969111487786/jira-events-acceptance
+    feedback: https://sqs.ap-south-1.amazonaws.com/969111487786/feedback-submitted-acceptance
+    email-event: https://sqs.ap-south-1.amazonaws.com/969111487786/email-events-acceptance
+    slack-notification: https://sqs.ap-south-1.amazonaws.com/969111487786/communication-events-staging
+    expert-payment-calculation: https://sqs.ap-south-1.amazonaws.com/969111487786/expert-payment-calculation-acceptance
+    db-log-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/events-log-db-acceptance
+    interviewing-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/interviewing-acceptance
+    video-transcoding-completion: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-transcoding-completion-event-staging
+    media-transcripts-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/media-transcripts-staging
+    ats-integrations-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-integrations-acceptance
+    data-science-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/datascience-acceptance
+
+linkedinShare:
+    redirectUrl: https://acceptance.barraiser.in
+launchdarkly:
+    secretNames:
+        sdk-key: launchdarklysdk/test
+
+communication:
+    calendar-accounts:
+        - interview12@barraiser.com
+        - interview13@barraiser.com
+    api-key-name: communication-service-api-key-acceptance
+    email:
+        fromAddress: interview@barraiser.com
+
+media-serving:
+    domain: "media.barraiser.com"
+
+search:
+    indices:
+        skills: "acceptance_skills"
+        companies: "acceptance_companies"
+        interests: "acceptance_area_of_interest"
+        interviewers: "acceptance_interviewers"
+
+
+monitoring:
+    slack-channel: "#"
+    enabled: false
+
+notification:
+    interview:
+        email: monitoring@barraiser.com
+        lifecycle:
+            email: interview@barraiser.com
+interview:
+    ta-auto-allocation: true
+    lifecycle:
+        management:
+            enabled: false
+        messagebird:
+            ivr:
+                url: https://flows.messagebird.com/flows/2a29248d-cd30-4e2f-a620-b88853ddc8e2/invoke
+                flowId:
+scheduled:
+    initialDelay: 1000000
+    fixedDelay: 10000000
+    fixedDelayTaAllocation: 500
+
+redirect_url:
+    url: https://barraiser.com/slack-confirmation
+
+buttercms:
+    key: fd932099990a6dc3e2513968af084fe81a740f2b
+
+sso:
+    google:
+        redirect-uri: https://acceptance.barraiser.com
+    microsoft:
+        redirect-uri: https://acceptance.barraiser.com/sso/micorosoft/redirect
+
+cancellation-prediction-api-url: "https://77g5d2fm68.execute-api.ap-south-1.amazonaws.com/default/cancellation-prediction-mock-api-for-local-and-staging"
+
+followup-question-detection-url: http://13.126.190.14:5024/followup_detection_prediction/v1
+
+feedback-recommendation-url: http://65.2.30.172:5024/feedback_suggestion/v1
+
+question-category-prediction-url: http://13.126.190.14:5024/question_category_prediction/v1
+
+overall-feedback-suggestions-url: http://13.126.190.14:5024
+
+merge-dev:
+    secretNames: staging/merge-dev
+
+lever:
+    secretNames: staging/lever_credentials
+    api-client: https://api.sandbox.lever.co/v1/
+    access-token-client: https://sandbox-lever.auth0.com/oauth/token

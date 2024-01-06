@@ -1,0 +1,6 @@
+Host estunnel
+HostName 13.233.160.222 # your server's public IP address
+User ec2-user
+IdentitiesOnly yes
+IdentityFile /workspace/pems/staging-vpn.pem
+LocalForward localhost:9200 vpc-es-staging-zkgowjkrmgux3eioi5h2qskaeq.ap-south-1.es.amazonaws.com:443

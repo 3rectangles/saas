@@ -1,0 +1,3 @@
+alter table interview_round_type_configuration
+add column interview_scheduled_candidate_calendar_invite_template text,
+add column interview_scheduled_expert_calendar_invite_template text;

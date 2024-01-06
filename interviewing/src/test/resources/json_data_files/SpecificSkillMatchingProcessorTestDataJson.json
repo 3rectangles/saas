@@ -1,0 +1,143 @@
+{
+    "expertSkills": [
+
+        {
+            "expertId": "1",
+            "skillId": "1",
+            "proficiency": 4
+        },
+        {
+            "expertId": "1",
+            "skillId": "2",
+            "proficiency": 4
+        },
+        {
+            "expertId": "1",
+            "skillId": "4",
+            "proficiency": 4
+        },
+
+        {
+            "expertId": "2",
+            "skillId": "1",
+            "proficiency": 4
+        },
+        {
+            "expertId": "2",
+            "skillId": "2",
+            "proficiency": 4
+        },
+        {
+            "expertId": "2",
+            "skillId": "3",
+            "proficiency": 4
+        },
+        {
+            "expertId": "2",
+            "skillId": "4",
+            "proficiency": 4
+        },
+        {
+            "expertId": "2",
+            "skillId": "5",
+            "proficiency": 4
+        },
+
+
+        {   "expertId": "4",
+            "skillId": "4",
+            "proficiency": 4
+        },
+        {
+            "expertId": "4",
+            "skillId": "5",
+            "proficiency": 4
+        },
+        {
+            "expertId": "5",
+            "skillId": "1",
+            "proficiency": 4
+        },
+        {
+            "expertId": "5",
+            "skillId": "2",
+            "proficiency": 4
+        },
+        {
+            "expertId": "5",
+            "skillId": "3",
+            "proficiency": 2.1
+        },
+        {
+            "expertId": "5",
+            "skillId": "4",
+            "proficiency": 4
+        },
+        {
+            "expertId": "5",
+            "skillId": "5",
+            "proficiency": 4
+        }],
+    "specificSkills": [
+        {
+            "skillId": "1",
+            "isOptional": false
+        },
+        {
+            "skillId": "2",
+            "isOptional": false
+        },
+        {
+            "skillId": "3",
+            "isOptional": false
+        },
+        {
+            "skillId": "4",
+            "isOptional": true
+        },
+        {
+            "skillId": "5",
+            "isOptional": true
+        }
+    ],
+    "result": [
+        {
+            "id": "2",
+            "specificSkills": [
+                {
+                    "skillId": "1"
+                },
+                {
+                    "skillId": "2"
+                },
+                {
+                    "skillId": "3"
+                },
+                {
+                    "skillId": "4"
+                },
+                {
+                    "skillId": "5"
+                }
+            ],
+            "averageProficiencyInSkills": 4
+        }
+    ],
+    "interviewers": [
+        {
+            "id": "1"
+        },
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        },
+        {
+            "id": "4"
+        },
+        {
+            "id": "5"
+        }
+    ]
+}

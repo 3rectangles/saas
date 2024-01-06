@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %highlight{%d{HH:mm:ss.SSS} %-5level %logger{36}.%M() @%L - %msg%n}{FATAL=red blink, ERROR=red, WARN=yellow
+            bold, INFO=black, DEBUG=green bold, TRACE=blue}
+        </Property>
+        <Property name="APP_LOG_ROOT">/var/log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <JsonLayout stacktraceAsString="true" compact="true" eventEol="true" properties="true">
+            </JsonLayout>
+        </Console>
+        <RollingFile name="AppLog"
+                     fileName="application.log"
+                     filePattern="application-%d{yyyy-MM-dd}-%i.log">
+            <JsonLayout stacktraceAsString="true" compact="true" eventEol="true" properties="true">
+            </JsonLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="1"/>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="AppLog"/>
+        </Root>
+        <!--        <Logger name="com.zaxxer.hikari" level="debug"/>-->
+    </Loggers>
+</Configuration>
+

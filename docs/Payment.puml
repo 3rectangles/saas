@@ -1,0 +1,66 @@
+@startuml
+participant "Barraiser-Frontend" as fe
+participant "Barraiser-Server" as s
+database    DynamoDB as d
+participant RazorPay as r
+
+fe -> s : Create order for the items in cart
+activate s
+s -> d : get all items in cart
+activate d
+note right of d
+  cart-items table
+end note
+d -> s : list of items
+deactivate d
+s -> s : calculate total cart value.
+s -> d : Create a payment entry
+activate d
+note right of d
+1. <b>payments table</b>
+* paymentID # UUID
+* order_id # razor_pay_id
+* amount
+* currency
+* status
+
+2. <b>payments-to-items-mapping</b> table
+* payment_id
+* item_id
+* amount
+* currency
+end note
+d -> s : ok
+deactivate d
+s -> r : Create order for payment amount as calculated before
+activate r
+r -> s : order_id
+deactivate r
+s -> d : update status in payments table
+activate d
+d -> s : ok
+deactivate d
+s -> fe : order_id
+deactivate s
+fe -> r : payment re-directions
+activate r
+r -> r : payment is accepted form user
+r -> fe : corresponding success/failure page.
+r -> s : payment success/failure notification
+activate s
+s -> d: update payment status to payment
+activate d
+d -> s : ok
+s -> d : Remove items from cart corresponding to the payment    .
+note left of d
+<b>cart-items</b> table
+* userId
+* item_id
+* amount
+* currency
+end note
+deactivate d
+s -> r : ok
+deactivate s
+deactivate r
+@enduml

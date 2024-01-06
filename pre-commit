@@ -1,0 +1,1 @@
+mvn -Dmaven.repo.local=/workspace/m2-repository spotless:apply

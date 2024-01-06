@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Payment Confirmation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td style="padding: 10px 0 30px 0;">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
+          <tr>
+            <td bgcolor="#ffffff" style="padding: 12px 16px 12px 16px;font-family: Arial, sans-serif; border-bottom:1px solid #cccccc">
+              <div class="sc-AxjAm GlewQ" style='display: inline-flex; color: #4457e5; font-weight: 700; font-size: 18px;'>BarRaiser</div>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#f8f8f8" style="padding: 24px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style='font-family: Arial, sans-serif; text-align: center'>
+                 <tr>
+                  <td style='padding-bottom: 12px;'>
+                    <img 
+                         height='40' src='data:image/png;base64,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'/>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='padding-bottom: 24px;'>
+                    Your Barraiser interview has been successfully scheduled. 
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style='background: #ffffff; padding: 16px; text-align: center'>
+                      <tr>
+                        <td style="font-size: 14px;">
+                          <b>Interview Summary</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style='border-bottom: 1px solid #e3e3e3; padding: 24px 0'>
+                            <tr>
+                              <td style='font-size: 14px; padding-bottom: 8px'>
+                                Introductory Call
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td style='font-size: 14px; padding-bottom: 8px'>
+                                {{introductoryInterviewerInitials}}, Human Resources
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td style='font-size: 14px'>
+                                {{introductoryInterviewDateTime}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style='background: #ffffff; padding: 16px; text-align: center'>
+                      <tr>
+                        <td style="font-size: 14px;">
+                          <b>Interview Summary</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style='border-bottom: 1px solid #e3e3e3; padding: 24px 0'>
+                            <tr>
+                              <td style='font-size: 14px; padding-bottom: 8px'>
+                                Peer Discussion
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td style='font-size: 14px; padding-bottom: 8px'>
+                                {{peerInterviewerInitials}}, {{peerInterviewerDesignation}}
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td style='font-size: 14px'>
+                                 {{peerInterviewDateTime}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style='background: #ffffff; padding: 16px; text-align: center'>
+                      <tr>
+                        <td style="font-size: 14px;">
+                          <b>Interview Summary</b>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style='border-bottom: 1px solid #e3e3e3; padding: 24px 0'>
+                            <tr>
+                              <td style='font-size: 14px; padding-bottom: 8px'>
+                                Expert Discussion
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td style='font-size: 14px; padding-bottom: 8px'>
+                                {{experInterviewerInitials}}, {{expertInterviewerDesignation}}
+                              </td>
+                            </tr>
+                            
+                            <tr>
+                              <td style='font-size: 14px'>
+                                {{expertInterviewDateTime}}
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgcolor="#0115aa" style="padding: 8px 16px;">
+              <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 10px;">
+                    &copy; BarRaiser Private Limited<br />
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </div>
+  {{> footer_BR.mustache}}
+  </div>
+
+</body>
+
+</html>

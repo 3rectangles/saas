@@ -1,0 +1,59 @@
+{{> header_partner.mustache}}
+<p>Dear {{candidate_name}},</p>
+{{#rescheduled_from}}
+    <p>Due to some technical changes, your zoom meeting details are updated for your interview scheduled with {{company_name}} on
+        {{candidate_start_datetime}}</p>
+    <p>You can access the zoom details from <a href="{{candidate_landing_page_url}}">here</a>.
+    {{/rescheduled_from}}
+{{^rescheduled_from}}
+    <p>Your interview has been scheduled on {{candidate_start_datetime}} and a calender invite has been sent as well.
+
+    This interview will be {{^is_round_internal}} taken by a BarRaiser expert {{/is_round_internal}}on a zoom video call which will be recorded and hence, please read all the instructions given below: </p>
+    <ol style="padding-left: 20px;">
+    <li>Kindly login through a laptop and turn on your video</li>
+    {{^is_round_internal}}<li>Share your screen during coding sessions</li>{{/is_round_internal}}
+    <li>Ensure a stable internet connection </li>
+    </ol>
+
+   <p>Key focus areas for this interview would be:</p>
+   <ol style="padding-left: 20px;">
+   {{#categories_list}}
+       <li> {{name}} </li>
+   {{/categories_list}}
+    </ol>
+    {{#specific_skills_list}}
+    (specific focus on : {{specific_skills_list}})
+    {{/specific_skills_list}}
+
+   <p>
+        <div align="center" width="300" height="40" bgcolor="#0898A9" style="-webkit-border-radius: 5px;
+               -moz-border-radius: 5px;
+               border-radius: 5px;
+               color: #ffffff;
+               display: block;
+               width:270px;
+               height:40px;
+               background-color:#0898A9;
+               margin-left:auto;margin-right:auto">
+               <a href={{candidate_landing_page_url}}
+               style="font-size:16px;
+               font-weight: bold;
+               font-family: Helvetica, Arial, sans-serif;
+               text-decoration: none;
+               line-height:40px;
+               width:100%;
+               display:inline-block">
+               <span style="color: #FFFFFF">Join Interview</span></a>
+       </div><br/>
+   Zoom passcode: 123456</p>
+{{/rescheduled_from}}
+
+
+
+<p>Wishing you all the luck!</p>
+<br/>
+
+<p>Regards,</p>
+<p>BarRaiser Team</p>
+{{> footer_partner.mustache}}
+

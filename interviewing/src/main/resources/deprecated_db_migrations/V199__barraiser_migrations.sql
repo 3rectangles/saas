@@ -1,0 +1,2 @@
+alter table user_details
+add column previous_work_experience_in_months integer;

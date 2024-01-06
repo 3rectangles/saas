@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "skill_interviewing_configuration_id": {
+            "type": "keyword"
+        },
+        "partner_id": {
+            "type": "keyword",
+            "null_value": "NULL"
+        },
+        "skill_interviewing_configuration_version": {
+            "type": "keyword"
+        },
+        "domain_id": {
+            "type": "keyword"
+        },
+        "skill_id": {
+            "type": "keyword"
+        },
+        "category_coverage": {
+            "type": "keyword"
+        },
+        "created_on": {
+            "type": "date"
+        }
+    }
+}

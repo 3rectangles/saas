@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>BarRaiser Login OTP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{> styles.mustache}}
+</head>
+<body id="body">
+    <div class="root">
+        {{> header_BR.mustache}}
+        <div class="content">
+            <p>Hello,</p>
+            <p>{{otp_message}}</p>
+            {{#magic_link}}
+            <p>In case of any issue, please use below link to login - </p>
+            <p>{{magic_link}}</p>
+            {{/magic_link}}
+            <p>Regards,<br/>BarRaiser Team</p>
+        </div>
+        {{> footer_BR.mustache}}
+    </div>
+</body>
+</html>

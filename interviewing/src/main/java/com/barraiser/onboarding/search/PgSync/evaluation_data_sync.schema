@@ -1,0 +1,129 @@
+[{
+    "database": "barraiser",
+    "index": "evaluation-filter",
+    "nodes": {
+        "table": "evaluation",
+        "schema": "public",
+        "columns": [
+            "id",
+            "job_role_id",
+            "created_on",
+            "status",
+            "deleted_on"
+        ],
+        "transform": {
+                "rename": {
+                    "id": "evaluation_id",
+                    "status": "barraiser_status"
+                }
+            },
+        "children": [{
+                "table": "partner_company",
+                "label": "parnter_id",
+                "columns": ["id"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["company_id"],
+                        "parent": ["company_id"]
+                    }
+                }
+            },
+            {
+                "table": "job_role",
+                "label": "domain_id",
+                "columns": ["domain_id"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["job_role_id"]
+                    }
+                }
+            },
+            {
+                "table": "status",
+                "label": "partner_status",
+                "columns": ["internal_status"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["partner_status_id"]
+                    }
+                }
+            },
+            {
+                "table": "user_details",
+                "label": "candidate_first_name",
+                "columns": ["first_name"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["user_id"]
+                    }
+                }
+
+            },
+            {
+                "table": "user_details",
+                "label": "candidate_last_name",
+                "columns": ["last_name"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["user_id"]
+                    }
+                }
+
+            },
+            {
+                "table": "job_role",
+                "label": "min_exp",
+                "columns": ["min_exp"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["job_role_id"]
+                    }
+                }
+            },
+            {
+                "table": "job_role",
+                "label": "max_exp",
+                "columns": ["max_exp"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["job_role_id"]
+                    }
+                }
+            },
+            {
+                "table": "job_role",
+                "label": "job_role_version",
+                "columns": ["version_id"],
+                "relationship": {
+                    "variant": "scalar",
+                    "type": "one_to_one",
+                    "foreign_key": {
+                        "child": ["id"],
+                        "parent": ["job_role_id"]
+                    }
+                }
+            }
+
+        ]
+    }
+}]

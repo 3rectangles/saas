@@ -1,0 +1,279 @@
+{
+    "interviews": [
+        {
+            "lastQuestionEnd": 200,
+            "isSaasInterview": true,
+            "questions": [
+                {
+                    "id": "question12",
+                    "type": "REQUIRED",
+                    "serialNumber": 1,
+                    "startTimeEpoch": 0,
+                    "interviewId": "i1",
+                    "feedbacks": [
+                        {
+                            "id": "feed121",
+                            "isSaasFeedback": true,
+                            "difficulty": "HARD",
+                            "rating": 10,
+                            "categoryId": "7",
+                            "referenceId": "question12",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 8
+                                },
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 8
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed122",
+                            "isSaasFeedback": true,
+                            "difficulty": "MODERATE",
+                            "rating": 4,
+                            "categoryId": "8",
+                            "referenceId": "question12",
+                            "feedback": "asdfds adfasdf adfasdf adfasdf adfasdfas asdfasdfasdf adsfasdfasdfasd asdfasdfasdfasdf asdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 5
+                                },
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question11",
+                    "type": "NON_EVALUATIVE",
+                    "serialNumber": 2,
+                    "startTimeEpoch": 93,
+                    "interviewId": "i1"
+                },
+                {
+                    "id": "question123",
+                    "type": "REQUIRED",
+                    "serialNumber": 3,
+                    "startTimeEpoch": 95,
+                    "interviewId": "i1",
+                    "feedbacks": [
+                        {
+                            "id": "feed1231",
+                            "isSaasFeedback": true,
+                            "difficulty": "EASY",
+                            "rating": 6,
+                            "categoryId": "7",
+                            "referenceId": "question123",
+                            "feedback": "dsfs",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 6
+                                },
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 6
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question124",
+                    "type": "DELETED",
+                    "serialNumber": 4,
+                    "startTimeEpoch": 100,
+                    "interviewId": "i1"
+                }
+            ]
+        },
+        {
+            "lastQuestionEnd": 3000,
+            "isSaasInterview": false,
+            "questions": [
+                {
+                    "id": "question21",
+                    "type": "REQUIRED",
+                    "serialNumber": 0,
+                    "startTimeEpoch": 0,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed211",
+                            "isSaasFeedback": false,
+                            "difficulty": "HARD",
+                            "rating": 2,
+                            "categoryId": "7",
+                            "referenceId": "question21",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 1
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed212",
+                            "isSaasFeedback": false,
+                            "difficulty": "EASY",
+                            "rating": 4,
+                            "normalisedRating": 3,
+                            "categoryId": "8",
+                            "referenceId": "question21",
+                            "feedback": "dsfs sadfasdf asdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 3
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question22",
+                    "type": "REQUIRED",
+                    "serialNumber": 1,
+                    "startTimeEpoch": 650,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed221",
+                            "isSaasFeedback": false,
+                            "difficulty": "MODERATE",
+                            "rating": 9,
+                            "normalisedRating": 8,
+                            "categoryId": "7",
+                            "referenceId": "question22",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 8
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed222",
+                            "isSaasFeedback": false,
+                            "difficulty": "EASY",
+                            "rating": 10,
+                            "normalisedRating": 9,
+                            "categoryId": "8",
+                            "referenceId": "question22",
+                            "feedback": "dsfs sadfasdf asdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 9
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question23",
+                    "type": "REQUIRED",
+                    "serialNumber": 2,
+                    "startTimeEpoch": 1050,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed231",
+                            "isSaasFeedback": false,
+                            "difficulty": "HARD",
+                            "rating": 7,
+                            "normalisedRating": 7,
+                            "categoryId": "7",
+                            "referenceId": "question23",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf ",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 7
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed232",
+                            "isSaasFeedback": false,
+                            "difficulty": "MODERATE",
+                            "rating": 8,
+                            "normalisedRating": 8,
+                            "categoryId": "8",
+                            "referenceId": "question23",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf ",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 8
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question27",
+                    "type": "DELETED",
+                    "serialNumber": 6,
+                    "startTimeEpoch": 3000,
+                    "interviewId": "i2"
+                }
+            ]
+        }
+    ],
+    "skillWeightageMap": {
+        "7": 20,
+        "8": 20,
+        "9": 25,
+        "52": 35
+    },
+    "softSkillFeedback": {
+        "rating": 7.5,
+        "isSaasFeedback": false,
+        "difficulty": "MODERATE",
+        "categoryId": "52",
+        "normalisedRatingMappings": [
+            {
+                "normalisationVersion": "1",
+                "cappedNormalisedRating": 7.5
+            },
+            {
+                "normalisationVersion": "2",
+                "cappedNormalisedRating": 9.5
+            }
+        ]
+    }
+}

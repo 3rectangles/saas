@@ -1,0 +1,49 @@
+{
+    "availabilityPerInterviewer": {
+        "1": [
+            {
+                "userId": "1",
+                "startDate": 1624170600,
+                "endDate": 1624188600
+            }
+        ]
+    },
+    "bookedSlotsPerInterviewerMidOverlap": {
+        "1": [
+            {
+                "userId": "1",
+                "startDate": 1624167000,
+                "endDate": 1624170600
+            },
+            {
+                "userId": "1",
+                "startDate": 1624172400,
+                "endDate": 1624179600
+            },
+            {
+                "userId": "1",
+                "startDate": 1624188600,
+                "endDate": 1624192200
+            }
+        ]
+    },
+    "epochTo15thMinuteCeil": {
+        "1624170600": 1624170600
+    },
+    "calculatedAvailabilityOfInterviewer": {
+        "1": [
+            {
+                "startDate": 1624179600,
+                "endDate": 1624186800
+            },
+            {
+                "startDate": 1624180500,
+                "endDate": 1624187700
+            },
+            {
+                "startDate": 1624181400,
+                "endDate": 1624188600
+            }
+        ]
+    }
+}

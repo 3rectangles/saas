@@ -1,0 +1,2 @@
+ALTER TABLE evaluation_recommendation
+DROP CONSTRAINT one_recommendation_per_evaluation_per_recommendation_version;

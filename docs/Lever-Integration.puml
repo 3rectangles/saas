@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+participant Lever as lever
+collections BarRaiser_FrontEnd as barraiser_frontend
+collections BarRaiser_Backend as barraiser_backend
+queue EventQueue as event_queue
+database DB as db
+
+group INITIAL INTEGRATION
+lever -> barraiser_backend : Sends the details of the partner company who initiated the integration
+barraiser_backend -> db : saves the concerned tokens in DB
+end
+
+group MAP LEVER POSTING TO JOB ROLE
+lever -> barraiser_backend  : Fetches lever postings from lever
+barraiser_backend -> barraiser_frontend : Displaying all lever postings available to map with on the job role card in job role dashboard
+barraiser_frontend -> barraiser_backend : Maps each of the selected lever posting to the concerned job role
+barraiser_backend -> db : saving mapping in DB
+end
+
+group APPLICATION CREATED WEBHOOK CONSUMER
+lever -> barraiser_backend : Receives ApplicationCreated webhook from lever
+lever -> barraiser_backend : Fetches required data to populate AddEvaluationEvent from lever
+barraiser_backend -> event_queue : Pushing AddEvaluationEvent event to event queue.
+end
+
+group SENDING CANDIDATE EVALUATION LINK TO LEVER
+event_queue -> barraiser_backend : LeverEvaluationCompletedHandler will handle the EvaluationCompleted event.
+barraiser_backend -> lever : Candidate Evaluation Link will be sent to Lever
+end
+
+@enduml

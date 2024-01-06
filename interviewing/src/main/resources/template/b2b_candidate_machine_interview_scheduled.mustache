@@ -1,0 +1,38 @@
+{{> header_partner.mustache}}
+<p>Dear {{candidate_name}},</p>
+{{#rescheduled_from}}
+    <p>This is regarding your interview with <strong>{{company_name}}</strong>. Due to some technical reasons we are updating the meeting link.<p>
+
+    <p><strong>Below are the details of the interview, please go through them carefully.</strong></p>
+    <p>
+        <strong>interview start:</strong>{{candidate_start_datetime}}
+        <strong>interview end:</strong>{{candidate_end_datetime}}
+    </p>
+{{/rescheduled_from}}
+{{^rescheduled_from}}
+    <p>
+        Your interview has been scheduled on {{candidate_start_datetime}}.
+    </p>
+     <p>What is this interview about?</p>
+
+     <p>This is an application development ( Machine Coding ) interview round wherein you will be given the problem to build a small webpage using a framework on a browser based IDE.
+     </p>
+     <p>
+     Setup instructions and usage guide for the IDE are available on following links:
+     </p>
+
+    <p>IDE Setup Instructions
+       Your Coding Pad Link {{interviewee_pad_id}}</p>
+
+   <p>It is highly recommended to come prepared with the setup of the IDE to utilize maximum time of the interview (instead of : It is mandatory to come prepared with setup of IDE)You will be interviewed by a BarRaiser Interview Expert and the interview will be recorded.</p>
+
+    <p> Additional Instructions for the Interview : </p>
+    <p> Kindly login through your laptop and share your video
+        Share your screen while you are solving the problem
+        Ensure a stable internet and electricity connection </p>
+
+{{/rescheduled_from}}
+
+<p>Regards,</p>
+<p>Team BarRaiser</p>
+{{> footer_partner.mustache}}

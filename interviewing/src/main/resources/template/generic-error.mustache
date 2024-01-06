@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bad Data in JIRA provided</title>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+<h1>Something went wrong</h1>
+<code>
+    {{StackTrace}}
+</code>
+</div>
+{{> footer_BR.mustache}}
+</div>
+</body>
+</html>

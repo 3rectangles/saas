@@ -1,0 +1,190 @@
+{
+  "Comment": "Process payment success with a series of tasks",
+  "StartAt": "SavePaymentNotification",
+  "States": {
+    "SavePaymentNotification": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:SaveNotification",
+      "Next": "CheckPaymentStatus"
+    },
+    "CheckPaymentStatus": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.paymentStatus",
+          "StringEquals": "authorized",
+          "Next": "SendPaymentSuccessEmail"
+        },
+        {
+          "Variable": "$.paymentStatus",
+          "StringEquals": "failed",
+          "Next": "NotifyFailedEmail"
+        }
+      ],
+      "Default": "NoopState"
+    },
+    "NotifyFailedEmail": {
+      "Type": "Pass",
+      "End": true
+    },
+    "SendPaymentSuccessEmail": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:SendPaymentSuccessEmail",
+      "Next": "BlockCalendarOfInterviewer"
+    },
+    "BlockCalendarOfInterviewer": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:BlockCalendarOfInterviewer",
+      "Next": "CheckIfAllInterviewsConfirmed"
+    },
+    "CheckIfAllInterviewsConfirmed": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.allInterviewsConfirmed",
+          "BooleanEquals": true,
+          "Next": "SendNotificationToInterviewers"
+        },
+        {
+          "Variable": "$.allInterviewsConfirmed",
+          "BooleanEquals": false,
+          "Next": "SendInterviewSchedulingFailureEmail"
+        }
+      ]
+    },
+    "SendInterviewSchedulingFailureEmail": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:SendInterviewSchedulingFailureEmail",
+      "End": true
+    },
+    "SendNotificationToInterviewers": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:SendNotificationToInterviewers",
+      "Next": "CheckInterviewersResponse"
+    },
+    "CheckInterviewersResponse": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:CheckIfInterviewersHaveAccepted",
+      "Next": "HasInterviewersAccepted"
+    },
+    "HasInterviewersAccepted": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.interviewerResponse",
+          "StringEquals": "AllAccepted",
+          "Next": "SendInterviewConfirmationEmail"
+        },
+        {
+          "Variable": "$.interviewerResponse",
+          "StringEquals": "NoneAccepted",
+          "Next": "SendInterviewNotConfirmedEmail"
+        },
+        {
+          "Variable": "$.interviewerResponse",
+          "StringEquals": "NotAllAccepted",
+          "Next": "WaitForInterviewersToConfirm"
+        }
+      ]
+    },
+    "WaitForInterviewersToConfirm": {
+      "Type": "Wait",
+      "Seconds": 30,
+      "Next": "CheckInterviewersResponse"
+    },
+    "SendInterviewConfirmationEmail": {
+      "Type": "Task",
+      "TimeoutSeconds": 30,
+      "Retry": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "IntervalSeconds": 1,
+          "MaxAttempts": 5,
+          "BackoffRate": 2
+        }
+      ],
+      "Resource": "arn:aws:states:ap-south-1:969111487786:activity:SendInterviewConfirmationEmail",
+      "End": true
+    },
+    "SendInterviewNotConfirmedEmail": {
+      "Type": "Pass",
+      "Next": "InitiateRefund"
+    },
+    "InitiateRefund": {
+      "Type": "Pass",
+      "End": true
+    },
+    "NoopState": {
+      "Type": "Pass",
+      "End": true
+    }
+  }
+}

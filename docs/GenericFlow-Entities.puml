@@ -1,0 +1,10 @@
+@startuml
+entity "Workflows" as wf {
+    * userId : text <<Range key>>
+    * wofklowId : text <<sort key>>
+    * stepId : text
+    * completed : Boolean
+    * createdOn: timestamp
+    * lastModifiedOn: timestamp
+}
+@enduml

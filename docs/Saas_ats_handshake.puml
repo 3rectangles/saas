@@ -1,0 +1,71 @@
+@startuml
+actor PartnerScheduler as psc
+actor Interviewer as ir
+participant "ATS" as ats
+participant "Barraiser-Server" as bs
+participant "Barraiser Portal" as bp
+participant GoogleCalendar as gc
+participant BarraiserApp as bap
+participant  BarraiserBot as bot
+participant Browser as b
+
+
+group Partner Onboarding flow
+psc -> bp : Integration of calendar(of POC) with full access
+bp -> bs : Request for calendar integration
+bs -> gc : integrate calendar
+gc -> bs :
+bs -> psc : return success on calendar integration
+end
+
+|||
+|||
+
+group  Happy ATS Integration flow
+psc -> bp : Creates flows
+psc -> bp : Puts API Key to integrate ATS
+bs -> ats : Pull Data from ATS (job roles)
+psc -> bp : Connects ATS job role to internal / Attaches flows to JR
+end
+
+|||
+|||
+
+group Unhappy ATS Integration flow
+psc -> ats : Creates a new job opening
+ats -> bs : Notify new job opening created (keep reminding)
+bs -> psc : Notify customer to create a mapping with a link of BR portal
+end
+
+
+|||
+|||
+
+group Interview Scheduling Flow
+psc -> ats : Schedules interview (calendar integrated on ATS)
+ats -> gc : Create interview scheduling invite for candidate and for interviewer seperately
+gc -> bs : Notify Barraiser server on invite creation
+bs -> bs : Check the invite for processability |  filter for the interviewer invite
+bs -> bs : Parse invite content to extract info like job role id, candidate id, interview id/type, \n meeting link
+bs -> bs : Replace invite info if corresponding barraiser info
+bs -> bs : Create participant as user with expert role in barraiser system
+bs -> bs : Create Evaluation in barraiser system
+bs -> gc : Update calendar invite show 'Join Barraiser Interview' which directs to new landing page(with option for app download)
+end
+
+|||
+|||
+
+group Interview Day Flow
+ir -> gc : Clicks 'Join Barraiser Interview' on invite
+gc -> bp : Redirects to new Interview Landing page
+ir -> bp : Proceeds via App
+ir -> bap : Logs in via SSO
+bp -> bap : Opens BarraiserApp via deeplink for interview
+ir -> bap : Clicks on 'Join Meeting'
+bap -> b : Opens Meeting (Google meet in this case)
+bot -> b : Joins the meeting
+end
+
+
+@enduml

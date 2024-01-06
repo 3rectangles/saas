@@ -1,0 +1,270 @@
+{
+    "interviewers" : [
+        {
+            "id": "1",
+            "cost": 1600,
+            "averageProficiencyInSkills": 4,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible":false
+        },
+        {
+            "id": "2",
+            "cost": 1100,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "3",
+            "cost": 1500,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "4",
+            "cost": 1000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "5",
+            "cost": 1800,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 2,
+            "isDemoEligible": false
+        },
+        {
+            "id": "6",
+            "cost": 1100,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 1,
+            "isDemoEligible": false
+        },
+        {
+            "id": "7",
+            "cost": 1000,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 5,
+            "isDemoEligible": false
+        },
+        {
+            "id": "8",
+            "cost": 1800,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "9",
+            "cost": 1700,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": false
+        },
+        {
+            "id": "10",
+            "cost": 1200,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 3,
+            "isDemoEligible": false
+        },
+        {
+            "id": "11",
+            "cost": 1100,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 5,
+            "isDemoEligible": false
+        },
+        {
+            "id": "12",
+            "cost": 1650,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 1,
+            "isDemoEligible": false
+        },
+        {
+            "id": "13",
+            "cost": 1600,
+            "averageProficiencyInSkills": 4,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": true
+        },
+        {
+            "id": "14",
+            "cost": 1100,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": true
+        },
+        {
+            "id": "15",
+            "cost": 1500,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": true
+        },
+        {
+            "id": "16",
+            "cost": 1000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": true
+        },
+        {
+            "id": "17",
+            "cost": 1800,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 2,
+            "isDemoEligible": true
+        },
+        {
+            "id": "18",
+            "cost": 1100,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 1,
+            "isDemoEligible": true
+        },
+        {
+            "id": "19",
+            "cost": 1000,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 5,
+            "isDemoEligible": true
+        },
+        {
+            "id": "20",
+            "cost": 1800,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": true
+        },
+        {
+            "id": "21",
+            "cost": 1700,
+            "averageProficiencyInSkills": 4.5,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 0,
+            "isDemoEligible": true
+        },
+        {
+            "id": "22",
+            "cost": 1200,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 3,
+            "isDemoEligible": true
+        },
+        {
+            "id": "23",
+            "cost": 1100,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 5,
+            "isDemoEligible": true
+        },
+        {
+            "id": "24",
+            "cost": 1650,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 1,
+            "isDemoEligible": true
+        }
+    ],
+    "expertListOfPriorityInterviewers": [
+        {
+            "id": "13"
+        },
+        {
+            "id": "16"
+        },
+        {
+            "id": "14"
+        },
+        {
+            "id": "15"
+        },
+        {
+            "id": "18"
+        },
+        {
+            "id": "21"
+        },
+        {
+            "id": "20"
+        },
+        {
+            "id": "19"
+        },
+        {
+            "id": "17"
+        },
+        {
+            "id": "22"
+        },
+        {
+            "id": "24"
+        },
+        {
+            "id": "23"
+        },
+        {
+            "id": "1"
+        },
+        {
+            "id": "4"
+        },
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        },
+        {
+            "id": "6"
+        },
+        {
+            "id": "9"
+        },
+        {
+            "id": "8"
+        },
+        {
+            "id": "7"
+        },
+        {
+            "id": "5"
+        },
+        {
+            "id": "10"
+        },
+        {
+            "id": "12"
+        },
+        {
+            "id": "11"
+        }
+    ]
+}

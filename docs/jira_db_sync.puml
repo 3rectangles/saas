@@ -1,0 +1,36 @@
+@startuml
+participant JIRA as j
+participant BarraiserService as b
+database DB as d
+participant SQS as s
+participant Cognito as c
+
+j -> b : Candidate event
+b -> s : event message
+s-->b : ok
+b --> j : ok
+
+b -> s : get event
+s -> b : event json
+
+alt email / phone not present
+b -> s : delete message
+else
+    s -> c : Check if user exists \n for the particular phone or email
+
+    alt user does not exits
+        b -> c : create user with available info.
+        c -> b : userid
+        b -> d : create entry in jira-uuid table
+        d -> b : ok
+        b -> d : create an entry in user_details table.
+        d -> b : ok
+        b -> d : create target job attributes
+        d -> b : ok
+        b -> d : create an evaluation
+        d -> b : ok
+    else
+
+    end
+end
+@enduml

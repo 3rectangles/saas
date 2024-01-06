@@ -1,0 +1,28 @@
+{
+    "question": {
+        "feedback": {
+            "minCount": 1,
+            "showCategories": false,
+            "maxCategories": 1,
+            "difficulty": {
+                "disable": true
+            },
+            "ratings": {
+                "maxValue5": true
+            },
+            "feedback": {
+                "required": false
+            }
+        }
+    },
+    "overallFeedback": {
+        "mergeAOIAndStrength": true,
+        "softSkills": {
+            "disabled": false
+        },
+        "interviewerRecommendation": {
+            "disabled": true
+        }
+    },
+    "suggestFeedbackImprovements": false
+}

@@ -1,0 +1,87 @@
+{
+    "evaluations": {
+        "e1": {
+            "id": "e1",
+            "companyId": "p1",
+            "status": "WAITING_CLIENT",
+            "finalStatus": {
+                "displayStatus": "WAITING_CLIENT"
+            },
+            "jobRoleId": "JR1",
+            "jobRoleVersion": 0
+        },
+        "e2": {
+            "id": "e2",
+            "companyId": "p2",
+            "status": "WAITING_CLIENT"
+        },
+        "e3": {
+            "id": "e3",
+            "companyId": "p3",
+            "status": "WAITING_CLIENT"
+        },
+        "e4": {
+            "id": "e4",
+            "companyId": "p4",
+            "status": "WAITING_CLIENT"
+        }
+    },
+    "interviews": {
+        "e1": {
+            "id": "i1",
+            "evaluationId": "e1",
+            "status": "pending_scheduling",
+            "interviewStructureId": "IS1"
+        },
+        "e2": {
+            "id": "i2",
+            "evaluationId": "e2",
+            "status": "pending_scheduling"
+        },
+        "e3": {
+            "id": "i3",
+            "evaluationId": "e3",
+            "status": "pending_scheduling"
+        },
+        "e4": {
+            "id": "i4",
+            "evaluationId": "e4",
+            "status": "pending_scheduling"
+        }
+    },
+    "partnerCompanies": {
+        "p1": {
+            "id": "p1",
+            "isCandidateSchedulingEnabled": false
+        },
+        "p2": {
+            "id": "p2",
+            "isCandidateSchedulingEnabled": true
+        },
+        "p3": {
+            "id": "p3",
+            "isCandidateSchedulingEnabled": true
+        },
+        "p4": {
+            "id": "p4",
+            "isCandidateSchedulingEnabled": true
+        }
+    },
+    "waitingReasons": {
+        "1": {
+            "id": "1",
+            "reason": "candidate_pending_scheduling"
+        }
+    },
+    "jobRoleToInterviewStructures": {
+        "JR1": {
+            "id": "JRTIS1",
+            "jobRoleId": "JR1",
+            "jobRoleVersion": 0,
+            "interviewStructureId": "IS1",
+            "orderIndex": 0,
+            "acceptanceCutoffScore": 500,
+            "rejectionCutoffScore": 300
+        }
+    }
+}

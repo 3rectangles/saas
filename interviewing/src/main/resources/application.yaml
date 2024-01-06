@@ -1,0 +1,47 @@
+server:
+    port: 5000
+    max-http-header-size: 40KB
+
+feign:
+    client:
+        config:
+            default:
+                loggerLevel: BASIC
+
+logging.level.com.barraiser.onboarding: DEBUG
+
+spring:
+    application:
+        name: barraiser-backend
+    jackson:
+        serialization:
+            write-dates-as-timestamps: false
+    jpa:
+        hibernate:
+            dialect: org.hibernate.dialect.PostgresSQLDialect
+    servlet:
+        multipart:
+            max-file-size: 10MB
+otp:
+    message:
+        phone: "%s is your BarRaiser OTP for login, it will be valid for 5 minutes and can be used only once."
+
+management:
+    metrics:
+        export:
+            cloudwatch:
+                namespace: barraiser-backend
+                batchSize: 20
+                enabled: true
+                step: 1m
+                region: ap-south-1
+
+logging:
+    level:
+        root: INFO
+
+springdoc:
+    swagger-ui:
+        enabled: true
+    api-docs:
+        enabled: true

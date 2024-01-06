@@ -1,0 +1,262 @@
+{
+    "interviewers": [
+        {
+            "id": "1"
+        },
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        },
+        {
+            "id": "4"
+        },
+        {
+            "id": "5"
+        },
+        {
+            "id": "6"
+        }
+    ],
+    "bookedSlotsPerInterviewer": {
+        "1": [
+            {
+                "startDate": "1623609000"
+            },
+            {
+                "startDate": "1623609000"
+            },
+            {
+                "startDate": "1623609000"
+            },
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623961800"
+            }
+        ],
+        "2": [
+            {
+                "startDate": "1623609000"
+            },
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623789000"
+            },
+            {
+                "startDate": "1623789000"
+            },
+            {
+                "startDate": "1623875400"
+            }
+        ],
+        "3": [
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623702600"
+            }
+        ],
+        "4": [
+            {
+                "startDate": "1623961800"
+            },
+            {
+                "startDate": "1623961800"
+            },
+            {
+                "startDate": "1623961800"
+            },
+            {
+                "startDate": "1623961800"
+            },
+            {
+                "startDate": "1623961800"
+            }
+        ],
+        "5": [
+            {
+                "startDate": "1623789000"
+            },
+            {
+                "startDate": "1623789000"
+            },
+            {
+                "startDate": "1623875400"
+            },
+            {
+                "startDate": "1623875400"
+            },
+            {
+                "startDate": "1623875400"
+            }
+        ],
+        "6": [
+            {
+                "startDate": "1623702600"
+            },
+            {
+                "startDate": "1623609000"
+            },
+            {
+                "startDate": "1623875400"
+            },
+            {
+                "startDate": "1623875400"
+            }
+        ]
+    },
+    "longToDate": {
+        "1623609000": "2021-06-14",
+        "1623702600": "2021-06-15",
+        "1623789000": "2021-06-16",
+        "1623875400": "2021-06-17",
+        "1623961800": "2021-06-18"
+    },
+    "bookedSlotsPerDayPerInterviewer": {
+        "2021-06-14": [
+            {
+                "id": "1",
+                "slotsBooked": 3
+            },
+            {
+                "id": "2",
+                "slotsBooked": 1
+            },
+            {
+                "id": "3",
+                "slotsBooked": 0
+            },
+            {
+                "id": "4",
+                "slotsBooked": 0
+            },
+            {
+                "id": "5",
+                "slotsBooked": 0
+            },
+            {
+                "id": "6",
+                "slotsBooked": 1
+            }
+        ],
+        "2021-06-15": [
+            {
+                "id": "1",
+                "slotsBooked": 1
+            },
+            {
+                "id": "2",
+                "slotsBooked": 1
+            },
+            {
+                "id": "3",
+                "slotsBooked": 5
+            },
+            {
+                "id": "4",
+                "slotsBooked": 0
+            },
+            {
+                "id": "5",
+                "slotsBooked": 0
+            },
+            {
+                "id": "6",
+                "slotsBooked": 1
+            }
+        ],
+        "2021-06-16": [
+            {
+                "id": "1",
+                "slotsBooked": 0
+            },
+            {
+                "id": "2",
+                "slotsBooked": 2
+            },
+            {
+                "id": "3",
+                "slotsBooked": 0
+            },
+            {
+                "id": "4",
+                "slotsBooked": 0
+            },
+            {
+                "id": "5",
+                "slotsBooked": 2
+            },
+            {
+                "id": "6",
+                "slotsBooked": 0
+            }
+        ],
+        "2021-06-17": [
+            {
+                "id": "1",
+                "slotsBooked": 0
+            },
+            {
+                "id": "2",
+                "slotsBooked": 1
+            },
+            {
+                "id": "3",
+                "slotsBooked": 0
+            },
+            {
+                "id": "4",
+                "slotsBooked": 0
+            },
+            {
+                "id": "5",
+                "slotsBooked": 3
+            },
+            {
+                "id": "6",
+                "slotsBooked": 2
+            }
+        ],
+        "2021-06-18": [
+            {
+                "id": "1",
+                "slotsBooked": 1
+            },
+            {
+                "id": "2",
+                "slotsBooked": 0
+            },
+            {
+                "id": "3",
+                "slotsBooked": 0
+            },
+            {
+                "id": "4",
+                "slotsBooked": 5
+            },
+            {
+                "id": "5",
+                "slotsBooked": 0
+            },
+            {
+                "id": "6",
+                "slotsBooked": 0
+            }
+        ]
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "interviewers": [
+        {
+            "id": "1"
+        },
+        {
+            "id": "2"
+        },
+        {
+            "id": "3"
+        },
+        {
+            "id": "4"
+        },
+        {
+            "id": "5"
+        },
+        {
+            "id": "6"
+        }
+    ],
+    "interviews": [
+        {
+            "interviewerId": "1",
+            "actualEndDate": 1623645000
+        },
+        {
+            "interviewerId": "2",
+            "endDate": 1623645000
+        },
+        {
+            "interviewerId": "5",
+            "actualEndDate": 2574217800
+        },
+        {
+            "interviewerId": "6",
+            "endDate": 2574217800
+        },
+        {
+            "interviewerId": "3",
+            "actualEndDate": 1623645000,
+            "endDate": 1623731400
+        },
+        {
+            "interviewerId": "4",
+            "actualEndDate": 2574217800,
+            "endDate": 1623645000
+        }
+    ]
+}

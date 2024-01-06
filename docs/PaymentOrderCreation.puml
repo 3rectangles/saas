@@ -1,0 +1,19 @@
+@startuml
+(*)  --> "get cart items"
+If "cartItems.size() > 0" then
+--> [Yes] "create a entry in payment \n including all of the cart-items.\n PaymentStatus.OPEN"
+--> "create order in razorPay"
+--> "Update order & delete cart-items\nPaymentStatus.ORDER_CREATED"
+--> Return orderId
+-->(*)
+else
+   --> "Look for an existing open payment"
+   If "status != PaymentStatus.AUTHORRIZED or PaymentStatus.FAILED" then
+   --> [Yes] throw exception
+   -->(*)
+   else
+   --> Return the order_id from payment
+
+Endif
+-->(*)
+@enduml

@@ -1,0 +1,25 @@
+[
+    {
+        "database": "barraiser",
+        "index": "skill-interviewing-configuration-filter",
+        "nodes": {
+            "table": "skill_interviewing_configuration",
+            "schema": "public",
+            "columns": [
+                "id",
+                "version_id",
+                "partner_id",
+                "domain_id",
+                "skill_id",
+                "category_coverage",
+                "duration"
+            ],
+            "transform": {
+                            "rename": {
+                                "id": "skill_interviewing_configuration_id",
+                                "version_id": "skill_interviewing_configuration_version"
+                            }
+                        }
+        }
+    }
+]

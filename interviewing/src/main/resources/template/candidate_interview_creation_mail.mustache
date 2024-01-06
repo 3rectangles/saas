@@ -1,0 +1,25 @@
+{{> header_partner.mustache}}
+<p>Dear {{candidate_name}},</p>
+    <p>Congratulations! You have successfully cleared your last interview for the role of {{job_role}} ({{domain}}) and have moved to the next step. </p>
+
+    {{#is_candidate_scheduling_on}}
+   <p>We are excited to schedule your next interview(s) with us. Kindly schedule your interview from the below links:</p>
+   <ol style="padding-left: 20px;">
+   {{#interviews}}
+       <li> Interview round ({{interviewRound}}) - <a href = "https://app.barraiser.com/candidate-scheduling/{{id}}">
+       https://app.barraiser.com/candidate-scheduling/{{id}}</a> </li>
+   {{/interviews}}
+    </ol>
+    {{/is_candidate_scheduling_on}}
+
+   <p>{{company_name}} has collaborated with BarRaiser to bring out best in candidates. BarRaiser is an amalgamation of AI platform and expert interviewers who aim to bring global standards to interviewing across industries.</p>
+
+
+
+<p>Wishing you all the luck!</p>
+<br/>
+
+<p>Regards,</p>
+<p>Team BarRaiser on behalf of {{company_name}}
+   https://barraiser.com</p>
+{{> footer_partner.mustache}}

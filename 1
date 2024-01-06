@@ -1,0 +1,47 @@
+environment=$1
+version=$(date +%Y.%m.%d.%H%M)
+
+echo "Running deploy stage for environment:$1"
+myuser=$(whoami)
+echo "User : $myuser"
+
+jar_to_be_packaged=$(ls|grep -i "onboarding.*.jar")
+echo "jar to be packaged : $jar_to_be_packaged"
+
+
+s3_bucket=""
+procfile="Procfile-$environment-$version"
+if [ "$environment" == "staging" ];then
+        s3_bucket="elasticbeanstalk-ap-south-1-969111487786"
+        printf "web: java -jar -Dspring.profiles.active=staging "$jar_to_be_packaged"" > "$procfile"
+fi
+if [ "$environment" == "prod" ];then
+        echo "Setup s3 bucket for prod deployment"
+        s3_bucket="elasticbeanstalk-ap-south-1-969111487786"
+        printf "web: java -jar -Dspring.profiles.active=prod "$jar_to_be_packaged"" > "$procfile"
+fi
+
+
+
+#Packaging zip to create artifact
+artifact="onboarding-$environment-$version.zip"
+cp "$procfile" Procfile
+echo "Executing command : zip -r onboarding-$environment-$version.zip "$jar_to_be_packaged" Procfile .platform"
+zip -r "$artifact" "$jar_to_be_packaged" Procfile .platform
+          
+#myuser=$(whoami)
+#echo "User : $myuser"
+#Uploading artifact to s3
+echo "Executing command : aws s3 cp "$artifact" s3://elasticbeanstalk-ap-south-1-969111487786/$artifact"
+aws s3 cp "$artifact" s3://elasticbeanstalk-ap-south-1-969111487786/"$artifact"
+             
+echo "Deploying for environment : $environment"
+
+application_name="barraiser" 
+    
+echo "Creating application version for artifact : $artifact"
+aws elasticbeanstalk create-application-version --application-name "$application_name" --version-label "$artifact"  --source-bundle S3Bucket="$s3_bucket",S3Key="$artifact"
+
+echo "Deploying"
+aws elasticbeanstalk update-environment --environment-name "$environment" --version-label "$artifact"
+echo "Deployment Successful"

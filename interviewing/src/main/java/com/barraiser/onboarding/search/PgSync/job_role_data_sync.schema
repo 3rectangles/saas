@@ -1,0 +1,38 @@
+[{
+	"database": "barraiser",
+	"index": "job-role-filter",
+	"nodes": {
+		"table": "job_role",
+		"schema": "public",
+		"columns": [
+			"id",
+			"version_id",
+			"domain_id",
+			"internal_display_name",
+			"candidate_display_name",
+			"min_exp",
+			"max_exp",
+			"created_on",
+			"deprecated_on"
+		],
+		"transform":{
+		     "rename": {
+		        "id": "job_role_id",
+		        "version_id": "job_role_version"
+		     }
+		},
+		"children": [{
+			"table": "partner_company",
+			"label": "partner_id",
+			"columns": ["id"],
+			"relationship": {
+				"variant": "scalar",
+				"type": "one_to_one",
+				"foreign_key": {
+					"child": ["company_id"],
+					"parent": ["company_id"]
+				}
+			}
+		}]
+	}
+}]

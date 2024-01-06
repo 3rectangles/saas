@@ -1,0 +1,50 @@
+{
+    "interviewers" : [
+        {
+            "id": "1",
+            "costInINR": 2000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 1,
+            "isDemoEligible": "False"
+        },
+        {
+            "id": "2",
+            "costInINR": 4000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 1,
+            "interviewingSlotsBookedOnADay": 2,
+            "isDemoEligible": "False"
+        },
+        {
+            "id": "3",
+            "costInINR": 1000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 1,
+            "isDemoEligible": "False"
+        },
+        {
+            "id": "4",
+            "costInINR": 3000,
+            "averageProficiencyInSkills": 3,
+            "interviewingSlotsBookedInAWeek": 0,
+            "interviewingSlotsBookedOnADay": 2,
+            "isDemoEligible": "False"
+        }
+    ],
+    "expertListOfPriorityInterviewers": [
+        {
+            "id": "3"
+        },
+        {
+            "id": "4"
+        },
+        {
+            "id": "1"
+        },
+        {
+            "id": "2"
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+server:
+    port: 5000
+    servlet:
+        session:
+            cookie:
+                domain: .staging.barraiser.in
+                http-only: true
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - httptrace
+                    - info
+                    - health
+                    - shutdown
+                    - env
+                    - logfile
+                    - auditevents
+    health:
+        elasticsearch:
+            enabled: false
+    endpoint:
+        health:
+            show-details: always
+            show-components: always
+    metrics:
+        tags:
+            stage: staging
+spring:
+    profiles: staging
+    datasource:
+        jdbcUrl: jdbc:postgresql://staging.czggcjhujenw.ap-south-1.rds.amazonaws.com:5432/barraiser
+        username: barraiser
+        maximum-pool-size: 40
+
+        hikari:
+            leak-detection-threshold: 30000
+speaker:
+    url: http://13.234.172.129:5024
+
+elasticsearch:
+    cluster:
+        domain: vpc-es-staging-zkgowjkrmgux3eioi5h2qskaeq.ap-south-1.es.amazonaws.com
+        port: 443
+        protocol: https
+
+firebase:
+    credentials-secret-name: firebase-codepairing-staging
+    database-url: https://codepairing-staging-default-rtdb.asia-southeast1.firebasedatabase.app
+
+mixpanel:
+    project-barraiser:
+        token: b13b478bf719460e37b216489f736da2
+
+aws:
+    secretNames:
+        barraiserDb: newstaging/barraiser
+    cognito:
+        userPoolId: ap-south-1_63VrnfQr0
+        backendClientId: 5b8aqclsqa26mtl2fdvd1ka472
+        backendClientSecretId: staging/cognito-client-5b8aqclsqa26mtl2fdvd1ka472
+        expectedIssuerCognito: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_63VrnfQr0
+        jwksDownloadUrl: https://cognito-idp.ap-south-1.amazonaws.com/ap-south-1_63VrnfQr0/.well-known/jwks.json
+    eventBus: barraiser-staging
+    sns:
+        sms:
+            senderId: BarRaiser
+            maxPrice: 0.50
+            smsType: Transactional
+
+bgs:
+    algorithm:
+        version: 12
+
+
+razorpay:
+    secretNames:
+        apiKeyId: rzp_live_HNzSB8M7lYSOXj
+        secretName: RazorPay
+        webhook: jxXXGYd9ts5c7q#
+payment:
+    redirection:
+        host: staging.barraiser.in
+queue:
+    atsIntegration: https://sqs.ap-south-1.amazonaws.com/969111487786/job-sync-with-partner-staging
+    jira: https://sqs.ap-south-1.amazonaws.com/969111487786/jira-events-staging
+    feedback: https://sqs.ap-south-1.amazonaws.com/969111487786/feedback-submitted-dev
+    email-event: https://sqs.ap-south-1.amazonaws.com/969111487786/email-events-staging
+    slack-notification: https://sqs.ap-south-1.amazonaws.com/969111487786/communication-events-staging
+    expert-payment-calculation: https://sqs.ap-south-1.amazonaws.com/969111487786/expert-payment-calculation-staging
+    db-log-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/events-log-db-staging
+    interviewing-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/interviewing-staging
+    video-transcoding-completion: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-transcoding-completion-event-staging
+    video-events: https://sqs.ap-southeast-1.amazonaws.com/969111487786/video-events-staging
+    media-transcripts-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/media-transcripts-staging
+    ats-integrations-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-integrations-staging
+    data-science-events-consumer: https://sqs.ap-south-1.amazonaws.com/969111487786/datascience-staging
+    ats-calendar-events: https://sqs.ap-south-1.amazonaws.com/969111487786/ats-calendar-events-staging
+    highlight-events: https://sqs.ap-south-1.amazonaws.com/969111487786/highlight-events-staging
+
+transcripts-s3-bucket:
+    uri: s3://barraiser-interviewing-bot-staging/transcripts
+
+interviewing-service-host:
+    url: https://api.staging.barraiser.in
+
+linkedinShare:
+    redirectUrl: https://staging.barraiser.in
+media-serving:
+    domain: "media.staging.barraiser.in"
+
+launchdarkly:
+    secretNames:
+        sdk-key: launchdarklysdk/test
+
+communication:
+    calendar-accounts:
+        - interview12@barraiser.com
+        - interview13@barraiser.com
+    api-key-name: communication-service-api-key-staging
+    email:
+        fromAddress: interview@barraiser.com
+    phone:
+        countryCode:
+            india: 91
+        length:
+            india: 10
+
+search:
+    indices:
+        skills: "staging_skills"
+        companies: "staging_companies"
+        interests: "staging_area_of_interest"
+        interviewers: "staging_interviewers"
+
+
+monitoring:
+    slack-channel: "#"
+    enabled: false
+
+notification:
+    interview:
+        email: monitoring@barraiser.com
+        lifecycle:
+            email: interview@barraiser.com
+
+
+br-config:
+    s3-bucket: br-config-staging
+
+interview:
+    ta-auto-allocation: true
+    lifecycle:
+        management:
+            enabled: true
+        messagebird:
+            ivr:
+                url: https://flows.messagebird.com/flows/eb520859-ae44-4f37-bf11-7bb7dfdb1fc0/invoke
+                flowId:
+    confirmation:
+        messagebird:
+            whatsapp:
+                namespace: 00225efe_0bbc_4fab_8456_7f1952833ec0
+                candidateChannelId: b47898c2-2fd8-4fac-81ac-57d7e8c51219
+                expertChannelId: 55f2e6c6-363c-4284-b130-466cdccce0cd
+    followUpForScheduling:
+        messagebird:
+            ivr:
+                flowId: 4007d29b-d09a-4649-8462-a1faef8b944d
+
+scheduled:
+    initialDelay: 1
+    fixedDelay: 1
+    fixedDelayTaAllocation: 1
+
+redirect_url:
+    url: https://staging.barraiser.in/slack-confirmation
+
+buttercms:
+    key: fd932099990a6dc3e2513968af084fe81a740f2b
+
+cancellation-prediction-api-url: "https://77g5d2fm68.execute-api.ap-south-1.amazonaws.com/default/cancellation-prediction-mock-api-for-local-and-staging"
+
+followup-question-detection-url: http://13.234.172.129:5024/followup_detection_prediction/v1
+
+feedback-recommendation-url: http://13.234.172.129:5024/feedback_suggestion/v1
+
+interview-structure-skills-values-url: http://13.234.172.129:5024/interview_structure/skills_and_values
+
+question-category-prediction-url: http://13.234.172.129:5024/question_category_prediction/v1
+
+overall-feedback-suggestions-url: http://13.234.172.129:5024
+
+evaluation-link: https://staging.barraiser.in/customer/%s/evaluations/%s
+
+bgs-link: https://staging.barraiser.in/candidate-evaluation/%s
+
+merge-dev:
+    secretNames: staging/merge-dev
+
+login-link: https://staging.barraiser.in/login
+
+lever:
+    secretNames: staging/lever_credentials
+    api-client: https://api.sandbox.lever.co/v1/
+    access-token-client: https://sandbox-lever.auth0.com/oauth/token
+
+zoom:
+    app:
+        installation-link: https://bia.staging.barraiser.in/api/zoomapp/install
+        api-key: staging/bia-service/api-key
+
+ms-teams:
+    app-id: 345dea15-857a-460e-a989-36a380a4c1f8
+
+cors:
+    enabled-origins:
+        - "http://localhost"
+        - "http://localhost:3000"
+        - "http://staging.barraiser.in"
+        - "https://staging.barraiser.in"
+        - "https://staging.barraiser.com"
+        - "http://staging.barraiser.com"
+        - "*"
+        - "chrome-extension://nicimijlbggbdfnooghfkjpcbllphjcc"
+
+recaptcha-secret-key: 6LcJ2EEnAAAAALsC7g1tYE58GpwGOrmd9tVNjWKz
+

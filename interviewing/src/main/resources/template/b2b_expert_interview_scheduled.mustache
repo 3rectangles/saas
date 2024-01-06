@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Interview Scheduled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+    {{> header_BR.mustache}}
+    <div class="content">
+<p>Hi {{expert_name}},</p>
+<p>We have scheduled an interview for you on {{expert_start_datetime}}.</p>
+<p>Below are the details of the interview, please go through them carefully.</p>
+<p>Interview will happen over a zoom meeting details of which can be accessed through
+    <a href="https://app.barraiser.com/interview-landing/e/{{interview_id}}">here</a> before the interview.
+    The page also contains information on what to expect in the interview and some general guidelines of interviewing,
+    it is highly recommended that you go through them and make yourself familiar.
+</p>
+
+<p>
+The page contains interview structure which helps you with what needs to be asked in the interview, candidate's resume and
+some general guidelines of BarRaiser interviewing, it is highly recommended that you go through them much before the interview
+scheduled time and make yourself familiar and prepared for the interview.
+</p>
+
+<p>Key focus areas for this interview would be:</p>
+<ol style="padding-left: 20px;">
+{{#categories_list}}
+       <li> {{name}} </li>
+{{/categories_list}}
+</ol>
+{{#specific_skills_list}}
+(specific focus on : {{specific_skills_list}})
+{{/specific_skills_list}}
+
+<p>Wishing you all the luck !</p>
+<br/>
+<p>Regards,</p>
+<p>BarRaiser Team</p>
+    </div>
+    {{> footer_BR.mustache}}
+</div>
+</body>
+</html>

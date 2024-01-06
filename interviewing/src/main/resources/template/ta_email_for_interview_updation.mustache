@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Interview Scheduled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    {{> styles.mustache}}
+</head>
+<body>
+<div class="root">
+{{> header_BR.mustache}}
+        <div class="content">
+<p>Hi {{ta_name}},</p>
+<p>Please find details of the assigned interview on {{ta_start_datetime}}.</p>
+{{#meet_link}}
+<p>Interview Tagging Link:</p>
+{{/meet_link}}
+{{^meet_link}}
+<p>Interview Tagging & Meeting Link:</p>
+{{/meet_link}}
+<p>https://app.barraiser.com/question-tagging/{{interview_id}}</p>
+<p>Please login with your registered number.</p>
+{{#meet_link}}
+<p>Meeting Link:</p>
+<p>{{meet_link}}</p>
+{{/meet_link}}
+<p>After Interview, please fill the below google form:</p>
+<p>https://docs.google.com/forms/d/e/1FAIpQLSdXnYhqlvOqYYmSgx-0ImdjqkZRFfVcLlVBv2HIsORASC1LaA/viewform?usp=pp_url&entry.913617766={{jira}}</p>
+{{#meet_link}}
+<p>Instructions -</p>
+<p>Kindly join 5 mins prior to the interview time with 'BarRaiser.ai' name. Please be on mute throughout the interview.</p>
+{{/meet_link}}
+<p>Regards,</p>
+<p>Team BarRaiser</p>
+</div>
+{{> footer_BR.mustache}}
+</div>
+</body>
+</html>
+

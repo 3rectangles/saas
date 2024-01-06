@@ -1,0 +1,453 @@
+{
+    "interviews": [
+        {
+            "lastQuestionEnd": 200,
+            "questions": [
+                {
+                    "id": "question11",
+                    "type": "NON_EVALUATIVE",
+                    "serialNumber": 2,
+                    "startTimeEpoch": 93,
+                    "interviewId": "i1"
+                },
+                {
+                    "id": "question12",
+                    "type": "REQUIRED",
+                    "serialNumber": 0,
+                    "startTimeEpoch": 0,
+                    "interviewId": "i1",
+                    "followUpQuestions": [
+                        {
+                            "id": "question121",
+                            "type": "GOOD_TO_KNOW",
+                            "serialNumber": 1,
+                            "startTimeEpoch": 2,
+                            "interviewId": "i1",
+                            "feedbacks": [
+                                {
+                                    "id": "feed1211",
+                                    "difficulty": "MODERATE",
+                                    "rating": 10,
+                                    "normalisedRating": 8.5,
+                                    "referenceId": "question121",
+                                    "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                                    "categoryId": "7",
+                                    "normalisedRatingMappings": [
+                                        {
+                                            "normalisationVersion": "1",
+                                            "cappedNormalisedRating": 8.5
+                                        },
+                                        {
+                                            "normalisationVersion": "2",
+                                            "cappedNormalisedRating": 9.5
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "feed1212",
+                                    "difficulty": "HARD",
+                                    "rating": 5,
+                                    "normalisedRating": 5,
+                                    "categoryId": "8",
+                                    "referenceId": "question121",
+                                    "feedback": "asdfds",
+                                    "normalisedRatingMappings": [
+                                        {
+                                            "normalisationVersion": "1",
+                                            "cappedNormalisedRating": 5
+                                        },
+                                        {
+                                            "normalisationVersion": "2",
+                                            "cappedNormalisedRating": 9.5
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": "feed1213",
+                                    "difficulty": "HARD",
+                                    "rating": 5,
+                                    "normalisedRating": 5,
+                                    "categoryId": "9",
+                                    "referenceId": "question121",
+                                    "feedback": "asdfds adfasdf adfasdf adfasdf",
+                                    "normalisedRatingMappings": [
+                                        {
+                                            "normalisationVersion": "1",
+                                            "cappedNormalisedRating": 5
+                                        },
+                                        {
+                                            "normalisationVersion": "2",
+                                            "cappedNormalisedRating": 9.5
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "feedbacks": [
+                        {
+                            "id": "feed121",
+                            "difficulty": "HARD",
+                            "rating": 10,
+                            "normalisedRating": 8.5,
+                            "categoryId": "7",
+                            "referenceId": "question12",
+                            "feedback": "dsfs",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 8.5
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed122",
+                            "difficulty": "MODERATE",
+                            "rating": 5,
+                            "normalisedRating": 5,
+                            "categoryId": "8",
+                            "referenceId": "question12",
+                            "feedback": "asdfds adfasdf adfasdf adfasdf adfasdfas asdfasdfasdf adsfasdfasdfasd asdfasdfasdfasdf asdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 5
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question123",
+                    "type": "REQUIRED",
+                    "serialNumber": 3,
+                    "startTimeEpoch": 95,
+                    "interviewId": "i1",
+                    "feedbacks": [
+                        {
+                            "id": "feed1231",
+                            "difficulty": "EASY",
+                            "rating": 6,
+                            "normalisedRating": 6,
+                            "categoryId": "7",
+                            "referenceId": "question123",
+                            "feedback": "dsfs",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 6
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question124",
+                    "type": "DELETED",
+                    "serialNumber": 4,
+                    "startTimeEpoch": 100,
+                    "interviewId": "i1"
+                }
+            ]
+        },
+        {
+            "lastQuestionEnd": 3000,
+            "questions": [
+                {
+                    "id": "question21",
+                    "type": "REQUIRED",
+                    "serialNumber": 0,
+                    "startTimeEpoch": 0,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed211",
+                            "difficulty": "HARD",
+                            "rating": 1,
+                            "normalisedRating": 1,
+                            "categoryId": "7",
+                            "referenceId": "question21",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 1
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed212",
+                            "difficulty": "EASY",
+                            "rating": 3,
+                            "normalisedRating": 3,
+                            "categoryId": "8",
+                            "referenceId": "question21",
+                            "feedback": "dsfs sadfasdf asdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 3
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question22",
+                    "type": "REQUIRED",
+                    "serialNumber": 1,
+                    "startTimeEpoch": 650,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed221",
+                            "difficulty": "MODERATE",
+                            "rating": 8,
+                            "normalisedRating": 8,
+                            "categoryId": "7",
+                            "referenceId": "question22",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 8
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed222",
+                            "difficulty": "EASY",
+                            "rating": 9,
+                            "normalisedRating": 9,
+                            "categoryId": "8",
+                            "referenceId": "question22",
+                            "feedback": "dsfs sadfasdf asdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 9
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question23",
+                    "type": "GOOD_TO_KNOW",
+                    "serialNumber": 2,
+                    "startTimeEpoch": 1050,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed231",
+                            "difficulty": "HARD",
+                            "rating": 7,
+                            "normalisedRating": 7,
+                            "categoryId": "7",
+                            "referenceId": "question23",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 7
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        },
+                        {
+                            "id": "feed232",
+                            "difficulty": "MODERATE",
+                            "rating": 8,
+                            "normalisedRating": 8,
+                            "categoryId": "8",
+                            "referenceId": "question23",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf ",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 8
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question24",
+                    "type": "GOOD_TO_KNOW",
+                    "serialNumber": 3,
+                    "startTimeEpoch": 1350,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed241",
+                            "difficulty": "HARD",
+                            "rating": 10,
+                            "normalisedRating": 10,
+                            "categoryId": "7",
+                            "referenceId": "question24",
+                            "feedback": "dsfs ",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 10
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question25",
+                    "type": "REQUIRED",
+                    "serialNumber": 4,
+                    "startTimeEpoch": 1750,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed251",
+                            "difficulty": "MODERATE",
+                            "rating": 6,
+                            "normalisedRating": 6,
+                            "categoryId": "8",
+                            "referenceId": "question25",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 6
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question26",
+                    "type": "NON_EVALUATIVE",
+                    "serialNumber": 5,
+                    "startTimeEpoch": 2750,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed261",
+                            "difficulty": "MODERATE",
+                            "rating": 6,
+                            "normalisedRating": 6,
+                            "categoryId": "8",
+                            "referenceId": "question26",
+                            "feedback": "dsfs ",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 6
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "question27",
+                    "type": "DELETED",
+                    "serialNumber": 6,
+                    "startTimeEpoch": 3000,
+                    "interviewId": "i2"
+                },
+                {
+                    "id": "question28",
+                    "type": "GOOD_TO_KNOW",
+                    "serialNumber": 7,
+                    "startTimeEpoch": 3100,
+                    "interviewId": "i2",
+                    "feedbacks": [
+                        {
+                            "id": "feed281",
+                            "difficulty": "HARD",
+                            "rating": 7,
+                            "normalisedRating": 7,
+                            "categoryId": "9",
+                            "referenceId": "question28",
+                            "feedback": "dsfs sadfasdf asdfasdf asdfasdf adsfasdf asdfasdfas asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf",
+                            "normalisedRatingMappings": [
+                                {
+                                    "normalisationVersion": "1",
+                                    "cappedNormalisedRating": 7
+                                },
+                                {
+                                    "normalisationVersion": "2",
+                                    "cappedNormalisedRating": 9.5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "skillWeightageMap": {
+        "7": 20,
+        "8": 20,
+        "9": 25,
+        "52": 35
+    },
+    "softSkillFeedback": {
+        "rating": 7.5,
+        "normalisedRating": 7.5,
+        "difficulty": "MODERATE",
+        "categoryId": "52",
+        "normalisedRatingMappings": [
+            {
+                "normalisationVersion": "1",
+                "cappedNormalisedRating": 7.5
+            },
+            {
+                "normalisationVersion": "2",
+                "cappedNormalisedRating": 9.5
+            }
+        ]
+    }
+}

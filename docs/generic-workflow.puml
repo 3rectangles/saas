@@ -1,0 +1,11 @@
+@startuml
+title Generic Workflow
+participant Frotend as fe
+participant Backend as be
+
+fe -> be : Get current stepInput of flowid x and user-id u
+be -> fe : stepInput-id
+
+fe -> be : save workflowProgress
+be -> fe : ok
+@enduml
